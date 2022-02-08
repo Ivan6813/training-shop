@@ -1,0 +1,17 @@
+@import "../../mixin.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 95%;
+    margin: 0 auto;
+    @include desktop {
+        max-width: 1110px;
+    }
+}

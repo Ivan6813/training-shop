@@ -1,0 +1,91 @@
+@import "../../mixin.scss";
+
+.top-bar {
+    background: #121212;
+    color: #ffffff;
+}
+
+.info-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 0;
+}
+
+.info-list {
+    display: flex;
+    @include lg-mobile {
+        display: block;
+    }
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    opacity: 0.8;
+}
+
+.info-icon {
+    width: 10px;
+    height: 10px;
+}
+
+.info-text {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    margin-left: 12px;
+    @include sm-mobile {
+        font-size: 9px;
+    }
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+}
+
+.header-logo {
+    font-family: Playfair Display SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    color: #121212;
+}
+
+.nav-menu {
+    @include tablets {
+        display: none;
+    }
+}
+
+.nav-list,
+.user-block-list {
+    display: flex;
+}
+
+.nav-link {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #121212;
+    margin-right: 32px;
+}
+
+.user-block-item {
+    margin-left: 29px;
+    @include sm-mobile {
+        margin-left: 20px;
+    }
+}
+
+.user-block-icon {
+    width: 18px;
+    height: 18px;
+}

@@ -1,0 +1,20 @@
+@import "../../mixin.scss";
+
+.socials-list {
+    display: flex;
+    align-items: center;
+}
+
+.social-item {
+    margin-left: 10px;
+    opacity: 0.8;
+}
+
+.social-icon {
+    width: 14px;
+    height: 14px;
+    @include lg-mobile {
+        width: 20px;
+        height: 20px;
+    }
+}
