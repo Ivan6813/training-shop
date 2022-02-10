@@ -13,11 +13,11 @@ function Socials() {
         <ul className = "socials-list">
             {socials.map((item, i) => {
                 return ( 
-                    <li className = "social-item" key = {i}>
-                        <a href = "/">
-                            <img className = "social-icon" src = {item} alt = {item} />
-                        </a>
-                    </li>
+                <li className = "social-item" key = {i}>
+                    <a href = "/">
+                        <img className = "social-icon" src = {item} alt = "icon" />
+                    </a>
+                </li>
                 )
             })}
         </ul>

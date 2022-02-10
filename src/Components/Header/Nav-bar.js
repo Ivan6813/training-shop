@@ -17,23 +17,23 @@ function NavBar() {
                 </a>
                 <nav className = "nav-menu" data-test-id = "menu">
                     <ul className = "nav-list">
-                        {headerNav.map(item => {
+                        {headerNav.map((item, i) => {
                             return ( 
-                                <li className = "nav-item" key = {item}>
-                                    <a className = "nav-link" href  ="/">{item}</a>
-                                </li>
+                            <li className = "nav-item" key = {i}>
+                                <a className = "nav-link" href  ="/">{item}</a>
+                            </li>
                             )
                         })}
                     </ul>
                 </nav>
                 <ul className = "user-block-list">
-                    {userBlock.map((item) => {
+                    {userBlock.map((item, i) => {
                         return (
-                            <li className = "user-block-item" key = {item}>
-                                <a href = "/">
-                                    <img className = "user-block-icon" src = {item} alt = "icon"/>
-                                </a>
-                            </li>
+                        <li className = "user-block-item" key = {i}>
+                            <a href = "/">
+                                <img className = "user-block-icon" src = {item} alt = "icon"/>
+                            </a>
+                        </li>
                         )
                     })}
                 </ul>

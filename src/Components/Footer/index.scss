@@ -1,0 +1,230 @@
+@import "../../mixin.scss";
+
+.input-bar {
+    background: #000;
+    color: white;
+}
+
+.wrapper-input-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    @include lg-mobile {
+        justify-content: center;
+        padding: 8px 0;
+        flex-direction: column;
+    }
+}
+
+.input-bar-text {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #ffffff;
+    @include lg-mobile {
+        margin-bottom: 10px;
+        font-size: 10px;
+    }
+}
+
+.footer-form {
+    display: flex;
+    @include lg-mobile {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.footer-input {
+    max-width: 400px;
+    height: 32px;
+    background: rgba($color: #ffffff, $alpha: 0.2);
+    color: #ffffff;
+    border: none;
+    padding: 0 16px;
+    margin: 0 12px 0 -50px;
+    &::placeholder {
+        font-family: Spartan;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        color: white;
+        opacity: 0.4;
+        @include lg-mobile {
+            font-size: 10px;
+        }
+    }
+    @include desktop {
+        width: 400px;
+    }
+    @include lg-mobile {
+        width: 100%;
+        margin: 0 12px 0 0;
+    }
+}
+
+.footer-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 108px;
+    height: 32px;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #ffffff;
+    opacity: 0.9;
+    @include lg-mobile {
+        width: 80px;
+        font-size: 10px;
+    }
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0 30px 0;
+    @include tablets {
+        padding: 25px 0 15px 0;
+    }
+    @include lg-mobile {
+        flex-wrap: wrap;
+        padding: 20px 0 0 0;
+    }
+}
+
+.footer-nav-block {
+    width: 255px;
+    @include lg-mobile {
+        width: 50%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}
+
+.footer-nav-title,
+.footer-info-title {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    margin-bottom: 14px;
+    @include lg-mobile {
+        margin-bottom: 8px;
+    }
+}
+
+.footer-info-title {
+    @include tablets {
+        margin-bottom: 20px;
+    }
+    @include lg-mobile {
+        margin-bottom: 16px;
+    }
+}
+
+.footer-nav-link,
+.footer-info-text {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: #121212;
+    opacity: 0.8;
+    @include tablets {
+        font-size: 10px;
+    }
+    @include sm-mobile {
+        font-size: 8px;
+    }
+}
+
+.footer-nav-item {
+    margin-bottom: 16px;
+    @include tablets {
+        margin-bottom: 13px;
+    }
+    @include lg-mobile {
+        margin-bottom: 8px;
+    }
+}
+
+.footer-info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 17px;
+    @include tablets {
+        margin-bottom: 20px;
+    }
+    @include lg-mobile {
+        margin-bottom: 17px;
+    }
+}
+
+.footer-info-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    @include tablets {
+        width: 10px;
+        height: 10px;
+    }
+    @include lg-mobile {
+        margin: 0 5px 0 25px;
+    }
+}
+
+.copyright-bar {
+    background: #f8f8f8;
+}
+
+.wrapper-copyright-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    @include lg-mobile {
+        justify-content: center;
+    }
+}
+
+.copyright-bar-text,
+.copyright-bar-link {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    color: #121212;
+    opacity: 0.8;
+    @include lg-mobile {
+        font-size: 9px;
+    }
+}
+
+.copyright-bar-link {
+    flex-direction: column;
+    text-decoration-line: underline;
+}
+
+.copyright-bar-img {
+    width: 380px;
+    height: 16px;
+    @include lg-mobile {
+        width: 100%;
+        margin: 8px 0;
+    }
+}

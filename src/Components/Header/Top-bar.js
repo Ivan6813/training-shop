@@ -7,9 +7,9 @@ import clock from "../../img/clock.svg";
 function TopBar() {
 
     const topBarInfo = [
-        {id: 0, icon: phone, text: "+375 29 100 20 30"}, 
-        {id: 1, icon: location_marker, text: "Belarus, Gomel, Lange 17"}, 
-        {id: 2, icon: clock, text: "All week 24/7"}
+        {icon: phone, text: "+375 29 100 20 30"}, 
+        {icon: location_marker, text: "Belarus, Gomel, Lange 17"}, 
+        {icon: clock, text: "All week 24/7"}
     ];
 
     return (
@@ -17,12 +17,12 @@ function TopBar() {
             <div className = "container">
                 <div className = "info-block">
                     <ul className = "info-list">
-                        {topBarInfo.map(item => {
+                        {topBarInfo.map((item, i) => {
                             return ( 
-                                <li className = "info-item" key = {item.id}>
-                                    <img className = "info-icon" src = {item.icon} alt = "icon"/>
-                                    <div className = "info-text">{item.text}</div>
-                                </li>
+                            <li className = "info-item" key = {i}>
+                                <img className = "info-icon" src = {item.icon} alt = "icon"/>
+                                <div className = "info-text">{item.text}</div>
+                            </li>
                             )
                         })}
                     </ul>
