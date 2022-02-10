@@ -1,24 +1,29 @@
 {
   "files": {
-    "main.css": "/training-shop/static/css/main.12409d7c.css",
-    "main.js": "/training-shop/static/js/main.de69c9d1.js",
+    "main.css": "/training-shop/static/css/main.398e2dcf.css",
+    "main.js": "/training-shop/static/js/main.622de850.js",
+    "static/media/copyright_bar_img_2x.png": "/training-shop/static/media/copyright_bar_img_2x.e18000108e256257153a.png",
     "static/media/instagram.svg": "/training-shop/static/media/instagram.67d259b90b7cfb475f2b72c8baf01765.svg",
     "static/media/globe.svg": "/training-shop/static/media/globe.e7fbffcf8e0dec190ac395e582336b07.svg",
     "static/media/pinterest.svg": "/training-shop/static/media/pinterest.999453765058229adcc060214525170e.svg",
+    "static/media/f_location_marker.svg": "/training-shop/static/media/f_location_marker.f361d0b96122f8aeff226ef55eeadc4e.svg",
     "static/media/clock.svg": "/training-shop/static/media/clock.817f99178a9561f61258e82b3f8135b9.svg",
     "static/media/twitter.svg": "/training-shop/static/media/twitter.bd7add1e458b5ff39c1683b1ebccc271.svg",
     "static/media/location_marker.svg": "/training-shop/static/media/location_marker.f3a287c36713ca5a1f7e5a0abf525e38.svg",
     "static/media/phone.svg": "/training-shop/static/media/phone.7619680f8d1eacb03c561f77341ae676.svg",
+    "static/media/f_phone.svg": "/training-shop/static/media/f_phone.b4245f1088a4fa524d598666ee23e1f1.svg",
     "index.html": "/training-shop/index.html",
+    "static/media/f_clock.svg": "/training-shop/static/media/f_clock.14f47f88684e6056e1d29791a673b3c1.svg",
     "static/media/user.svg": "/training-shop/static/media/user.5f1eb733424b41c5e07d0ba77a6d5beb.svg",
     "static/media/search.svg": "/training-shop/static/media/search.3e369ae61d94eb94115c1eb102ed7764.svg",
+    "static/media/email.svg": "/training-shop/static/media/email.fe58a9c8dee830cdc191fffa72e0c794.svg",
     "static/media/facebook.svg": "/training-shop/static/media/facebook.04fcfe0702dbfa7d3bdf1e44ce981478.svg",
     "static/media/shopping_bag.svg": "/training-shop/static/media/shopping_bag.f83a75a7371832b4fcec9fd8fd5f6474.svg",
-    "main.12409d7c.css.map": "/training-shop/static/css/main.12409d7c.css.map",
-    "main.de69c9d1.js.map": "/training-shop/static/js/main.de69c9d1.js.map"
+    "main.398e2dcf.css.map": "/training-shop/static/css/main.398e2dcf.css.map",
+    "main.622de850.js.map": "/training-shop/static/js/main.622de850.js.map"
   },
   "entrypoints": [
-    "static/css/main.12409d7c.css",
-    "static/js/main.de69c9d1.js"
+    "static/css/main.398e2dcf.css",
+    "static/js/main.622de850.js"
   ]
 }
