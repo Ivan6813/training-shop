@@ -3,6 +3,7 @@ import Slider from "./Slider";
 import Benefits from "./Benefits";
 import "./index.scss";
 import Info from "./Info";
+import Subscribe from "./Subscribe";
 
 
 function Main() {
@@ -12,6 +13,7 @@ function Main() {
             <Slider/>
             <Benefits/>
             <Info/>
+            <Subscribe/>
         </main>
     );
 }

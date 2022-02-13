@@ -304,3 +304,134 @@
 .sale-title span {
     color: #e91e63;
 }
+
+/*** Subscribe ***/
+
+.wrapper-subcribe-block {
+    background: linear-gradient(180deg, #f3f2f2 0%, #dcdbdb 100%);
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    @include lg-mobile {
+        padding: 40px 0;
+    }
+}
+
+.subcribe-block {
+    position: relative;
+    background: #ffffff;
+    width: 532px;
+    border-radius: 4px;
+    padding: 80px 96px 96px 96px;
+    @include lg-mobile {
+        width: 100%;
+        padding: 40px 20px;
+    }
+}
+
+.subcribe-block-title {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    opacity: 0.4;
+    text-align: center;
+    margin-bottom: 16px;
+    @include lg-mobile {
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.subcribe-block-subtitle {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 36px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    text-align: center;
+    margin-bottom: 32px;
+    white-space: pre-line;
+    @include lg-mobile {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.subcribe-block-subtitle span {
+    color: #e91e63;
+}
+
+.subcribe-form-input {
+    text-align: center;
+    width: 100%;
+    background: #f8f8f8;
+    border: none;
+    padding: 22px 0 24px 0;
+    margin-bottom: 24px;
+    @include lg-mobile {
+        padding: 15px 0 15px 0;
+        margin-bottom: 15px;
+    }
+}
+
+.subcribe-form-input::placeholder {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    color: #121212;
+    opacity: 0.4;
+    @include lg-mobile {
+        font-size: 10px;
+    }
+}
+
+.subcribe-form-btn {
+    width: 100%;
+    padding: 23px 0;
+    background: #121212;
+    border: 2px solid #121212;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #ffffff;
+    opacity: 0.9;
+    @include lg-mobile {
+        font-size: 10px;
+        padding: 15px 0;
+        margin-bottom: 15px;
+    }
+}
+
+.subcribe-block-women {
+    position: absolute;
+    top: -21px;
+    left: 0;
+    transform: translateX(-85%);
+    @include lg-mobile {
+        display: none;
+    }
+}
+
+.subcribe-block-men {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    transform: translateX(95%);
+    @include lg-mobile {
+        display: none;
+    }
+}
