@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "./Slider";
 import Benefits from "./Benefits";
 import "./index.scss";
+import Info from "./Info";
 
 
 function Main() {
@@ -10,6 +11,7 @@ function Main() {
         <main className = "main">
             <Slider/>
             <Benefits/>
+            <Info/>
         </main>
     );
 }
