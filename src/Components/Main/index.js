@@ -4,6 +4,7 @@ import Benefits from "./Benefits";
 import "./index.scss";
 import Info from "./Info";
 import Subscribe from "./Subscribe";
+import Blog from "./Blog";
 
 
 function Main() {
@@ -14,6 +15,7 @@ function Main() {
             <Benefits/>
             <Info/>
             <Subscribe/>
+            <Blog/>
         </main>
     );
 }
