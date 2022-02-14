@@ -5,6 +5,8 @@ import "./index.scss";
 import Info from "./Info";
 import Subscribe from "./Subscribe";
 import Blog from "./Blog";
+import WomenClothes from "./Clothes/Women-clothes";
+import MenClothes from "./Clothes/Men-clothes";
 
 
 function Main() {
@@ -13,6 +15,8 @@ function Main() {
         <main className = "main">
             <Slider/>
             <Benefits/>
+            <WomenClothes/>
+            <MenClothes/>
             <Info/>
             <Subscribe/>
             <Blog/>
