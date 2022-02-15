@@ -1,8 +1,7 @@
 import React from "react";
-import "./index.scss";
-import TopBar from "./Top-bar";
-import NavBar from "./Nav-bar";
-
+import TopBar from "./Top-bar/Top-bar";
+import NavBar from "./Nav-bar/Nav-bar";
+import "./header.scss";
 
 function Header() {
 

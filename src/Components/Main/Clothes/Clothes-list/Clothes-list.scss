@@ -1,0 +1,48 @@
+@import "../../../../mixin.scss";
+
+.clothes-cards-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include tablets {
+        justify-content: center;
+    }
+}
+
+.clothes-cards-item {
+    margin-bottom: 25px;
+    @include tablets {
+        margin: 0 15px 25px 15px;
+    }
+    @include lg-mobile {
+        margin: 0 10px 25px 10px;
+    }
+}
+
+.clothes-card-img {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.clothes-card-name {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #121212;
+    opacity: 0.6;
+    margin-bottom: 12px;
+}
+
+.clothes-card-price-block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.clothes-card-price {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    color: #121212;
+}

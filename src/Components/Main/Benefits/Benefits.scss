@@ -1,0 +1,65 @@
+@import "../../../mixin.scss";
+
+.benefits-block {
+    padding: 30px 0;
+    border-bottom: 2px solid #f8f8f8;
+    @include tablets {
+        padding: 20px 0;
+    }
+    @include lg-mobile {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0 0 0;
+    }
+}
+
+.benefits-list {
+    display: flex;
+    justify-content: space-between;
+    @include lg-mobile {
+        display: block;
+    }
+}
+
+.benefits-item {
+    display: flex;
+    align-items: center;
+    @include lg-mobile {
+        margin-bottom: 10px;
+    }
+}
+
+.benefits-icon-block {
+    margin-right: 8px;
+}
+
+.benefits-icon {
+    width: 30px;
+    height: 30px;
+    @include tablets {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.benefits-text-block {
+    font-family: Spartan;
+    font-style: normal;
+    font-size: 12px;
+    color: #121212;
+    @include tablets {
+        font-size: 8px;
+    }
+}
+
+.benefits-title {
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.benefits-text {
+    font-weight: 500;
+    line-height: 22px;
+    opacity: 0.9;
+}

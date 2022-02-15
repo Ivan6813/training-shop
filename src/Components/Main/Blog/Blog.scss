@@ -1,0 +1,135 @@
+@import "../../../mixin.scss";
+
+.blog-block {
+    padding: 96px 0 20px 0;
+    @include tablets {
+        padding: 50px 0 0 0;
+    }
+    @include lg-mobile {
+        padding: 40px 0 0 0;
+    }
+}
+
+.header-blog {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    @include tablets {
+        margin-bottom: 35px;
+    }
+    @include lg-mobile {
+        margin-bottom: 30px;
+    }
+}
+
+.header-blog-title {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    @include tablets {
+        font-size: 16px;
+    }
+    @include lg-mobile {
+        font-size: 14px;
+    }
+}
+
+.header-blog-link {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    opacity: 0.6;
+    @include tablets {
+        font-size: 10px;
+    }
+    @include lg-mobile {
+        font-size: 8px;
+    }
+}
+
+.blog-list {
+    display: flex;
+    justify-content: space-between;
+    @include lg-mobile {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.blog-item {
+    margin-right: 30px;
+    @include tablets {
+        margin-right: 10px;
+    }
+    @include lg-mobile {
+        margin-right: 0;
+    }
+}
+
+.blog-item:last-child {
+    margin-right: 0;
+}
+
+.blog-item-img {
+    width: 100%;
+}
+
+.img-block-text {
+    position: relative;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    background: #ffffff;
+    padding: 27px 16px 15px 16px;
+    @include tablets {
+        padding: 20px 10px 0 10px;
+    }
+    @include lg-mobile {
+        padding: 20px 10px 10px 10px;
+        width: 90%;
+    }
+}
+
+.blog-item-title {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    margin-bottom: 15px;
+    @include tablets {
+        font-size: 8px;
+        margin-bottom: 10px;
+    }
+    @include lg-mobile {
+        font-size: 12px;
+    }
+}
+
+.blog-item-text {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #121212;
+    opacity: 0.8;
+    @include tablets {
+        font-size: 8px;
+    }
+    @include lg-mobile {
+        font-size: 12px;
+    }
+}

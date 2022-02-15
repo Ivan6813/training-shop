@@ -1,0 +1,43 @@
+@import "../../../mixin.scss";
+
+.top-bar {
+    background: #121212;
+    color: #ffffff;
+}
+
+.info-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 0;
+}
+
+.info-list {
+    display: flex;
+    @include lg-mobile {
+        display: block;
+    }
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    opacity: 0.8;
+}
+
+.info-icon {
+    width: 10px;
+    height: 10px;
+}
+
+.info-text {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    margin-left: 12px;
+    @include sm-mobile {
+        font-size: 9px;
+    }
+}

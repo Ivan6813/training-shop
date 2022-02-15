@@ -1,0 +1,100 @@
+@import "../../mixin.scss";
+@import "./Input-bar/Input-bar.scss";
+@import "./Copyright-bar/Copyright-bar.scss";
+
+.footer-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0 30px 0;
+    @include tablets {
+        padding: 25px 0 15px 0;
+    }
+    @include lg-mobile {
+        flex-wrap: wrap;
+        padding: 20px 0 0 0;
+    }
+}
+
+.footer-nav-block {
+    width: 255px;
+    @include lg-mobile {
+        width: 50%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}
+
+.footer-nav-title,
+.footer-info-title {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    margin-bottom: 14px;
+    @include lg-mobile {
+        margin-bottom: 8px;
+    }
+}
+
+.footer-info-title {
+    @include tablets {
+        margin-bottom: 20px;
+    }
+    @include lg-mobile {
+        margin-bottom: 16px;
+    }
+}
+
+.footer-nav-link,
+.footer-info-text {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: #121212;
+    opacity: 0.8;
+    @include tablets {
+        font-size: 10px;
+    }
+    @include sm-mobile {
+        font-size: 8px;
+    }
+}
+
+.footer-nav-item {
+    margin-bottom: 16px;
+    @include tablets {
+        margin-bottom: 13px;
+    }
+    @include lg-mobile {
+        margin-bottom: 8px;
+    }
+}
+
+.footer-info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 17px;
+    @include tablets {
+        margin-bottom: 20px;
+    }
+    @include lg-mobile {
+        margin-bottom: 17px;
+    }
+}
+
+.footer-info-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    @include tablets {
+        width: 10px;
+        height: 10px;
+    }
+    @include lg-mobile {
+        margin: 0 5px 0 25px;
+    }
+}

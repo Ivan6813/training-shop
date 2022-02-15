@@ -1,0 +1,84 @@
+@import "../../../mixin.scss";
+
+.information-block {
+    display: flex;
+    justify-content: space-between;
+    padding: 96px 0;
+    @include tablets {
+        padding: 50px 0;
+    }
+    @include lg-mobile {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 30px 0;
+    }
+}
+
+.new-season-block,
+.sale-block {
+    position: relative;
+}
+
+.new-season-block {
+    @include tablets {
+        margin-right: 10px;
+    }
+    @include lg-mobile {
+        margin: 0 0 5px 0;
+    }
+}
+
+.new-season-img,
+.sale-img {
+    width: 100%;
+}
+
+.new-season-block-text,
+.sale-block-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 16px 24px;
+    background: #ffffff;
+    border-radius: 4px;
+    text-align: center;
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    @include tablets {
+        padding: 10px 20px;
+    }
+}
+
+.new-season-text,
+.sale-text {
+    font-size: 12px;
+    opacity: 0.6;
+    margin-bottom: 8px;
+    @include tablets {
+        font-size: 10px;
+    }
+    @include lg-mobile {
+        font-size: 8px;
+    }
+}
+
+.new-season-title,
+.sale-title {
+    white-space: nowrap;
+    font-size: 16px;
+    @include tablets {
+        font-size: 12px;
+    }
+    @include lg-mobile {
+        font-size: 10px;
+    }
+}
+
+.sale-title span {
+    color: #e91e63;
+}

@@ -1,0 +1,43 @@
+@import "./../../../mixin.scss";
+
+.copyright-bar {
+    background: #f8f8f8;
+}
+
+.wrapper-copyright-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    @include lg-mobile {
+        justify-content: center;
+    }
+}
+
+.copyright-bar-text,
+.copyright-bar-link {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    color: #121212;
+    opacity: 0.8;
+    @include lg-mobile {
+        font-size: 9px;
+    }
+}
+
+.copyright-bar-link {
+    flex-direction: column;
+    text-decoration-line: underline;
+}
+
+.copyright-bar-img {
+    width: 380px;
+    height: 16px;
+    @include lg-mobile {
+        width: 100%;
+        margin: 8px 0;
+    }
+}

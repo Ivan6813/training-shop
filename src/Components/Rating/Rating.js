@@ -1,11 +1,8 @@
 import React from "react";
+import { ratingStars } from "../constants/constants";
 import "./Rating.scss";
-import filledStar from "../../img/filled_star.svg";
-import unfilledStar from "../../img/unfilled_star.svg";
 
 function Rating() {
-
-    const ratingStars = [filledStar, filledStar,filledStar, filledStar, unfilledStar];
 
     return (
         <ul className = "rating-list">

@@ -1,0 +1,78 @@
+@import "../../../mixin.scss";
+
+.products-settings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 0;
+    @include lg-mobile {
+        padding: 20px 0;
+    }
+}
+
+.filter-block {
+    display: flex;
+    align-items: center;
+}
+
+.filter-btn {
+    background: url(../../../img/filter-btn.svg) no-repeat center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    margin-right: 12px;
+    @include lg-mobile {
+        margin-right: 0;
+    }
+}
+.filter-text {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    opacity: 0.6;
+    @include lg-mobile {
+        font-size: 10px;
+    }
+}
+
+.change-layout-block {
+    display: flex;
+}
+
+.display-list-btn {
+    background: url(../../../img/display-list.svg) no-repeat center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    margin-right: 24px;
+    @include lg-mobile {
+        margin-right: 15px;
+    }
+}
+
+.display-tile-btn {
+    background: url(../../../img/display-tile.svg) no-repeat center;
+    width: 24px;
+    height: 24px;
+    border: none;
+}
+
+.products-settings-sort {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    opacity: 0.6;
+    background: #ffffff;
+    border: none;
+    @include lg-mobile {
+        font-size: 10px;
+    }
+}

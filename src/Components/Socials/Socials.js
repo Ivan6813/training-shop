@@ -1,13 +1,8 @@
 import React from "react";
+import { socials } from "../constants/constants";
 import "./Socials.scss";
-import facebook from "../../img/facebook.svg";
-import twitter from "../../img/twitter.svg";
-import instagram from "../../img/instagram.svg";
-import pinterest from "../../img/pinterest.svg";
 
 function Socials() {
-
-    const socials = [facebook, twitter,instagram, pinterest];
 
     return (
         <ul className = "socials-list">

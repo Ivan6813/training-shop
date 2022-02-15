@@ -1,11 +1,11 @@
 import React from "react";
-import InputBar from "./Input-bar";
-import Categories from "./Categories";
-import Information from "./Information";
-import UsefulLinks from "./Useful-links";
-import Contacts from "./Contacts";
-import CopyrightBar from "./Copyright-bar";
-import "./index.scss";
+import InputBar from "./Input-bar/Input-bar";
+import Categories from "./Categories/Categories";
+import Information from "./Information/Information";
+import UsefulLinks from "./Useful-links/Useful-links";
+import Contacts from "./Contacts/Contacts";
+import CopyrightBar from "./Copyright-bar/Copyright-bar";
+import "./footer.scss";
 
 
 function Footer() {

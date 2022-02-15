@@ -1,0 +1,73 @@
+@import "../../../mixin.scss";
+
+.products-header {
+    background: #f8f8f8;
+    padding-bottom: 24px;
+    @include lg-mobile {
+        padding-bottom: 20px;
+    }
+}
+
+.wrapper-products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    margin-bottom: 14px;
+}
+
+.home-link {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    color: #121212;
+    opacity: 0.6;
+    display: inline-flex;
+    align-items: center;
+}
+
+.home-link::after {
+    content: "►";
+    display: block;
+    margin: 0 6px;
+}
+
+.current-categories-link {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    color: #121212;
+}
+
+.share-link {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    color: #121212;
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+}
+
+.share-link::before {
+    content: url(../../../img/share-link.svg);
+    display: block;
+    margin-right: 8px;
+}
+
+.category-name {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    text-align: center;
+    @include lg-mobile {
+        font-size: 20px;
+    }
+}
