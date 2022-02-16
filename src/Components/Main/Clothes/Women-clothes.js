@@ -9,7 +9,7 @@ function WomenClothes() {
 
     return (
         <div className = "clothes">
-            <ClothesHeader  category = {"Women`s"}/>
+            <ClothesHeader  category = {"Women`s"} path = {"/women"}/>
             <ClothesList clothes = {womenClothes}/>
             <ClothesBtn/>
         </div>

@@ -1,19 +1,23 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom";
 import "./Products-header.scss";
 
-function ProductsHeader({category}) {
+function ProductsHeader() {
+
+    let category1  = useParams(); 
+    const path = category1.category;
 
     return (
         <div className = "products-header">
             <div className = "container">
                 <div className = "wrapper-products-header">
                     <div className = "products-header-nav">
-                        <a className = "home-link" href = "/">Home</a>
-                        <a className = "current-categories-link" href = "/">{category}</a>
+                        <Link className = "home-link" to = "/">Home</Link>
+                        <Link className = "current-categories-link" to = {`/${path}`}>{path}</Link>
                     </div>
-                    <a className = "share-link" href = "/">Share</a>
+                    <Link className = "share-link" to = "/">Share</Link>
                 </div>
-                <div className = "category-name">{category}</div>
+                <div className = "category-name">{path}</div>
             </div>
         </div>
     );

@@ -8,9 +8,9 @@ function Benefits() {
         <div className = "container">
             <div className = "benefits-block">
                 <ul className = "benefits-list">
-                    {benefits.map((item, i) => {
+                    {benefits.map(item => {
                         return ( 
-                        <li className = "benefits-item" key = {i}>
+                        <li className = "benefits-item" key = {item.id}>
                             <div className = "benefits-icon-block">
                                 <img className = "benefits-icon" src = {item.icon} alt = "icon"/>
                             </div>

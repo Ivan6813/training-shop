@@ -1,0 +1,116 @@
+@import "../../../mixin.scss";
+
+.product-header {
+    background: #f8f8f8;
+    padding-bottom: 6px;
+}
+
+.wrapper-product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    margin-bottom: 14px;
+}
+
+.home-link,
+.products-page-link {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    color: #121212;
+    opacity: 0.6;
+    display: inline-flex;
+    align-items: center;
+    @include lg-mobile {
+        font-size: 9px;
+    }
+}
+
+.home-link::after,
+.products-page-link::after {
+    content: "►";
+    display: block;
+    margin: 0 6px;
+}
+
+.current-product-link {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    color: #121212;
+    @include lg-mobile {
+        font-size: 9px;
+    }
+}
+
+.share-link {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    color: #121212;
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+}
+
+.share-link::before {
+    content: url(../../../img/share-link.svg);
+    display: block;
+    margin-right: 8px;
+}
+
+.product-name {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: #121212;
+    @include lg-mobile {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include lg-mobile {
+        display: block;
+    }
+}
+
+.rating-info,
+.availability-info {
+    display: flex;
+    align-items: center;
+    @include lg-mobile {
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+}
+
+.number-reviews,
+.sku,
+.availability {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    color: #121212;
+    opacity: 0.6;
+}
+
+.number-reviews {
+    margin-left: 6px;
+}
+
+.availability {
+    margin-left: 27px;
+}

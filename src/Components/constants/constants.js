@@ -35,61 +35,77 @@ import blog_img_3 from "../../img/Blog-img-3.png";
 import filledStar from "../../img/filled_star.svg";
 import unfilledStar from "../../img/unfilled_star.svg";
 
-
-export const headerNav = ["Abour Us", "Women", "Men", "Beauty", "Accessories", "Blog", "Contact"];
+export const headerNav = [
+    {id: 1, name: "Abour Us", path: "/"},
+    {id: 2, name: "Women", path: "/women"},
+    {id: 3, name: "Men", path: "/men"},
+    {id: 4, name: "Beauty", path: "/"},
+    {id: 5, name: "Accessories", path: "/"},
+    {id: 6, name: "Blog", path: "/"},
+    {id: 7, name: "Contact", path: "/"},
+];
 
 export const userBlock = [search, globe, user, shopping_bag];
 
 export const topBarInfo = [
-    {icon: phone, text: "+375 29 100 20 30"}, 
-    {icon: location_marker, text: "Belarus, Gomel, Lange 17"}, 
-    {icon: clock, text: "All week 24/7"}
+    {id: 1, icon: phone, text: "+375 29 100 20 30"}, 
+    {id: 2, icon: location_marker, text: "Belarus, Gomel, Lange 17"}, 
+    {id: 3, icon: clock, text: "All week 24/7"}
 ];
 
 export const socials = [facebook, twitter,instagram, pinterest];
 
 export const benefits = [
-    {title: "FREE SHIPPING", icon: truck, text: "On all UA order or order above $100"}, 
-    {title: "30 DAYS RETURN", icon: refresh, text: "Simply return it within 30 days for an exchange"}, 
-    {title: "SUPPORT 24/7", icon: support, text: "Contact us 24 hours a day, 7 days a week"}
+    {id: 1, title: "FREE SHIPPING", icon: truck, text: "On all UA order or order above $100"}, 
+    {id: 2, title: "30 DAYS RETURN", icon: refresh, text: "Simply return it within 30 days for an exchange"}, 
+    {id: 3, title: "SUPPORT 24/7", icon: support, text: "Contact us 24 hours a day, 7 days a week"}
 ];
 
-export const clothesNav = ["NEW ARRIVALS", "SPECIALS", "BESTSELLERS", "MOST VIEWED", "FEATURED PRODUCTS"];
+export const clothesNav  = [
+    {id: 1, name: "NEW ARRIVALS", path: "/"},
+    {id: 2, name: "SPECIALS", path: "/"},
+    {id: 3, name: "BESTSELLERS", path: "/"},
+    {id: 4, name: "MOST VIEWED", path: "/"},
+    {id: 5, name: "FEATURED PRODUCTS", path: "/"}
+];
 
 export const womenClothes = [
-    {id: 1, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_1},
-    {id: 2, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_2},
-    {id: 3, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_3},
-    {id: 4, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_4},
-    {id: 5, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_5},
-    {id: 6, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_6},
-    {id: 7, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_7},
-    {id: 8, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_8},
+    {id: 1, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_1, c: "women"},
+    {id: 2, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_2, c: "women"},
+    {id: 3, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_3, c: "women"},
+    {id: 4, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_4, c: "women"},
+    {id: 5, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_5, c: "women"},
+    {id: 6, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_6, c: "women"},
+    {id: 7, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_7, c: "women"},
+    {id: 8, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_8, c: "women"},
 ];
 
 export const menClothes = [
-    {id: 1, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_1},
-    {id: 2, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_2},
-    {id: 3, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_3},
-    {id: 4, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_4},
-    {id: 5, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_5},
-    {id: 6, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_6},
-    {id: 7, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_7},
-    {id: 8, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_8},
+    {id: 1, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_1, c: "men"},
+    {id: 2, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_2, c: "men"},
+    {id: 3, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_3, c: "men"},
+    {id: 4, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_4, c: "men"},
+    {id: 5, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_5, c: "men"},
+    {id: 6, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_6, c: "men"},
+    {id: 7, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_7, c: "men"},
+    {id: 8, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_8, c: "men"},
 ];
 
 export const blogs = [
     {
+        id: 1,
         title: "The Easiest Way to Break", 
         text: "But I must explain to you how all this mistaken idea of denouncing pleas and praising pain was bor",
         img: blog_img_1
     },
     {
+        id: 2,
         title: "Wedding Season", 
         text: "But I must explain to you how all this mistaken idea of denouncing pleas and praising pain was bor",
         img: blog_img_2
     },
     {
+        id: 3,
         title: "Recent Favorites On Repeat", 
         text: "But I must explain to you how all this mistaken idea of denouncing pleas and praising pain was bor",
         img: blog_img_3
@@ -98,15 +114,30 @@ export const blogs = [
 
 export const ratingStars = [filledStar, filledStar,filledStar, filledStar, unfilledStar];
 
-export const footerCategories = ["Men", "Women", "Accessories", "Beauty"];
+export const footerCategories = [
+    {id: 1, name: "Men", path: "/men"},
+    {id: 2, name: "Women", path: "/women"},
+    {id: 3, name: "Accessories", path: "/"},
+    {id: 4, name: "Beauty", path: "/"}
+];
 
-export const footerInformation = ["About Us", "Contact Us", "Blog", "FAQs"];
+export const footerInformation = [
+    {id: 1, name: "About Us", path: "/"},
+    {id: 2, name: "Contact Us", path: "/"},
+    {id: 3, name: "Blog", path: "/"},
+    {id: 4, name: "FAQs", path: "/"}
+];
 
-export const footerUsefulLinks = ["Terms & Conditions", "Returns & Exchanges", "Shipping & Delivery", "Privacy Policyauty"];
+export const footerUsefulLinks = [
+    {id: 1, name: "Terms & Conditions", path: "/"},
+    {id: 2, name: "Returns & Exchanges", path: "/"},
+    {id: 3, name: "Shipping & Delivery", path: "/"},
+    {id: 4, name: "Privacy Policyauty", path: "/"}
+];
 
 export const footerContacts = [
-    {icon: location_marker, text: "Belarus, Gomel, Lange 17"},
-    {icon: phone, text: "+375 29 100 20 30"}, 
-    {icon: clock, text: "All week 24/7"},
-    {icon: email, text: "info@clevertec.ru"}
+    {id: 1, icon: location_marker, text: "Belarus, Gomel, Lange 17"},
+    {id: 2, icon: phone, text: "+375 29 100 20 30"}, 
+    {id: 3, icon: clock, text: "All week 24/7"},
+    {id: 4, icon: email, text: "info@clevertec.ru"}
 ];

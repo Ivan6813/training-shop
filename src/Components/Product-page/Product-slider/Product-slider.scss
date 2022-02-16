@@ -1,0 +1,70 @@
+@import "../../../mixin.scss";
+
+.product-slider-block {
+    display: flex;
+}
+
+.wrapper-product-slider-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-img {
+    margin: 0 16px 16px 0;
+}
+
+.small {
+    transform: rotate(90deg);
+    margin: 0 16px 16px 0;
+}
+
+.product-slider-select-item {
+    position: relative;
+}
+
+.product-select-img {
+    width: 100%;
+}
+
+.product-slider-button-block {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.product-slider-btn-left {
+    background: url(../../../img/main-slider-btn-left.svg) no-repeat center;
+}
+
+.product-slider-btn-right {
+    background: url(../../../img/main-slider-btn-right.svg) no-repeat center;
+}
+
+.product-slider-btn-left,
+.product-slider-btn-right {
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.product-slider-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-wrapper-slider-items {
+    display: flex;
+    justify-content: space-between;
+    @include lg-mobile {
+        margin-bottom: 5px;
+    }
+}

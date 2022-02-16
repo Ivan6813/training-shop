@@ -1,21 +1,23 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Header from "../Header";
 import Main from "../Main";
+import Categories from "../Categories";
+import ProductPage from "../Product-page";
 import Footer from "../Footer";
 import "./App.scss";
-// import Categories from "../Categories";
-// import { womenClothes } from "../constants/constants";
-// import { menClothes } from "../constants/constants";
 
 function App() {
 
   return (
     <div className = "app" data-test-id = "app">
-        <Header/>
-        <Main/>
-        {/* <Categories category = {"Women"} clothes = {womenClothes}/> */}
-        {/* <Categories category = {"Men"} clothes = {menClothes}/> */}
-        <Footer/>
+      <Header/>
+      <Routes>
+        <Route path = "/" element = {<Main/>}/>
+        <Route path = "/:category" element = {<Categories/>}/>
+        <Route path = "/:category/:id" element = {<ProductPage/>}/>
+      </Routes>
+      <Footer/>
     </div>
   );
 }

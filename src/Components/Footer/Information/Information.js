@@ -1,5 +1,6 @@
 import React from "react";
 import { footerInformation } from "../../constants/constants";
+import { Link } from "react-router-dom";
 
 function Information() {
 
@@ -8,10 +9,10 @@ function Information() {
             <div className = "footer-nav-title">Information</div>
             <nav>
                 <ul className = "footer-nav-list">
-                    {footerInformation.map((item, i) => {
+                    {footerInformation.map(item => {
                         return ( 
-                        <li className = "footer-nav-item" key = {i}>
-                            <a className = "footer-nav-link" href = "/">{item}</a>
+                        <li className = "footer-nav-item" key = {item.id}>
+                            <Link className = "footer-nav-link" to = {item.path}>{item.name}</Link>
                         </li>
                         )
                     })}

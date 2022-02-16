@@ -16,6 +16,9 @@ function ProductsSettings() {
                 </div>
                 <select className = "products-settings-sort">
                     <option value = "">BESTSELLERS</option>
+                    <option value = "">NEW ARRIVALS</option>
+                    <option value = "">SPECIALS</option>
+                    <option value = "">MOST VIEWED</option>
                 </select>
             </div>
         </div>

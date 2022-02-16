@@ -1,5 +1,6 @@
 import React from "react";
 import { blogs } from "../../constants/constants";
+import { Link } from "react-router-dom";
 import "./Blog.scss";
 
 function Blog() {
@@ -9,12 +10,12 @@ function Blog() {
             <div className = "blog-block">
                 <div className = "header-blog">
                    <div className = "header-blog-title">LATEST FROM BLOG</div>
-                   <a className = "header-blog-link" href = "/">See all</a>
+                   <Link className = "header-blog-link" to = "/">See all</Link>
                 </div>
                 <ul className = "blog-list">
-                    {blogs.map((item, i) => {
+                    {blogs.map(item => {
                         return (
-                        <li className = "blog-item" key = {i}>
+                        <li className = "blog-item" key = {item.id}>
                             <img className = "blog-item-img" src = {item.img} alt = "img"/>
                             <div className = "img-block-text">
                                 <div className = "blog-item-title">{item.title}</div>

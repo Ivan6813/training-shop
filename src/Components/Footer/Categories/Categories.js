@@ -1,5 +1,6 @@
 import React from "react";
 import { footerCategories } from "../../constants/constants";
+import { Link } from "react-router-dom";
 
 function Categories() {
 
@@ -8,10 +9,10 @@ function Categories() {
             <div className = "footer-nav-title">Categories</div>
             <nav>
                 <ul className = "footer-nav-list">
-                    {footerCategories.map((item, i) => {
+                    {footerCategories.map(item => {
                         return ( 
-                        <li className = "footer-nav-item" key = {i}>
-                            <a className = "footer-nav-link" href = "/">{item}</a>
+                        <li className = "footer-nav-item" key = {item.id}>
+                            <Link className = "footer-nav-link" to = {item.path}>{item.name}</Link>
                         </li>
                         )
                     })}

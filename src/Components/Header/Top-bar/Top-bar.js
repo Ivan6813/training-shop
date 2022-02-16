@@ -10,9 +10,9 @@ function TopBar() {
             <div className = "container">
                 <div className = "info-block">
                     <ul className = "info-list">
-                        {topBarInfo.map((item, i) => {
+                        {topBarInfo.map(item => {
                             return ( 
-                            <li className = "info-item" key = {i}>
+                            <li className = "info-item" key = {item.id}>
                                 <img className = "info-icon" src = {item.icon} alt = "icon"/>
                                 <div className = "info-text">{item.text}</div>
                             </li>

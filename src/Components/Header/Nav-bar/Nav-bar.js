@@ -1,6 +1,7 @@
 import React from "react";
 import { headerNav } from "../../constants/constants";
 import { userBlock } from "../../constants/constants";
+import { Link } from "react-router-dom";
 import "./Nav-bar.scss";
 
 function NavBar() {
@@ -8,15 +9,15 @@ function NavBar() {
     return (
         <div className = "container">
             <div className = "nav-bar">
-                <a href = "/" data-test-id = "header-logo-link">
+                <Link to = "/" data-test-id = "header-logo-link">
                     <h1 className = "header-logo">CleverShop</h1>
-                </a>
+                </Link>
                 <nav className = "nav-menu" data-test-id = "menu">
                     <ul className = "nav-list">
-                        {headerNav.map((item, i) => {
+                        {headerNav.map(item => {
                             return ( 
-                            <li className = "nav-item" key = {i}>
-                                <a className = "nav-link" href  ="/">{item}</a>
+                            <li className = "nav-item" key = {item.id}>
+                                <Link className = "nav-link" to  = {item.path}>{item.name}</Link>
                             </li>
                             )
                         })}
@@ -26,9 +27,9 @@ function NavBar() {
                     {userBlock.map((item, i) => {
                         return (
                         <li className = "user-block-item" key = {i}>
-                            <a href = "/">
+                            <Link to= "/">
                                 <img className = "user-block-icon" src = {item} alt = "icon"/>
-                            </a>
+                            </Link>
                         </li>
                         )
                     })}

@@ -1,5 +1,6 @@
 import React from "react";
 import { socials } from "../constants/constants";
+import { Link } from "react-router-dom";
 import "./Socials.scss";
 
 function Socials() {
@@ -9,9 +10,9 @@ function Socials() {
             {socials.map((item, i) => {
                 return ( 
                 <li className = "social-item" key = {i}>
-                    <a href = "/">
+                    <Link to = "/">
                         <img className = "social-icon" src = {item} alt = "icon" />
-                    </a>
+                    </Link>
                 </li>
                 )
             })}

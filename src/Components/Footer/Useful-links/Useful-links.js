@@ -1,5 +1,6 @@
 import React from "react";
 import { footerUsefulLinks } from "../../constants/constants";
+import { Link } from "react-router-dom";
 
 function UsefulLinks() {
 
@@ -8,10 +9,10 @@ function UsefulLinks() {
             <div className = "footer-nav-title">Useful links</div>
             <nav>
                 <ul className = "footer-nav-list">
-                    {footerUsefulLinks.map((item, i) => {
+                    {footerUsefulLinks.map(item => {
                         return ( 
-                        <li className = "footer-nav-item" key = {i}>
-                            <a className = "footer-nav-link" href = "/">{item}</a>
+                        <li className = "footer-nav-item" key = {item.id}>
+                            <Link className = "footer-nav-link" to = {item.path}>{item.name}</Link>
                         </li>
                         )
                     })}

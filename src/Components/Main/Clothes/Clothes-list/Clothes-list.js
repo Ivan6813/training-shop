@@ -1,5 +1,6 @@
 import React from "react";
 import Rating from "../../../Rating/Rating";
+import { Link } from "react-router-dom";
 import "./Clothes-list.scss";
 
 function ClothesList({clothes}) {
@@ -10,14 +11,14 @@ function ClothesList({clothes}) {
                 {clothes.map(item => {
                     return ( 
                     <li className = "clothes-cards-item" key = {item.id}>
-                        <a className = "clothes-card" href = "/">
+                        <Link className = "clothes-card" to = {`/${item.c}/:${item.id}`}>
                             <img className = "clothes-card-img" src= {item.img} alt = "clothes" />
                             <div className = "clothes-card-name">{item.name}</div>
                             <div className = "clothes-card-price-block">
                                 <div className = "clothes-card-price">{item.price}</div>
                                 <Rating/>
                             </div>
-                        </a>
+                        </Link>
                     </li>
                     )
                 })}
