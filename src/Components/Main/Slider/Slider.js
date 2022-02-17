@@ -3,6 +3,7 @@ import mainImg from "../../../img/slider-main-img.png";
 import womenImg from "../../../img/slider-women-img.png";
 import menImg from "../../../img/slider-men-img.png";
 import accessoriesImg from "../../../img/slider-accessories-img.png";
+import { Link } from "react-router-dom";
 import "./Slider.scss";
 
 function Slider() {
@@ -23,19 +24,19 @@ function Slider() {
                </div>
                <div className = "slider-items">
                    <div className = "wrapper-slider-items">
-                       <div className = "slider-item-women">
+                       <Link to = "/women" className = "slider-item-women">
                             <img className = "women-img" src = {womenImg} alt = "women"/>
                             <div className = "slider-items-text">Women</div>
-                       </div>
-                       <div className = "slider-item-men">
+                       </Link>
+                       <Link to = "/men" className = "slider-item-men">
                             <img className = "men-img" src = {menImg} alt = "men"/>
                             <div className = "slider-items-text">men</div>
-                       </div>
+                       </Link>
                    </div>
-                   <div className = "slider-item-accessories">
+                   <Link to = "/" className = "slider-item-accessories">
                        <img className = "accessories-img" src = {accessoriesImg} alt = "accessories"/>
                        <div className = "slider-items-text">Accessories</div>
-                   </div>
+                   </Link>
                </div>
             </div>
         </div>

@@ -16,6 +16,7 @@
 .slider-select-item {
     position: relative;
     margin-right: 30px;
+    cursor: pointer;
     @include tablets {
         margin-right: 15px;
     }

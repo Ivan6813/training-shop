@@ -19,7 +19,7 @@ function ProductPage() {
 
     return (
         <div className = "page-product" data-test-id = {`product-page-${category}`}>
-            <ProductHeader/>
+            <ProductHeader category = {category}/>
             <div className = "container">
                 <div className = "product-page">
                     <ProductSlider/>

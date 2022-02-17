@@ -3,7 +3,7 @@ import Rating from "../../Rating/Rating";
 import { Link } from "react-router-dom";
 import "./Product-header.scss";
 
-function ProductHeader() {
+function ProductHeader({category}) {
 
     return (
         <div className = "product-header">
@@ -11,8 +11,8 @@ function ProductHeader() {
                 <div className = "wrapper-product-header">
                     <div className = "product-header-nav">
                         <Link className = "home-link" to = "/">Home</Link>
-                        <Link className = "products-page-link" to = "/women">Women</Link>
-                        <Link className = "current-product-link" to = "/women/:1">Women's tracksuit Q109</Link>
+                        <Link className = "products-page-link" to = {`/${category}`}>{category}</Link>
+                        <Link className = "current-product-link" to = {`/${category}/1`}>Women's tracksuit Q109</Link>
                     </div>
                     <Link className = "share-link" to = "/">Share</Link>
                 </div>
