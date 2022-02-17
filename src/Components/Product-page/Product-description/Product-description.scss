@@ -1,0 +1,20 @@
+@import "../../../mixin.scss";
+
+.product-description-block {
+    padding: 33px 0;
+    border-bottom: 2px solid #e6e6e6;
+    @include lg-mobile {
+        padding: 25px 0;
+    }
+}
+
+.product-description-title {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    opacity: 0.6;
+}

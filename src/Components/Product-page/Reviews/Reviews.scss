@@ -1,0 +1,107 @@
+@import "../../../mixin.scss";
+
+.reviews-block {
+    padding: 35px 0;
+    border-bottom: 2px solid #e6e6e6;
+    @include lg-mobile {
+        padding: 25px 0;
+    }
+}
+
+.reviews-title {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    margin-bottom: 32px;
+    @include lg-mobile {
+        margin-bottom: 20px;
+    }
+}
+
+.rating-product-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.add-review {
+    display: flex;
+    align-items: center;
+}
+
+.add-review-icon {
+    margin-right: 10px;
+}
+
+.add-review-text {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    color: #121212;
+    opacity: 0.6;
+    @include lg-mobile {
+        font-size: 10px;
+    }
+}
+
+.customer-reviews-item {
+    margin-bottom: 48px;
+    @include lg-mobile {
+        margin-bottom: 30px;
+    }
+}
+
+.customer-reviews-item:last-child {
+    margin-bottom: 0;
+}
+
+.customer-info-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.customer-name {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #121212;
+}
+
+.rating-review-block {
+    display: flex;
+    align-items: center;
+}
+
+.dispatch-time {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    color: #121212;
+    opacity: 0.4;
+    @include lg-mobile {
+        font-size: 8px;
+    }
+}
+
+.customer-text {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #121212;
+    opacity: 0.8;
+    @include lg-mobile {
+        font-size: 10px;
+    }
+}

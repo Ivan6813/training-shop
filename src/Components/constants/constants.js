@@ -34,6 +34,10 @@ import blog_img_2 from "../../img/Blog-img-2.png";
 import blog_img_3 from "../../img/Blog-img-3.png";
 import filledStar from "../../img/filled_star.svg";
 import unfilledStar from "../../img/unfilled_star.svg";
+import related_products_img_1 from "../../img/related-products-img-1.png";
+import related_products_img_2 from "../../img/related-products-img-2.png";
+import related_products_img_3 from "../../img/related-products-img-3.png";
+import related_products_img_4 from "../../img/related-products-img-4.png";
 
 export const headerNav = [
     {id: 1, name: "Abour Us", path: "/"},
@@ -140,4 +144,32 @@ export const footerContacts = [
     {id: 2, icon: phone, text: "+375 29 100 20 30"}, 
     {id: 3, icon: clock, text: "All week 24/7"},
     {id: 4, icon: email, text: "info@clevertec.ru"}
+];
+
+export const productInfo = [
+    {id: 1, icon: truck, text: "Shipping & Delivery"},
+    {id: 2, icon: refresh, text: "Returns & Exchanges"}, 
+    {id: 3, icon: email, text: "Ask a question"}
+];
+
+export const customerReviews = [
+    {
+        id: 1,
+        name: "Oleh Chabanov", 
+        time: "3 months ago",
+        text: "On the other hand, we denounce with righteous indignation and like men who are so beguiled and demoralized by the charms of pleasure of the moment"
+    },
+    {
+        id: 2,
+        name: "ShAmAn design", 
+        time: "3 months ago",
+        text: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti"
+    }
+];
+
+export const relatedProducts = [
+    {id: 1, name: "Women's tracksuit Q109", price: "$ 30.00", img: related_products_img_1},
+    {id: 2, name: "Women's tracksuit Q109", price: "$ 30.00", img: related_products_img_2},
+    {id: 3, name: "Women's tracksuit Q109", price: "$ 30.00", img: related_products_img_3},
+    {id: 4, name: "Women's tracksuit Q109", price: "$ 30.00", img: related_products_img_4}
 ];

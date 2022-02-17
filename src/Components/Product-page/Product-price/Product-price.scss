@@ -1,0 +1,55 @@
+@import "../../../mixin.scss";
+
+.product-price-block {
+    display: flex;
+    align-items: center;
+    padding: 32px 0;
+    border-bottom: 2px solid #e6e6e6;
+    @include lg-mobile {
+        padding: 25px 0;
+        justify-content: space-between;
+    }
+}
+
+.product-price {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #121212;
+    margin-right: 24px;
+    @include lg-mobile {
+        font-size: 16px;
+        margin-right: 0;
+    }
+}
+
+.add-cart-btn {
+    width: 156px;
+    padding: 15px 0;
+    background: #121212;
+    border: 2px solid #121212;
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #ffffff;
+    opacity: 0.9;
+    margin-right: 30px;
+    @include lg-mobile {
+        width: 120px;
+        font-size: 10px;
+        margin-right: 0;
+    }
+}
+
+.product-price-heart {
+    margin-right: 43px;
+    @include lg-mobile {
+        margin-right: 0;
+    }
+}

@@ -1,0 +1,31 @@
+@import "../../../mixin.scss";
+
+.product-color-block {
+    padding: 6px 0;
+    @include lg-mobile {
+        padding: 25px 0 6px 0;
+    }
+}
+
+.product-color {
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #1212129c;
+    margin-bottom: 16px;
+}
+
+.product-color span {
+    text-transform: none;
+    color: #000000;
+}
+
+.product-change-color {
+    margin-right: 16px;
+    @include lg-mobile {
+        margin-right: 10px;
+    }
+}

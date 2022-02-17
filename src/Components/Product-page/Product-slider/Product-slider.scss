@@ -1,7 +1,11 @@
 @import "../../../mixin.scss";
 
 .product-slider-block {
+    width: 100%;
     display: flex;
+    @include lg-mobile {
+        flex-direction: column-reverse;
+    }
 }
 
 .wrapper-product-slider-items {
@@ -9,15 +13,25 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    @include lg-mobile {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.slider-item-btn {
+    display: flex;
+    @include lg-mobile {
+        flex-direction: column;
+    }
 }
 
 .product-img {
     margin: 0 16px 16px 0;
-}
-
-.small {
-    transform: rotate(90deg);
-    margin: 0 16px 16px 0;
+    @include lg-mobile {
+        margin: 0;
+        width: 20%;
+    }
 }
 
 .product-slider-select-item {
@@ -25,7 +39,9 @@
 }
 
 .product-select-img {
-    width: 100%;
+    @include lg-mobile {
+        width: 100%;
+    }
 }
 
 .product-slider-button-block {
@@ -53,6 +69,15 @@
     height: 40px;
     border: none;
     cursor: pointer;
+}
+
+.small {
+    transform: rotate(90deg);
+    margin: 0 16px 16px 0;
+    @include lg-mobile {
+        transform: rotate(0deg);
+        margin: 0;
+    }
 }
 
 .product-slider-items {
