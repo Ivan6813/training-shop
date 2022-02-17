@@ -12,7 +12,7 @@ function Clothes({productType}) {
     return (
         <div className = "clothes" data-test-id = {`clothes-${productType}`}>
             <ClothesHeader productType = {productType}/>
-            <ClothesList clothes = {clothes}/>
+            <ClothesList clothes = {clothes} productType = {productType}/>
             <ClothesBtn/>
         </div>
     );

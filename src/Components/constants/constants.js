@@ -74,25 +74,25 @@ export const clothesNav  = [
 ];
 
 export const womenClothes = [
-    {id: 1, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_1, c: "women"},
-    {id: 2, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_2, c: "women"},
-    {id: 3, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_3, c: "women"},
-    {id: 4, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_4, c: "women"},
-    {id: 5, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_5, c: "women"},
-    {id: 6, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_6, c: "women"},
-    {id: 7, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_7, c: "women"},
-    {id: 8, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_8, c: "women"},
+    {id: 1, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_1},
+    {id: 2, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_2},
+    {id: 3, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_3},
+    {id: 4, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_4},
+    {id: 5, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_5},
+    {id: 6, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_6},
+    {id: 7, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_7},
+    {id: 8, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_8},
 ];
 
 export const menClothes = [
-    {id: 1, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_1, c: "men"},
-    {id: 2, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_2, c: "men"},
-    {id: 3, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_3, c: "men"},
-    {id: 4, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_4, c: "men"},
-    {id: 5, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_5, c: "men"},
-    {id: 6, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_6, c: "men"},
-    {id: 7, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_7, c: "men"},
-    {id: 8, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_8, c: "men"},
+    {id: 1, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_1},
+    {id: 2, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_2},
+    {id: 3, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_3},
+    {id: 4, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_4},
+    {id: 5, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_5},
+    {id: 6, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_6},
+    {id: 7, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_7},
+    {id: 8, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_8},
 ];
 
 export const blogs = [

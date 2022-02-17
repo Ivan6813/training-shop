@@ -3,7 +3,7 @@ import ClothesList from "../../Main/Clothes/Clothes-list/Clothes-list";
 import { relatedProducts } from "../../constants/constants";
 import "./Related-products.scss";
 
-function RelatedProducts() {
+function RelatedProducts({productType}) {
 
     return (
        <div className = "container">
@@ -15,7 +15,7 @@ function RelatedProducts() {
                         <button className = "related-products-btn-next"></button>
                     </div>
                 </div>
-                <ClothesList clothes = {relatedProducts}/>
+                <ClothesList clothes = {relatedProducts} productType = {productType}/>
             </div>
        </div>
     );

@@ -15,7 +15,7 @@ function Categories() {
         <div className = "categories" data-test-id = {`products-page-${category}`}>
             <ProductsHeader/>
             <ProductsSettings/>
-            <ClothesList clothes = {clothes} category = {category}/>
+            <ClothesList clothes = {clothes} productType = {category}/>
         </div>
     );
 }

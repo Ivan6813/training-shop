@@ -35,7 +35,7 @@ function ProductPage() {
                     </div>
                 </div>
             </div>
-            <RelatedProducts/>
+            <RelatedProducts productType = {category}/>
         </div>
     );
 }

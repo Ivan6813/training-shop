@@ -3,7 +3,7 @@ import Rating from "../../../Rating/Rating";
 import { Link } from "react-router-dom";
 import "./Clothes-list.scss";
 
-function ClothesList({clothes}) {
+function ClothesList({clothes, productType}) {
 
     return (
         <div className = "container">
@@ -12,8 +12,8 @@ function ClothesList({clothes}) {
                     return ( 
                     <li className = "clothes-cards-item" key = {item.id}>
                         <Link className = "clothes-card" 
-                              to = {`/${item.c}/${item.id}`}
-                              data-test-id = {`clothes-card-${item.c}`}
+                              to = {`/${productType}/${item.id}`}
+                              data-test-id = {`clothes-card-${productType}`}
                               >
                             <img className = "clothes-card-img" src= {item.img} alt = "clothes" />
                             <div className = "clothes-card-name">{item.name}</div>
