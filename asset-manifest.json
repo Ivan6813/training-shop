@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/training-shop/static/css/main.02e8664c.css",
-    "main.js": "/training-shop/static/js/main.86e139c9.js",
+    "main.css": "/training-shop/static/css/main.756f4db9.css",
+    "main.js": "/training-shop/static/js/main.30999696.js",
     "static/media/slider-main-img.png": "/training-shop/static/media/slider-main-img.c59a67a48a101ef83f4a.png",
     "static/media/subscribe-block-women.png": "/training-shop/static/media/subscribe-block-women.c68094858fa94ac4dcf5.png",
     "static/media/Blog-img-1.png": "/training-shop/static/media/Blog-img-1.2c83828d55b07238fddc.png",
@@ -13,8 +13,12 @@
     "static/media/sale-img.png": "/training-shop/static/media/sale-img.a6f508ab262ecf674a61.png",
     "static/media/Blog-img-3.png": "/training-shop/static/media/Blog-img-3.aef6170eac9e5d31e8f6.png",
     "static/media/men_clothes_4.png": "/training-shop/static/media/men_clothes_4.566ddd47585baaa2675c.png",
+    "static/media/related-products-img-3.png": "/training-shop/static/media/related-products-img-3.62645154d7cf3c049613.png",
+    "static/media/related-products-img-1.png": "/training-shop/static/media/related-products-img-1.3a856e514e24a961c862.png",
     "static/media/men_clothes_3.png": "/training-shop/static/media/men_clothes_3.d9b2d95302ab7e21dcdb.png",
     "static/media/new-season-img.png": "/training-shop/static/media/new-season-img.1c6ffb2792b7b7a01773.png",
+    "static/media/related-products-img-4.png": "/training-shop/static/media/related-products-img-4.9b64afd1102773f865de.png",
+    "static/media/related-products-img-2.png": "/training-shop/static/media/related-products-img-2.340ac30c6389ce28a614.png",
     "static/media/men_clothes_8.png": "/training-shop/static/media/men_clothes_8.2314a08429e8d3ab78d5.png",
     "static/media/women_clothes_3.png": "/training-shop/static/media/women_clothes_3.fc03c9c709b9b072182b.png",
     "static/media/men_clothes_6.png": "/training-shop/static/media/men_clothes_6.53b172dee16ec232992f.png",
@@ -29,6 +33,7 @@
     "static/media/slider-women-img.png": "/training-shop/static/media/slider-women-img.cbee119685e91c164d5b.png",
     "static/media/men_clothes_5.png": "/training-shop/static/media/men_clothes_5.47b6c124ff4a0c2987d5.png",
     "static/media/women_clothes_4.png": "/training-shop/static/media/women_clothes_4.87f9e109eb0cc33ffeef.png",
+    "static/media/pay-with-img.png": "/training-shop/static/media/pay-with-img.646e206a5356edf4e1fb.png",
     "static/media/slider-men-img.png": "/training-shop/static/media/slider-men-img.8155c56f7dd3f70c2963.png",
     "static/media/copyright_bar_img_2x.png": "/training-shop/static/media/copyright_bar_img_2x.e18000108e256257153a.png",
     "static/media/product-page-img-1.png": "/training-shop/static/media/product-page-img-1.3c8672308fbd5c8a2dbf.png",
@@ -42,27 +47,31 @@
     "static/media/pinterest.svg": "/training-shop/static/media/pinterest.999453765058229adcc060214525170e.svg",
     "static/media/support.svg": "/training-shop/static/media/support.b6d71e1a52049e31c079576a7a1a35a5.svg",
     "static/media/clock.svg": "/training-shop/static/media/clock.817f99178a9561f61258e82b3f8135b9.svg",
+    "static/media/size-guide.svg": "/training-shop/static/media/size-guide.fccbda8b547981526d9b1a5d18959812.svg",
     "static/media/twitter.svg": "/training-shop/static/media/twitter.bd7add1e458b5ff39c1683b1ebccc271.svg",
     "static/media/unfilled_star.svg": "/training-shop/static/media/unfilled_star.5503579d382723d5486021134035e3bc.svg",
     "static/media/filled_star.svg": "/training-shop/static/media/filled_star.1b4fa10c81eda89d4924efd0e8564250.svg",
     "static/media/location_marker.svg": "/training-shop/static/media/location_marker.f3a287c36713ca5a1f7e5a0abf525e38.svg",
     "static/media/phone.svg": "/training-shop/static/media/phone.7619680f8d1eacb03c561f77341ae676.svg",
     "index.html": "/training-shop/index.html",
+    "static/media/product-price-heart.svg": "/training-shop/static/media/product-price-heart.3b80ad454a9b1f515d3d3613c9cd057d.svg",
     "static/media/refresh.svg": "/training-shop/static/media/refresh.7486e2b3d55e9145ebe889da8347e1e7.svg",
     "static/media/user.svg": "/training-shop/static/media/user.5f1eb733424b41c5e07d0ba77a6d5beb.svg",
     "static/media/search.svg": "/training-shop/static/media/search.3e369ae61d94eb94115c1eb102ed7764.svg",
     "static/media/email.svg": "/training-shop/static/media/email.fe58a9c8dee830cdc191fffa72e0c794.svg",
     "static/media/facebook.svg": "/training-shop/static/media/facebook.04fcfe0702dbfa7d3bdf1e44ce981478.svg",
+    "static/media/add-review-icon.svg": "/training-shop/static/media/add-review-icon.dc8eba27c575fde8d7bc7d778f0df5c5.svg",
+    "static/media/product-price-scales.svg": "/training-shop/static/media/product-price-scales.3b621aec2a61da5155deff199417102f.svg",
     "static/media/shopping_bag.svg": "/training-shop/static/media/shopping_bag.f83a75a7371832b4fcec9fd8fd5f6474.svg",
     "static/media/main-slider-btn-left.svg": "/training-shop/static/media/main-slider-btn-left.b1111ee19ab8cf8c97e9.svg",
     "static/media/main-slider-btn-right.svg": "/training-shop/static/media/main-slider-btn-right.f9eca5d1dfab498f759c.svg",
     "static/media/display-list.svg": "/training-shop/static/media/display-list.44db9bee8523b700cc81.svg",
     "static/media/burger-menu.svg": "/training-shop/static/media/burger-menu.1bbd5932c124fd9a02315fc63020c813.svg",
-    "main.02e8664c.css.map": "/training-shop/static/css/main.02e8664c.css.map",
-    "main.86e139c9.js.map": "/training-shop/static/js/main.86e139c9.js.map"
+    "main.756f4db9.css.map": "/training-shop/static/css/main.756f4db9.css.map",
+    "main.30999696.js.map": "/training-shop/static/js/main.30999696.js.map"
   },
   "entrypoints": [
-    "static/css/main.02e8664c.css",
-    "static/js/main.86e139c9.js"
+    "static/css/main.756f4db9.css",
+    "static/js/main.30999696.js"
   ]
 }
