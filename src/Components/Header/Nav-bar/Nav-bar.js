@@ -17,7 +17,10 @@ function NavBar() {
                         {headerNav.map(item => {
                             return ( 
                             <li className = "nav-item" key = {item.id}>
-                                <Link className = "nav-link" to  = {item.path}>{item.name}</Link>
+                                <Link className = "nav-link" 
+                                      to = {`/${item.path}`} 
+                                      data-test-id = {`menu-link-${item.path}`}
+                                >{item.name}</Link>
                             </li>
                             )
                         })}

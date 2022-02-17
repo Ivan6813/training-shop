@@ -36,6 +36,9 @@
 
 .product-slider-select-item {
     position: relative;
+    @include desktop {
+        height: 45%;
+    }
 }
 
 .product-select-img {

@@ -12,7 +12,10 @@ function Categories() {
                     {footerCategories.map(item => {
                         return ( 
                         <li className = "footer-nav-item" key = {item.id}>
-                            <Link className = "footer-nav-link" to = {item.path}>{item.name}</Link>
+                            <Link className = "footer-nav-link" 
+                                  to = {`/${item.path}`}
+                                  data-test-id = {`footer-nav-link-${item.path}`}
+                            >{item.name}</Link>
                         </li>
                         )
                     })}

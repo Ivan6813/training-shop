@@ -23,7 +23,7 @@ function ProductSlider() {
                 </div>
             </div>
             <div className = "product-slider-select-item">
-                <img src = {mainImg} className = "product-select-img" alt = "img" />
+                <img src = {mainImg} className = "product-select-img" alt = "img" />   
                 <div className = "product-slider-button-block">
                     <button className = "product-slider-btn-left"></button>
                     <button className = "product-slider-btn-right"></button>

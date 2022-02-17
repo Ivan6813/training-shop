@@ -4,12 +4,12 @@ import burger_menu from "../../../../img/burger-menu.svg";
 import { clothesNav } from "../../../constants/constants";
 import "./Clothes-header.scss";
 
-function ClothesHeader({category, path}) {
+function ClothesHeader({productType, path}) {
 
     return (
         <div className = "container">
             <div className = "header-clothes">
-                <Link to = {path} className = "category-clothes">{category}</Link>
+                <Link to = {`/${productType}`} className = "category-clothes">{`${productType}'s`}</Link>
                 <img className = "burger-menu-clothes" src = {burger_menu} alt = "burger-menu"/>
                 <nav className = "clothes-nav">
                     <ul className = "clothes-nav-list">

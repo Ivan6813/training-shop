@@ -9,12 +9,10 @@ import "./categories.scss";
 function Categories() {
 
     let {category}  = useParams(); 
-    let clothes;
-
-    (category === "women") ? clothes = womenClothes : clothes = menClothes;
+    let clothes = (category === "women") ? womenClothes : menClothes;
 
     return (
-        <div className = "categories">
+        <div className = "categories" data-test-id = {`products-page-${category}`}>
             <ProductsHeader/>
             <ProductsSettings/>
             <ClothesList clothes = {clothes} category = {category}/>

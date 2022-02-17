@@ -40,13 +40,13 @@ import related_products_img_3 from "../../img/related-products-img-3.png";
 import related_products_img_4 from "../../img/related-products-img-4.png";
 
 export const headerNav = [
-    {id: 1, name: "Abour Us", path: "/"},
-    {id: 2, name: "Women", path: "/women"},
-    {id: 3, name: "Men", path: "/men"},
-    {id: 4, name: "Beauty", path: "/"},
-    {id: 5, name: "Accessories", path: "/"},
-    {id: 6, name: "Blog", path: "/"},
-    {id: 7, name: "Contact", path: "/"},
+    {id: 1, name: "Abour Us", path: ""},
+    {id: 2, name: "Women", path: "women"},
+    {id: 3, name: "Men", path: "men"},
+    {id: 4, name: "Beauty", path: ""},
+    {id: 5, name: "Accessories", path: ""},
+    {id: 6, name: "Blog", path: ""},
+    {id: 7, name: "Contact", path: ""},
 ];
 
 export const userBlock = [search, globe, user, shopping_bag];
@@ -119,10 +119,10 @@ export const blogs = [
 export const ratingStars = [filledStar, filledStar,filledStar, filledStar, unfilledStar];
 
 export const footerCategories = [
-    {id: 1, name: "Men", path: "/men"},
-    {id: 2, name: "Women", path: "/women"},
-    {id: 3, name: "Accessories", path: "/"},
-    {id: 4, name: "Beauty", path: "/"}
+    {id: 1, name: "Men", path: "men"},
+    {id: 2, name: "Women", path: "women"},
+    {id: 3, name: "Accessories", path: ""},
+    {id: 4, name: "Beauty", path: ""}
 ];
 
 export const footerInformation = [

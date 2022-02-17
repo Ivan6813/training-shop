@@ -11,7 +11,10 @@ function ClothesList({clothes}) {
                 {clothes.map(item => {
                     return ( 
                     <li className = "clothes-cards-item" key = {item.id}>
-                        <Link className = "clothes-card" to = {`/${item.c}/:${item.id}`}>
+                        <Link className = "clothes-card" 
+                              to = {`/${item.c}/:${item.id}`}
+                              data-test-id = {`clothes-card-${item.c}`}
+                              >
                             <img className = "clothes-card-img" src= {item.img} alt = "clothes" />
                             <div className = "clothes-card-name">{item.name}</div>
                             <div className = "clothes-card-price-block">
