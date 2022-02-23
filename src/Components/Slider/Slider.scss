@@ -1,0 +1,92 @@
+@import "../../mixin.scss";
+
+.main-page-slider {
+    width: 540px;
+    margin-right: 30px;
+    @include tablets {
+        margin-right: 10px;
+    }
+    @include lg-mobile {
+        width: 95vw;
+        margin: 0 0 5px 0;
+    }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    background: #ffffff;
+    opacity: 0.6;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.swiper-button-next {
+    margin-right: 12px;
+    @include tablets {
+        margin-right: 0;
+    }
+}
+
+.swiper-button-prev {
+    margin-left: 12px;
+    @include tablets {
+        margin-left: 0;
+    }
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 14px;
+    color: #000000;
+}
+
+.main-page-slider-text-block {
+    padding: 24px 32px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 4px;
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #121212;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include tablets {
+        padding: 15px 25px;
+    }
+}
+
+.main-page-slider-text {
+    font-size: 12px;
+    opacity: 0.4;
+    margin-bottom: 14px;
+    @include tablets {
+        font-size: 10px;
+    }
+    @include lg-mobile {
+        font-size: 8px;
+    }
+    @include sm-mobile {
+        margin-bottom: 10px;
+    }
+}
+
+.main-page-slider-title {
+    font-size: 22px;
+    white-space: nowrap;
+    @include tablets {
+        font-size: 15px;
+    }
+    @include sm-mobile {
+        font-size: 10px;
+    }
+}
+
+.main-page-slider-img {
+    width: 100%;
+}

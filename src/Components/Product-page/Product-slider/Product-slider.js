@@ -1,34 +1,95 @@
-import React from "react";
-import mainImg from "../../../img/product-page-select-img.png";
-import product_img_1 from "../../../img/product-page-img-1.png";
-import product_img_2 from "../../../img/product-page-img-2.png";
-import product_img_3 from "../../../img/product-page-img-3.png";
-import product_img_4 from "../../../img/product-page-img-4.png";
+import React, {useState} from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode, Navigation, Thumbs, Controller } from "swiper";
+import classNames from "classnames";
+import { largeSlider } from "../../constants/constants";
+import { smallSlider } from "../../constants/constants";
 import "./Product-slider.scss";
+import "swiper/scss";
+import "swiper/scss/free-mode";
+import "swiper/scss/navigation";
+import "swiper/scss/thumbs";
 
 function ProductSlider() {
 
+    const [activeSlide, setActiveSlide] = useState(0);
+    const [mainSlider, setMainSlider] = useState(null);
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const length = smallSlider.length - 1;
+
     return (
         <div className = "product-slider-block">
-            <div className = "product-slider-items">
-                <div className = "wrapper-product-slider-items">
-                    <div className = "slider-item-btn">
-                        <button className = "product-slider-btn-left small"></button>
-                        <button className = "product-slider-btn-right small"></button>
+            <div className = "product-sliders">
+                <div className = "wrapper-product-slider-small">
+                    <div className = "slider-small-btn">
+                        <button onClick = {() => mainSlider.slidePrev()} 
+                                className = {classNames("btn-prev", {disabled: activeSlide === 0})}
+                        ></button>
+                        <button onClick = {() => mainSlider.slideNext()} 
+                                className = {classNames("btn-next", {disabled: activeSlide === length})}
+                        ></button>
                     </div>
-                    <img className = "product-img" src = {product_img_1} alt = "" />
-                    <img className = "product-img" src = {product_img_2} alt = "" />
-                    <img className = "product-img" src = {product_img_3} alt = "" />
-                    <img className = "product-img" src = {product_img_4} alt = "" />
+                    <Swiper
+                        onSwiper = {setThumbsSwiper}
+                        spaceBetween = {16}
+                        slidesPerView = {4}
+                        freeMode = {true}
+                        watchSlidesProgress = {true}
+                        modules = {[FreeMode, Navigation]}
+                        direction = {"vertical"}
+                        onSlideChange = {(swiper) => setActiveSlide(swiper.activeIndex)}
+                        onClick = {(swiper, event) => {
+                            if(event.target.className === "slider-small-img") {
+                                setActiveSlide(swiper.clickedIndex);
+                            }else {
+                                return;
+                            }
+                        }}
+                        breakpoints = {{
+                            320: {
+                                "direction" : "horizontal",
+                                " spaceBetween" : "5",
+                                "slidesPerView" : "3"
+                            },
+                            480: {
+                                "direction" : "vertical",
+                            },
+                            996: {
+                                "direction" : "vertical",
+                            }
+                        }}
+                        className = "product-slider-small"
+                    >
+                    {smallSlider.map((item, i) => {
+                        return (
+                            <SwiperSlide key = {item.id}>
+                                <img className = {classNames("slider-small-img", {active: activeSlide !== i})} 
+                                     src = {item.img} 
+                                     alt = "img"
+                                />
+                            </SwiperSlide>
+                        )
+                    })}
+                    </Swiper>
                 </div>
             </div>
-            <div className = "product-slider-select-item">
-                <img src = {mainImg} className = "product-select-img" alt = "img" />   
-                <div className = "product-slider-button-block">
-                    <button className = "product-slider-btn-left"></button>
-                    <button className = "product-slider-btn-right"></button>
-                </div>
-            </div>
+            <Swiper
+                navigation = {true}
+                thumbs = {{swiper: thumbsSwiper}}
+                modules = {[Navigation, Thumbs, Controller]}
+                controller = {{control: thumbsSwiper}}
+                onSlideChange = {(swiper) => setActiveSlide(swiper.activeIndex)}
+                onAfterInit = {(swiper) => setMainSlider(swiper)}
+                className = "product-slider"
+            >
+            {largeSlider.map(item => {
+                return (
+                    <SwiperSlide key = {item.id}>
+                        <img className = "product-slider-img" src = {item.img} alt = "img"/>
+                    </SwiperSlide>
+                )
+            })}
+            </Swiper>
         </div>
     );
 }

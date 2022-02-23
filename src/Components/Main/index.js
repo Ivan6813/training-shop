@@ -1,5 +1,5 @@
 import React from "react";
-import Slider from "./Slider/Slider";
+import MainSlider from "./Main-slider/Main-slider";
 import Benefits from "./Benefits/Benefits";
 import Clothes from "./Clothes/index";
 import Info from "./Info/Info";
@@ -11,7 +11,7 @@ function Main() {
 
     return (
         <main className = "main">
-            <Slider/>
+            <MainSlider/>
             <Benefits/>
             <Clothes productType = {"women"}/>
             <Clothes productType = {"men"}/>

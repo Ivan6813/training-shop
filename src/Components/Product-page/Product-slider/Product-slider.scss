@@ -1,80 +1,48 @@
 @import "../../../mixin.scss";
 
 .product-slider-block {
-    width: 100%;
     display: flex;
+    @include tablets {
+        margin-bottom: 30px;
+    }
     @include lg-mobile {
         flex-direction: column-reverse;
+        margin-bottom: 20px;
     }
 }
 
-.wrapper-product-slider-items {
+.wrapper-product-slider-small {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     @include lg-mobile {
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: flex;
     }
 }
 
-.slider-item-btn {
+.slider-small-btn {
     display: flex;
     @include lg-mobile {
-        flex-direction: column;
+        display: none;
     }
 }
 
-.product-img {
-    margin: 0 16px 16px 0;
-    @include lg-mobile {
-        margin: 0;
-        width: 20%;
-    }
-}
-
-.product-slider-select-item {
-    position: relative;
-    @include desktop {
-        height: 45%;
-    }
-}
-
-.product-select-img {
-    @include lg-mobile {
-        width: 100%;
-    }
-}
-
-.product-slider-button-block {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 16px;
-}
-
-.product-slider-btn-left {
+.btn-prev {
     background: url(../../../img/main-slider-btn-left.svg) no-repeat center;
 }
 
-.product-slider-btn-right {
+.btn-next {
     background: url(../../../img/main-slider-btn-right.svg) no-repeat center;
 }
 
-.product-slider-btn-left,
-.product-slider-btn-right {
+.btn-prev,
+.btn-next {
+    display: block;
     width: 40px;
     height: 40px;
     border: none;
     cursor: pointer;
-}
-
-.small {
     transform: rotate(90deg);
     margin: 0 16px 16px 0;
     @include lg-mobile {
@@ -83,16 +51,38 @@
     }
 }
 
-.product-slider-items {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.product-slider-small {
+    width: 94px;
+    height: 504px;
+    margin-right: 16px;
+    @include lg-mobile {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+    }
 }
 
-.product-wrapper-slider-items {
-    display: flex;
-    justify-content: space-between;
+.slider-small-img {
     @include lg-mobile {
-        margin-bottom: 5px;
+        width: 100%;
     }
+}
+
+.product-slider {
+    width: 448px;
+    height: 560px;
+    @include lg-mobile {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+}
+
+.product-slider-img {
+    width: 100%;
+}
+
+.active,
+.disabled {
+    filter: opacity(0.4);
 }
