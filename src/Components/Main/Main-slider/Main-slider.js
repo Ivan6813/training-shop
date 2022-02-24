@@ -23,7 +23,7 @@ function MainSlider() {
                             <div className = "main-card-text">men</div>
                        </Link>
                    </div>
-                   <Link to = "/accessories" className = "main-card">
+                   <Link to = "/" className = "main-card">
                        <img className = "main-card-img" src = {accessoriesImg} alt = "accessories"/>
                        <div className = "main-card-text">Accessories</div>
                    </Link>

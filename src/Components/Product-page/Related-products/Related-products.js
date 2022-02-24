@@ -47,6 +47,7 @@ function RelatedProducts({productType}) {
                         }
                     }}
                     className = "related-products-slider"
+                    data-test-id = "related-slider"
                 >
                     {relatedProducts.map(item => {
                         return (

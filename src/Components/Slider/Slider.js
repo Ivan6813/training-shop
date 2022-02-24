@@ -13,6 +13,7 @@ function Slider() {
             navigation = {true}
             modules = {[Navigation]} 
             className = "main-page-slider"
+            data-test-id = "main-slider"
         >
             {mainSlider.map(item => {
                 return (

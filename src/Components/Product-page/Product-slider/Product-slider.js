@@ -59,6 +59,7 @@ function ProductSlider() {
                             }
                         }}
                         className = "product-slider-small"
+                        data-test-id = "product-slider"
                     >
                     {smallSlider.map((item, i) => {
                         return (
@@ -81,6 +82,7 @@ function ProductSlider() {
                 onSlideChange = {(swiper) => setActiveSlide(swiper.activeIndex)}
                 onAfterInit = {(swiper) => setMainSlider(swiper)}
                 className = "product-slider"
+                data-test-id = "product-slider"
             >
             {largeSlider.map(item => {
                 return (
