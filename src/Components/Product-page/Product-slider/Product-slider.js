@@ -18,7 +18,7 @@ function ProductSlider() {
     const length = smallSlider.length - 1;
 
     return (
-        <div className = "product-slider-block">
+        <div className = "product-slider-block" data-test-id = "product-slider">
             <div className = "product-sliders">
                 <div className = "wrapper-product-slider-small">
                     <div className = "slider-small-btn">
@@ -59,7 +59,6 @@ function ProductSlider() {
                             }
                         }}
                         className = "product-slider-small"
-                        data-test-id = "product-slider"
                     >
                     {smallSlider.map((item, i) => {
                         return (
@@ -82,7 +81,6 @@ function ProductSlider() {
                 onSlideChange = {(swiper) => setActiveSlide(swiper.activeIndex)}
                 onAfterInit = {(swiper) => setMainSlider(swiper)}
                 className = "product-slider"
-                data-test-id = "product-slider"
             >
             {largeSlider.map(item => {
                 return (
