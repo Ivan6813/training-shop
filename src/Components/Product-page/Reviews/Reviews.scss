@@ -9,13 +9,10 @@
 }
 
 .reviews-title {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 600;
     font-size: 12px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #121212;
     margin-bottom: 32px;
     @include lg-mobile {
         margin-bottom: 20px;
@@ -39,11 +36,8 @@
 }
 
 .add-review-text {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 500;
     font-size: 12px;
-    color: #121212;
     opacity: 0.6;
     @include lg-mobile {
         font-size: 10px;
@@ -69,11 +63,8 @@
 }
 
 .customer-name {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 500;
     font-size: 14px;
-    color: #121212;
 }
 
 .rating-review-block {
@@ -82,24 +73,18 @@
 }
 
 .dispatch-time {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 500;
     font-size: 11px;
-    color: #121212;
     opacity: 0.4;
+    margin-right: 5px;
     @include lg-mobile {
         font-size: 8px;
     }
 }
 
 .customer-text {
-    font-family: Spartan;
-    font-style: normal;
-    font-weight: normal;
     font-size: 14px;
     line-height: 22px;
-    color: #121212;
     opacity: 0.8;
     @include lg-mobile {
         font-size: 10px;

@@ -13,18 +13,14 @@
     position: absolute;
     top: 0;
     transform: translateY(-50%);
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 600;
     font-size: 12px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #121212;
     background-color: white;
-    width: 48%;
+    padding-right: 10px;
     @include lg-mobile {
-        font-size: 8px;
-        width: 50%;
+        font-size: 10px;
     }
 }
 

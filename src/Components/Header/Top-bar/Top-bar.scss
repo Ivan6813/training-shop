@@ -2,7 +2,9 @@
 
 .top-bar {
     background: #121212;
-    color: #ffffff;
+    @include lg-mobile {
+        padding-top: 3px;
+    }
 }
 
 .info-block {
@@ -21,9 +23,12 @@
 
 .info-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-right: 30px;
     opacity: 0.8;
+    @include lg-mobile {
+        margin: 0 10px 3px 0;
+    }
 }
 
 .info-icon {
@@ -32,10 +37,9 @@
 }
 
 .info-text {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 500;
     font-size: 11px;
+    color: #ffffff;
     margin-left: 12px;
     @include sm-mobile {
         font-size: 9px;

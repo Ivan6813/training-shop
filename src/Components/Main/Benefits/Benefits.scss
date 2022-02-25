@@ -43,10 +43,7 @@
 }
 
 .benefits-text-block {
-    font-family: Spartan;
-    font-style: normal;
     font-size: 12px;
-    color: #121212;
     @include tablets {
         font-size: 8px;
     }

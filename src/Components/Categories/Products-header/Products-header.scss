@@ -17,11 +17,8 @@
 }
 
 .home-link {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 500;
     font-size: 11px;
-    color: #121212;
     opacity: 0.6;
     display: inline-flex;
     align-items: center;
@@ -34,19 +31,13 @@
 }
 
 .current-categories-link {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 500;
     font-size: 11px;
-    color: #121212;
 }
 
 .share-link {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 500;
     font-size: 11px;
-    color: #121212;
     opacity: 0.6;
     display: flex;
     align-items: center;
@@ -59,13 +50,10 @@
 }
 
 .category-name {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 600;
     font-size: 26px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #121212;
     text-align: center;
     @include lg-mobile {
         font-size: 20px;

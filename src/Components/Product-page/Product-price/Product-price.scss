@@ -12,12 +12,9 @@
 }
 
 .product-price {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: bold;
     font-size: 22px;
     text-transform: uppercase;
-    color: #121212;
     margin-right: 24px;
     @include lg-mobile {
         font-size: 16px;
@@ -30,8 +27,6 @@
     padding: 15px 0;
     background: #121212;
     border: 2px solid #121212;
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 500;
     font-size: 13px;
     text-align: center;

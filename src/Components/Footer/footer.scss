@@ -26,13 +26,10 @@
 
 .footer-nav-title,
 .footer-info-title {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 600;
     font-size: 12px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #121212;
     margin-bottom: 14px;
     @include lg-mobile {
         margin-bottom: 8px;
@@ -44,17 +41,13 @@
         margin-bottom: 20px;
     }
     @include lg-mobile {
-        margin-bottom: 16px;
+        margin-bottom: 14px;
     }
 }
 
 .footer-nav-link,
 .footer-info-text {
-    font-family: Spartan;
-    font-style: normal;
-    font-weight: normal;
     font-size: 12px;
-    color: #121212;
     opacity: 0.8;
     @include tablets {
         font-size: 10px;
@@ -79,10 +72,12 @@
     align-items: center;
     margin-bottom: 17px;
     @include tablets {
-        margin-bottom: 20px;
+        justify-content: start;
+        margin-bottom: 18px;
     }
     @include lg-mobile {
-        margin-bottom: 17px;
+        margin-bottom: 15px;
+        justify-content: center;
     }
 }
 
@@ -95,6 +90,6 @@
         height: 10px;
     }
     @include lg-mobile {
-        margin: 0 5px 0 25px;
+        margin-right: 5px;
     }
 }

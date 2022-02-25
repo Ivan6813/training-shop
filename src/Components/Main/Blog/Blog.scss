@@ -23,14 +23,11 @@
 }
 
 .header-blog-title {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 600;
     font-size: 22px;
     line-height: 12px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #121212;
     @include tablets {
         font-size: 16px;
     }
@@ -40,13 +37,10 @@
 }
 
 .header-blog-link {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 500;
     font-size: 12px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #121212;
     opacity: 0.6;
     @include tablets {
         font-size: 10px;
@@ -101,13 +95,10 @@
 }
 
 .blog-item-title {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #121212;
     margin-bottom: 15px;
     @include tablets {
         font-size: 8px;
@@ -119,12 +110,8 @@
 }
 
 .blog-item-text {
-    font-family: Spartan;
-    font-style: normal;
-    font-weight: normal;
     font-size: 14px;
     line-height: 22px;
-    color: #121212;
     opacity: 0.8;
     @include tablets {
         font-size: 8px;

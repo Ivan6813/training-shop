@@ -26,13 +26,10 @@
     }
 }
 .filter-text {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 500;
     font-size: 13px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #121212;
     opacity: 0.6;
     @include lg-mobile {
         font-size: 10px;
@@ -62,13 +59,10 @@
 }
 
 .products-settings-sort {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 500;
     font-size: 13px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #121212;
     opacity: 0.6;
     background: #ffffff;
     border: none;

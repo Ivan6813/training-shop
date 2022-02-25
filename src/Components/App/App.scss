@@ -16,10 +16,14 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+    font-family: "Spartan";
+    font-style: normal;
+    font-weight: normal;
+    color: #121212;
 }
 
 .container {
-    max-width: 95%;
+    width: 95%;
     margin: 0 auto;
     @include desktop {
         max-width: 1110px;

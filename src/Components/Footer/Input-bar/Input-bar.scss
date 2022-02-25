@@ -2,25 +2,21 @@
 
 .input-bar {
     background: #000;
-    color: white;
 }
 
 .wrapper-input-bar {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 12px 0;
     @include lg-mobile {
+        flex-direction: column;
         justify-content: center;
         padding: 8px 0;
-        flex-direction: column;
     }
 }
 
 .input-bar-text {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 600;
     font-size: 12px;
     letter-spacing: 0.06em;
@@ -41,7 +37,7 @@
 }
 
 .footer-input {
-    max-width: 400px;
+    width: 400px;
     height: 32px;
     background: rgba($color: #ffffff, $alpha: 0.2);
     color: #ffffff;
@@ -49,8 +45,6 @@
     padding: 0 16px;
     margin: 0 12px 0 -50px;
     &::placeholder {
-        font-family: Spartan;
-        font-style: normal;
         font-weight: 500;
         font-size: 13px;
         color: white;
@@ -59,11 +53,10 @@
             font-size: 10px;
         }
     }
-    @include desktop {
-        width: 400px;
+    @include tablets {
+        width: 100%;
     }
     @include lg-mobile {
-        width: 100%;
         margin: 0 12px 0 0;
     }
 }
@@ -76,8 +69,6 @@
     height: 32px;
     background-color: transparent;
     border: 1px solid #ffffff;
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 600;
     font-size: 12px;
     letter-spacing: 0.06em;

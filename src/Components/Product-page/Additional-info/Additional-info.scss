@@ -9,13 +9,10 @@
 }
 
 .additinal-info-title {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 600;
     font-size: 12px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #121212;
     margin-bottom: 35px;
     @include lg-mobile {
         margin-bottom: 20px;
@@ -25,11 +22,8 @@
 .additinal-info-color,
 .additinal-info-size,
 .additinal-info-material {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 500;
     font-size: 14px;
-    color: #121212;
     margin-bottom: 20px;
     @include lg-mobile {
         font-size: 12px;

@@ -15,11 +15,8 @@
 
 .home-link,
 .products-page-link {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 500;
     font-size: 11px;
-    color: #121212;
     opacity: 0.6;
     display: inline-flex;
     align-items: center;
@@ -36,22 +33,16 @@
 }
 
 .current-product-link {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 500;
     font-size: 11px;
-    color: #121212;
     @include lg-mobile {
         font-size: 9px;
     }
 }
 
 .share-link {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 500;
     font-size: 11px;
-    color: #121212;
     opacity: 0.6;
     display: flex;
     align-items: center;
@@ -64,13 +55,10 @@
 }
 
 .product-name {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 600;
     font-size: 26px;
     letter-spacing: 0.06em;
     text-align: center;
-    color: #121212;
     @include lg-mobile {
         font-size: 18px;
         margin-bottom: 15px;
@@ -99,11 +87,8 @@
 .number-reviews,
 .sku,
 .availability {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 500;
     font-size: 11px;
-    color: #121212;
     opacity: 0.6;
 }
 

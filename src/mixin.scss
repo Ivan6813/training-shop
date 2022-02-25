@@ -1,5 +1,5 @@
 @mixin desktop {
-    @media (min-width: 1110px) {
+    @media (max-width: 1920px) {
         @content;
     }
 }
@@ -11,13 +11,13 @@
 }
 
 @mixin lg-mobile {
-    @media (max-width: 625px) {
+    @media (max-width: 480px) {
         @content;
     }
 }
 
 @mixin sm-mobile {
-    @media (max-width: 360px) {
+    @media (max-width: 320px) {
         @content;
     }
 }

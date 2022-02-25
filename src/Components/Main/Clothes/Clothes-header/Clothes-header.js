@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import burger_menu from "../../../../img/burger-menu.svg";
 import { clothesNav } from "../../../constants/constants";
 import "./Clothes-header.scss";
 
@@ -10,7 +9,6 @@ function ClothesHeader({productType, path}) {
         <div className = "container">
             <div className = "header-clothes">
                 <Link to = {`/${productType}`} className = "category-clothes">{`${productType}'s`}</Link>
-                <img className = "burger-menu-clothes" src = {burger_menu} alt = "burger-menu"/>
                 <nav className = "clothes-nav">
                     <ul className = "clothes-nav-list">
                         {clothesNav.map(item => {
@@ -22,6 +20,12 @@ function ClothesHeader({productType, path}) {
                         })}
                     </ul>
                 </nav>
+                <select className = "header-clothes-sort">
+                    <option value = "">NEW ARRIVALS</option>
+                    <option value = "">SPECIALS</option>
+                    <option value = "">BESTSELLERS</option>
+                    <option value = "">MOST VIEWED</option>
+                </select>
             </div>
         </div>
     );

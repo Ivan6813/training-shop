@@ -43,12 +43,9 @@
     background: #ffffff;
     border-radius: 4px;
     text-align: center;
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #121212;
     @include tablets {
         padding: 10px 20px;
     }

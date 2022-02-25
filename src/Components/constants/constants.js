@@ -5,6 +5,9 @@ import shopping_bag from "../../img/shopping_bag.svg";
 import phone from "../../img/phone.svg";
 import location_marker from "../../img/location_marker.svg";
 import clock from "../../img/clock.svg";
+import f_phone from "../../img/f_phone.svg";
+import f_location_marker from "../../img/f_location_marker.svg";
+import f_clock from "../../img/f_clock.svg";
 import email from "../../img/email.svg";
 import facebook from "../../img/facebook.svg";
 import twitter from "../../img/twitter.svg";
@@ -149,9 +152,9 @@ export const footerUsefulLinks = [
 ];
 
 export const footerContacts = [
-    {id: 1, icon: location_marker, text: "Belarus, Gomel, Lange 17"},
-    {id: 2, icon: phone, text: "+375 29 100 20 30"}, 
-    {id: 3, icon: clock, text: "All week 24/7"},
+    {id: 1, icon: f_location_marker, text: "Belarus, Gomel, Lange 17"},
+    {id: 2, icon: f_phone, text: "+375 29 100 20 30"}, 
+    {id: 3, icon: f_clock, text: "All week 24/7"},
     {id: 4, icon: email, text: "info@clevertec.ru"}
 ];
 

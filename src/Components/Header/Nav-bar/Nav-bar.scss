@@ -9,11 +9,8 @@
 }
 
 .header-logo {
-    font-family: Playfair Display SC;
-    font-style: normal;
-    font-weight: normal;
+    font-family: "Playfair Display SC";
     font-size: 24px;
-    color: #121212;
     @include lg-mobile {
         font-size: 20px;
     }
@@ -33,18 +30,26 @@
     display: flex;
 }
 
+.user-block-list {
+    @include tablets {
+        flex: 1 1 auto;
+        justify-content: end;
+        margin-right: 30px;
+    }
+    @include lg-mobile {
+        justify-content: center;
+        margin-right: 0;
+    }
+}
+
 .nav-link {
-    font-family: Spartan;
-    font-style: normal;
-    font-weight: normal;
     font-size: 14px;
-    color: #121212;
     margin-right: 32px;
 }
 
 .user-block-item {
     margin-left: 29px;
-    @include sm-mobile {
+    @include lg-mobile {
         margin-left: 20px;
     }
 }

@@ -14,13 +14,10 @@
 }
 
 .category-clothes {
-    font-family: Spartan;
-    font-style: normal;
     font-weight: 600;
     font-size: 22px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #121212;
 }
 
 .burger-menu-clothes {
@@ -51,14 +48,21 @@
 }
 
 .clothes-nav-link {
-    font-family: Spartan;
-    font-style: normal;
-    font-weight: normal;
     font-size: 12px;
     letter-spacing: 0.06em;
-    color: #121212;
     opacity: 0.6;
     @include tablets {
         font-size: 10px;
+    }
+}
+
+.header-clothes-sort {
+    font-size: 12px;
+    display: none;
+    border: none;
+    opacity: 0.6;
+    background: transparent;
+    @include lg-mobile {
+        display: block;
     }
 }
