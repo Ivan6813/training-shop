@@ -33,7 +33,7 @@
 .user-block-list {
     @include tablets {
         flex: 1 1 auto;
-        justify-content: end;
+        justify-content: flex-end;
         margin-right: 30px;
     }
     @include lg-mobile {

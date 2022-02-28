@@ -12,16 +12,6 @@
     }
 }
 
-.wrapper-product-slider-small {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    @include lg-mobile {
-        display: flex;
-    }
-}
-
 .slider-small-btn {
     display: flex;
     @include lg-mobile {
@@ -46,15 +36,11 @@
     cursor: pointer;
     transform: rotate(90deg);
     margin: 0 16px 16px 0;
-    @include lg-mobile {
-        transform: rotate(0deg);
-        margin: 0;
-    }
 }
 
 .product-slider-small {
     width: 94px;
-    height: 504px;
+    height: 590px;
     margin-right: 16px;
     @include lg-mobile {
         width: 100%;
@@ -64,6 +50,8 @@
 }
 
 .slider-small-img {
+    width: 94px;
+    height: auto;
     @include lg-mobile {
         width: 100%;
     }
@@ -71,7 +59,7 @@
 
 .product-slider {
     width: 448px;
-    height: 560px;
+    height: 646px;
     @include lg-mobile {
         width: 100%;
         height: auto;
@@ -81,6 +69,7 @@
 
 .product-slider-img {
     width: 100%;
+    height: auto;
 }
 
 .active,

@@ -18,9 +18,7 @@
 }
 
 .main-card:first-child {
-    @include tablets {
-        margin-right: 10px;
-    }
+    margin-right: 10px;
 }
 
 .main-cards {

@@ -14,12 +14,6 @@ function ProductsSettings() {
                     <button className = "display-list-btn"></button>
                     <button className = "display-tile-btn"></button>
                 </div>
-                <select className = "products-settings-sort">
-                    <option value = "">BESTSELLERS</option>
-                    <option value = "">NEW ARRIVALS</option>
-                    <option value = "">SPECIALS</option>
-                    <option value = "">MOST VIEWED</option>
-                </select>
             </div>
         </div>
     );

@@ -2,20 +2,18 @@ import React, {useState} from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation, Thumbs, Controller } from "swiper";
 import classNames from "classnames";
-import { largeSlider } from "../../constants/constants";
-import { smallSlider } from "../../constants/constants";
 import "./Product-slider.scss";
 import "swiper/scss";
 import "swiper/scss/free-mode";
 import "swiper/scss/navigation";
 import "swiper/scss/thumbs";
 
-function ProductSlider() {
+function ProductSlider({images}) {
 
     const [activeSlide, setActiveSlide] = useState(0);
     const [mainSlider, setMainSlider] = useState(null);
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    const length = smallSlider.length - 1;
+    const length = images.length - 1;
 
     return (
         <div className = "product-slider-block" data-test-id = "product-slider">
@@ -60,11 +58,11 @@ function ProductSlider() {
                         }}
                         className = "product-slider-small"
                     >
-                    {smallSlider.map((item, i) => {
+                    {images.map((item, i) => {
                         return (
                             <SwiperSlide key = {item.id}>
                                 <img className = {classNames("slider-small-img", {active: activeSlide !== i})} 
-                                     src = {item.img} 
+                                     src = {`https://training.cleverland.by/shop${item.url}`}
                                      alt = "img"
                                 />
                             </SwiperSlide>
@@ -82,10 +80,12 @@ function ProductSlider() {
                 onAfterInit = {(swiper) => setMainSlider(swiper)}
                 className = "product-slider"
             >
-            {largeSlider.map(item => {
+            {images.map(item => {
                 return (
                     <SwiperSlide key = {item.id}>
-                        <img className = "product-slider-img" src = {item.img} alt = "img"/>
+                        <img className = "product-slider-img" 
+                             src = {`https://training.cleverland.by/shop${item.url}`} 
+                             alt = "img"/>
                     </SwiperSlide>
                 )
             })}

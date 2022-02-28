@@ -15,11 +15,14 @@ function ClothesList({clothes, productType}) {
                               to = {`/${productType}/${item.id}`}
                               data-test-id = {`clothes-card-${productType}`}
                               >
-                            <img className = "clothes-card-img" src= {item.img} alt = "clothes" />
+                            <img className = "clothes-card-img" 
+                                 src= {`https://training.cleverland.by/shop${item.images[0].url}`} 
+                                 alt = "clothes"
+                            />
                             <div className = "clothes-card-name">{item.name}</div>
                             <div className = "clothes-card-price-block">
                                 <div className = "clothes-card-price">{item.price}</div>
-                                <Rating/>
+                                <Rating rating = {item.rating}/>
                             </div>
                         </Link>
                     </li>

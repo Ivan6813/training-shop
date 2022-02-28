@@ -17,45 +17,13 @@ import mainImg from "../../img/slider-main-img.png";
 import truck from "../../img/truck.svg";
 import refresh from "../../img/refresh.svg";
 import support from "../../img/support.svg";
-import women_clothes_1 from "../../img/women_clothes_1.png";
-import women_clothes_2 from "../../img/women_clothes_2.png";
-import women_clothes_3 from "../../img/women_clothes_3.png";
-import women_clothes_4 from "../../img/women_clothes_4.png";
-import women_clothes_5 from "../../img/women_clothes_5.png";
-import women_clothes_6 from "../../img/women_clothes_6.png";
-import women_clothes_7 from "../../img/women_clothes_7.png";
-import women_clothes_8 from "../../img/women_clothes_8.png";
-import men_clothes_1 from "../../img/men_clothes_1.png";
-import men_clothes_2 from "../../img/men_clothes_2.png";
-import men_clothes_3 from "../../img/men_clothes_3.png";
-import men_clothes_4 from "../../img/men_clothes_4.png";
-import men_clothes_5 from "../../img/men_clothes_5.png";
-import men_clothes_6 from "../../img/men_clothes_6.png";
-import men_clothes_7 from "../../img/men_clothes_7.png";
-import men_clothes_8 from "../../img/men_clothes_8.png";
 import blog_img_1 from "../../img/Blog-img-1.png";
 import blog_img_2 from "../../img/Blog-img-2.png";
 import blog_img_3 from "../../img/Blog-img-3.png";
-import filledStar from "../../img/filled_star.svg";
-import unfilledStar from "../../img/unfilled_star.svg";
 import related_products_img_1 from "../../img/related-products-img-1.png";
 import related_products_img_2 from "../../img/related-products-img-2.png";
 import related_products_img_3 from "../../img/related-products-img-3.png";
 import related_products_img_4 from "../../img/related-products-img-4.png";
-import product_img_1 from "../../img/product-page-img-1.png";
-import largeImg from "../../img/product-page-select-img.png";
-
-export const headerNav = [
-    {id: 1, name: "Abour Us", path: ""},
-    {id: 2, name: "Women", path: "women"},
-    {id: 3, name: "Men", path: "men"},
-    {id: 4, name: "Beauty", path: ""},
-    {id: 5, name: "Accessories", path: ""},
-    {id: 6, name: "Blog", path: ""},
-    {id: 7, name: "Contact", path: ""},
-];
-
-export const userBlock = [search, globe, user, shopping_bag];
 
 export const topBarInfo = [
     {id: 1, icon: phone, text: "+375 29 100 20 30"}, 
@@ -65,11 +33,17 @@ export const topBarInfo = [
 
 export const socials = [facebook, twitter,instagram, pinterest];
 
-export const benefits = [
-    {id: 1, title: "FREE SHIPPING", icon: truck, text: "On all UA order or order above $100"}, 
-    {id: 2, title: "30 DAYS RETURN", icon: refresh, text: "Simply return it within 30 days for an exchange"}, 
-    {id: 3, title: "SUPPORT 24/7", icon: support, text: "Contact us 24 hours a day, 7 days a week"}
+export const headerNav = [
+    {id: 1, name: "Abour Us", path: "/"},
+    {id: 2, name: "Women", path: "women"},
+    {id: 3, name: "Men", path: "men"},
+    {id: 4, name: "Beauty", path: "/"},
+    {id: 5, name: "Accessories", path: "/"},
+    {id: 6, name: "Blog", path: "/"},
+    {id: 7, name: "Contact", path: "/"},
 ];
+
+export const userBlock = [search, globe, user, shopping_bag];
 
 export const mainSlider = [
     {id: 1, title: "Your title text", text: "Banner", img: mainImg}, 
@@ -77,34 +51,18 @@ export const mainSlider = [
     {id: 3, title: "Your title text", text: "Banner", img: mainImg}
 ];
 
+export const benefits = [
+    {id: 1, title: "FREE SHIPPING", icon: truck, text: "On all UA order or order above $100"}, 
+    {id: 2, title: "30 DAYS RETURN", icon: refresh, text: "Simply return it within 30 days for an exchange"}, 
+    {id: 3, title: "SUPPORT 24/7", icon: support, text: "Contact us 24 hours a day, 7 days a week"}
+];
+
 export const clothesNav  = [
-    {id: 1, name: "NEW ARRIVALS", path: "/"},
-    {id: 2, name: "SPECIALS", path: "/"},
-    {id: 3, name: "BESTSELLERS", path: "/"},
-    {id: 4, name: "MOST VIEWED", path: "/"},
-    {id: 5, name: "FEATURED PRODUCTS", path: "/"}
-];
-
-export const womenClothes = [
-    {id: 1, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_1},
-    {id: 2, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_2},
-    {id: 3, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_3},
-    {id: 4, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_4},
-    {id: 5, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_5},
-    {id: 6, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_6},
-    {id: 7, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_7},
-    {id: 8, name: "Women's tracksuit Q109", price: "$ 30.00", img: women_clothes_8},
-];
-
-export const menClothes = [
-    {id: 1, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_1},
-    {id: 2, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_2},
-    {id: 3, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_3},
-    {id: 4, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_4},
-    {id: 5, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_5},
-    {id: 6, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_6},
-    {id: 7, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_7},
-    {id: 8, name: "Women's tracksuit Q109", price: "$ 30.00", img: men_clothes_8},
+    {id: 1, name: "NEW ARRIVALS", value: "isNewArrivals"},
+    {id: 2, name: "SPECIALS", value: "isSpecial"},
+    {id: 3, name: "BESTSELLERS", value: "isBestseller"},
+    {id: 4, name: "MOST VIEWED", value: "isMostViewed"},
+    {id: 5, name: "FEATURED PRODUCTS", value: "isFeatured"}
 ];
 
 export const blogs = [
@@ -128,13 +86,11 @@ export const blogs = [
     }
 ];
 
-export const ratingStars = [filledStar, filledStar,filledStar, filledStar, unfilledStar];
-
 export const footerCategories = [
     {id: 1, name: "Men", path: "men"},
     {id: 2, name: "Women", path: "women"},
-    {id: 3, name: "Accessories", path: ""},
-    {id: 4, name: "Beauty", path: ""}
+    {id: 3, name: "Accessories", path: "/"},
+    {id: 4, name: "Beauty", path: "/"}
 ];
 
 export const footerInformation = [
@@ -164,21 +120,6 @@ export const productInfo = [
     {id: 3, icon: email, text: "Ask a question"}
 ];
 
-export const customerReviews = [
-    {
-        id: 1,
-        name: "Oleh Chabanov", 
-        time: "3 months ago",
-        text: "On the other hand, we denounce with righteous indignation and like men who are so beguiled and demoralized by the charms of pleasure of the moment"
-    },
-    {
-        id: 2,
-        name: "ShAmAn design", 
-        time: "3 months ago",
-        text: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti"
-    }
-];
-
 export const relatedProducts = [
     {id: 1, name: "Women's tracksuit Q109", price: "$ 30.00", img: related_products_img_1},
     {id: 2, name: "Women's tracksuit Q109", price: "$ 30.00", img: related_products_img_2},
@@ -188,18 +129,4 @@ export const relatedProducts = [
     {id: 6, name: "Women's tracksuit Q109", price: "$ 30.00", img: related_products_img_2},
     {id: 7, name: "Women's tracksuit Q109", price: "$ 30.00", img: related_products_img_3},
     {id: 8, name: "Women's tracksuit Q109", price: "$ 30.00", img: related_products_img_4}
-];
-
-export const smallSlider = [
-    {id: 1, img: product_img_1 },
-    {id: 2, img: product_img_1 },
-    {id: 3, img: product_img_1 },
-    {id: 4, img: product_img_1 }
-];
-
-export const largeSlider = [
-    {id: 1, img: largeImg },
-    {id: 2, img: largeImg },
-    {id: 3, img: largeImg },
-    {id: 4, img: largeImg }
 ];

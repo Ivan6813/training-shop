@@ -11,27 +11,29 @@ import ProductDescription from "./Product-description/Product-description";
 import AdditinalInfo from "./Additional-info/Additional-info";
 import Reviews from "./Reviews/Reviews";
 import RelatedProducts from "./Related-products/Related-products";
+import { PRODUCTS } from "../../data/data";
 import "./Product-page.scss";
 
 function ProductPage() {
 
-    let {category}  = useParams(); 
+    const {category, id}  = useParams(); 
+    const product = PRODUCTS[category].filter(item => item.id === id);
 
     return (
         <div className = "page-product" data-test-id = {`product-page-${category}`}>
-            <ProductHeader category = {category}/>
+            <ProductHeader category = {product[0].category} name = {product[0].name} reviews = {product[0].reviews.length} rating = {product[0].rating}/>
             <div className = "container">
                 <div className = "product-page">
-                    <ProductSlider/>
+                    <ProductSlider images = {product[0].images}/>
                     <div className = "product-page-info">
                         <ProductColor/>
                         <ProductSize/>
-                        <ProductPrice/>
+                        <ProductPrice price = {product[0].price}/>
                         <ProductInfo/>
                         <PayWith/>
                         <ProductDescription/>
-                        <AdditinalInfo/>
-                        <Reviews/>
+                        <AdditinalInfo material = {product[0].material} />
+                        <Reviews reviews = {product[0].reviews} rating = {product[0].rating} />
                     </div>
                 </div>
             </div>

@@ -1,8 +1,31 @@
 import React from "react";
-import { ratingStars } from "../constants/constants";
+import filledStar from "../../img/filled_star.svg";
+import unfilledStar from "../../img/unfilled_star.svg";
 import "./Rating.scss";
 
-function Rating() {
+function Rating({rating}) {
+
+    let ratingStars;
+
+    switch(rating) {
+        case 1 : 
+            ratingStars = [filledStar, unfilledStar,unfilledStar, unfilledStar, unfilledStar];
+        break;
+        case 2 : 
+            ratingStars = [filledStar, filledStar,unfilledStar, unfilledStar, unfilledStar];
+        break;
+        case 3 : 
+            ratingStars = [filledStar, filledStar,filledStar, unfilledStar, unfilledStar];
+        break;
+        case 4 : 
+            ratingStars = [filledStar, filledStar,filledStar, filledStar, unfilledStar];
+        break;
+        case 5 : 
+            ratingStars = [filledStar, filledStar,filledStar, filledStar, filledStar];
+        break;
+        default : 
+            ratingStars = [unfilledStar, unfilledStar, unfilledStar, unfilledStar, unfilledStar];
+    }
 
     return (
         <ul className = "rating-list">
