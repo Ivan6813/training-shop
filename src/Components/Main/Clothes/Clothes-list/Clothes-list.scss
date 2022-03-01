@@ -17,23 +17,71 @@
     }
 }
 
+.clothes-cards-item {
+    position: relative;
+}
+
 .clothes-card-img {
     width: 100%;
     margin-bottom: 12px;
+    @include lg-mobile {
+        margin-bottom: 5px;
+    }
 }
 
 .clothes-card-name {
     font-size: 14px;
     opacity: 0.6;
     margin-bottom: 12px;
+    @include lg-mobile {
+        margin-bottom: 5px;
+    }
 }
 
-.clothes-card-price-block {
+.clothes-card-info {
     display: flex;
     justify-content: space-between;
+    @include lg-mobile {
+        display: block;
+    }
 }
 
-.clothes-card-price {
+.clothes-card-prices-block {
+    display: flex;
+    align-items: center;
+    @include lg-mobile {
+        justify-content: space-between;
+    }
+}
+
+.clothes-price {
     font-weight: bold;
     font-size: 14px;
+    @include lg-mobile {
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+}
+
+.clothes-old-price {
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration-line: line-through;
+    opacity: 0.4;
+    margin-left: 5px;
+}
+
+.discount {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 8px 8px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #ffffff;
+    background: #e91e63;
+    @include lg-mobile {
+        padding: 5px 5px;
+        font-size: 10px;
+    }
 }

@@ -5,6 +5,11 @@ import "./Clothes-list.scss";
 
 function ClothesList({clothes, productType}) {
 
+    function discountCalc(price, discount) {
+        let percent = 100 + parseInt(discount);
+        return ((price / percent) *100).toFixed(1);
+    }
+
     return (
         <div className = "container">
             <ul className = "clothes-cards-list">
@@ -20,10 +25,23 @@ function ClothesList({clothes, productType}) {
                                  alt = "clothes"
                             />
                             <div className = "clothes-card-name">{item.name}</div>
-                            <div className = "clothes-card-price-block">
-                                <div className = "clothes-card-price">{item.price}</div>
+                            <div className = "clothes-card-info">
+                                {(item.discount) ? (
+                                    <div className = "clothes-card-prices-block">
+                                        <div className = "clothes-price">{`$ ${item.price}`}</div>
+                                        <div className = "clothes-old-price">
+                                            {`$ ${discountCalc(item.price, item.discount)}`}</div>
+                                        </div>
+                                ):(
+                                    <div className = "clothes-price">{`$ ${item.price}`}</div>
+                                )}
                                 <Rating rating = {item.rating}/>
                             </div>
+                            {(item.discount) ? (
+                                <div className = "discount">{item.discount}</div>
+                            ):(
+                                <div></div>
+                            )}
                         </Link>
                     </li>
                     )
