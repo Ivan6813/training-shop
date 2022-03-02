@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { PRODUCTS } from "../../data/data";
 import ProductHeader from "./Product-header/Product-header";
 import ProductSlider from "./Product-slider/Product-slider";
 import ProductColor from "./Product-color/Product-color";
@@ -11,29 +12,37 @@ import ProductDescription from "./Product-description/Product-description";
 import AdditinalInfo from "./Additional-info/Additional-info";
 import Reviews from "./Reviews/Reviews";
 import RelatedProducts from "./Related-products/Related-products";
-import { PRODUCTS } from "../../data/data";
 import "./Product-page.scss";
 
 function ProductPage() {
 
     const {category, id}  = useParams(); 
-    const product = PRODUCTS[category].filter(item => item.id === id);
+    const [product] = PRODUCTS[category].filter(item => item.id === id);
 
     return (
         <div className = "page-product" data-test-id = {`product-page-${category}`}>
-            <ProductHeader category = {product[0].category} name = {product[0].name} reviews = {product[0].reviews.length} rating = {product[0].rating}/>
+            <ProductHeader category = {product.category} 
+                           name = {product.name}
+                           reviews = {product.reviews.length}
+                           rating = {product.rating}
+            />
             <div className = "container">
                 <div className = "product-page">
-                    <ProductSlider images = {product[0].images}/>
+                    <ProductSlider images = {product.images}/>
                     <div className = "product-page-info">
-                        <ProductColor/>
-                        <ProductSize/>
-                        <ProductPrice price = {product[0].price}/>
+                        <ProductColor images = {product.images}/>
+                        <ProductSize sizes = {product.sizes}/>
+                        <ProductPrice price = {product.price}/>
                         <ProductInfo/>
                         <PayWith/>
                         <ProductDescription/>
-                        <AdditinalInfo material = {product[0].material} />
-                        <Reviews reviews = {product[0].reviews} rating = {product[0].rating} />
+                        <AdditinalInfo material = {product.material} 
+                                       colors = {product.images}
+                                       sizes = {product.sizes}
+                        />
+                        <Reviews reviews = {product.reviews}
+                                 rating = {product.rating}
+                        />
                     </div>
                 </div>
             </div>

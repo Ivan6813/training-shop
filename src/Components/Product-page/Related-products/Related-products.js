@@ -57,7 +57,7 @@ function RelatedProducts({productType}) {
                                     <div className = "clothes-card-name">{item.name}</div>
                                     <div className = "clothes-card-price-block">
                                         <div className = "clothes-card-price">{item.price}</div>
-                                        <Rating/>
+                                        <Rating  rating = {4}/>
                                     </div>
                                 </Link>
                             </SwiperSlide>

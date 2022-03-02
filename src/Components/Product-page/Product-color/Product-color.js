@@ -1,20 +1,36 @@
-import React from "react";
+import React, {useState} from "react";
+import classNames from "classnames";
 import "./Product-color.scss";
-import product_clor_img_1 from "../../../img/product-color-img-1.png";
-import product_clor_img_2 from "../../../img/product-color-img-2.png";
-import product_clor_img_3 from "../../../img/product-color-img-3.png";
-import product_clor_img_4 from "../../../img/product-color-img-4.png";
 
-function ProductColor() {
+function ProductColor({images}) {
+
+    const [currentColor, setCurrentColor] = useState(0);
+    const uniqueColors = [];
+    const uniqueImages = images.filter(item => findUniqueImg(item));
+
+    function findUniqueImg(item) {
+        if(uniqueColors.indexOf(item.color) === -1) {
+            uniqueColors.push(item.color);
+            return true;
+        }else {
+            return false;
+        }
+    }
 
     return (
         <div className = "product-color-block">
-            <div className = "product-color">Color: <span>Blue</span></div>
+            <div className = "product-color">Color: <span>{uniqueColors[currentColor]}</span></div>
             <div className = "product-select-color">
-                <img className = "product-change-color" src = {product_clor_img_1 } alt = "icon"/>
-                <img className = "product-change-color" src = {product_clor_img_2 } alt = "icon"/>
-                <img className = "product-change-color" src = {product_clor_img_3 } alt = "icon"/>
-                <img className = "product-change-color" src = {product_clor_img_4 } alt = "icon"/>
+                {uniqueImages.map((item, i) => {
+                    return (
+                        <img className = {classNames("product-color-img", {current_color: currentColor === i})} 
+                             src = {`https://training.cleverland.by/shop${item.url}`}
+                             alt = "icon"
+                             onClick = {() => setCurrentColor(i)}
+                             key = {item.id}
+                        />
+                    )
+                })}
             </div>
             
         </div>

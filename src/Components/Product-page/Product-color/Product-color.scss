@@ -21,9 +21,16 @@
     color: #000000;
 }
 
-.product-change-color {
+.product-color-img {
+    width: 64px;
+    height: auto;
     margin-right: 16px;
+    cursor: pointer;
     @include lg-mobile {
         margin-right: 10px;
     }
+}
+
+.current_color {
+    outline: 2px solid #121212;
 }
