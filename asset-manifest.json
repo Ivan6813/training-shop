@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/training-shop/static/css/main.4fc5853f.css",
-    "main.js": "/training-shop/static/js/main.7137448a.js",
+    "main.css": "/training-shop/static/css/main.1cffc0d1.css",
+    "main.js": "/training-shop/static/js/main.97274462.js",
     "static/media/slider-main-img.png": "/training-shop/static/media/slider-main-img.c59a67a48a101ef83f4a.png",
     "static/media/subscribe-block-women.png": "/training-shop/static/media/subscribe-block-women.c68094858fa94ac4dcf5.png",
     "static/media/Blog-img-1.png": "/training-shop/static/media/Blog-img-1.2c83828d55b07238fddc.png",
@@ -22,7 +22,7 @@
     "static/media/truck.svg": "/training-shop/static/media/truck.199c609cb79e0e153cb6046a6cfb3019.svg",
     "static/media/display-tile.svg": "/training-shop/static/media/display-tile.809a79b816a678120fa4.svg",
     "static/media/instagram.svg": "/training-shop/static/media/instagram.67d259b90b7cfb475f2b72c8baf01765.svg",
-    "static/media/filter-btn.svg": "/training-shop/static/media/filter-btn.c95eb3800ba74271d517.svg",
+    "static/media/filter-btn.svg": "/training-shop/static/media/filter-btn.bcf7971464cb4a14b951.svg",
     "static/media/share-link.svg": "/training-shop/static/media/share-link.fdd62df983a114296b69.svg",
     "static/media/globe.svg": "/training-shop/static/media/globe.e7fbffcf8e0dec190ac395e582336b07.svg",
     "static/media/pinterest.svg": "/training-shop/static/media/pinterest.999453765058229adcc060214525170e.svg",
@@ -50,11 +50,12 @@
     "static/media/main-slider-btn-left.svg": "/training-shop/static/media/main-slider-btn-left.b1111ee19ab8cf8c97e9.svg",
     "static/media/main-slider-btn-right.svg": "/training-shop/static/media/main-slider-btn-right.f9eca5d1dfab498f759c.svg",
     "static/media/display-list.svg": "/training-shop/static/media/display-list.44db9bee8523b700cc81.svg",
-    "main.4fc5853f.css.map": "/training-shop/static/css/main.4fc5853f.css.map",
-    "main.7137448a.js.map": "/training-shop/static/js/main.7137448a.js.map"
+    "static/media/filter-open-btn.svg": "/training-shop/static/media/filter-open-btn.c1acda466a6f57fc13cc.svg",
+    "main.1cffc0d1.css.map": "/training-shop/static/css/main.1cffc0d1.css.map",
+    "main.97274462.js.map": "/training-shop/static/js/main.97274462.js.map"
   },
   "entrypoints": [
-    "static/css/main.4fc5853f.css",
-    "static/js/main.7137448a.js"
+    "static/css/main.1cffc0d1.css",
+    "static/js/main.97274462.js"
   ]
 }
