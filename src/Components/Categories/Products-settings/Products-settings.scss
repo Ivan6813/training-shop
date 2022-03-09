@@ -10,37 +10,35 @@
     }
 }
 
-.filter-block {
-    display: flex;
-    align-items: center;
-}
-
 .filter-btn {
-    background: url(../../../img/filter-btn.svg) no-repeat center;
-    width: 32px;
+    background: url(../../../img/filter-btn.svg) no-repeat left;
+    text-align: right;
+    width: 95px;
     height: 32px;
     border: none;
-    margin-right: 12px;
-    @include lg-mobile {
-        margin-right: 0;
-    }
-}
-.filter-text {
     font-weight: 500;
     font-size: 13px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    opacity: 0.6;
+    color: rgba($color: #121212, $alpha: 0.6);
+    outline: none;
+    cursor: pointer;
+    transition: all ease 0.1s;
     @include lg-mobile {
         font-size: 10px;
+        width: 75px;
     }
 }
 
-.change-layout-block {
+.filter-btn.filter_open {
+    background: url(../../../img/filter-open-btn.svg) no-repeat left;
+}
+
+.page-view-block {
     display: flex;
 }
 
-.display-list-btn {
+.page-view-list-btn {
     background: url(../../../img/display-list.svg) no-repeat center;
     width: 24px;
     height: 24px;
@@ -51,7 +49,7 @@
     }
 }
 
-.display-tile-btn {
+.page-view-squares-btn {
     background: url(../../../img/display-tile.svg) no-repeat center;
     width: 24px;
     height: 24px;
@@ -69,4 +67,37 @@
     @include lg-mobile {
         font-size: 10px;
     }
+}
+
+.activ-filters-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 0;
+    @include lg-mobile {
+        display: block;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.show_filter {
+    display: block;
+}
+
+.items-found,
+.activ_filter {
+    display: block;
+    font-size: 14px;
+    margin-right: 20px;
+    @include lg-mobile {
+        font-size: 12px;
+        margin: 0 0 10px 0;
+    }
+}
+
+.activ_filter {
+    opacity: 0.6;
 }

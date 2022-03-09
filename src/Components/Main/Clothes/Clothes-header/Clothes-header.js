@@ -26,6 +26,7 @@ function ClothesHeader({productType, setParticulars}) {
                                     className = {classNames("clothes-sort-btn", {activ_btn: activBtn !== i})} 
                                     value = {item.value}
                                     onClick = {(event) => sortClothes(event, i)}
+                                    data-test-id = {`clothes-${productType}-${item.value}`}
                                 >{item.name}</button>
                             </li>
                             )

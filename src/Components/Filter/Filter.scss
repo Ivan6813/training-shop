@@ -1,0 +1,72 @@
+@import "../../mixin.scss";
+
+.filter {
+    display: flex;
+    height: 320px;
+    padding: 25px 10px;
+    background: #f8f8f8;
+    @include tablets {
+        padding: 25px 0;
+    }
+    @include lg-mobile {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 25px 5px 0 5px;
+    }
+}
+
+.filter-category {
+    width: 25%;
+    padding: 0 30px;
+    overflow-y: auto;
+    @include tablets {
+        padding: 0 10px;
+    }
+    @include lg-mobile {
+        width: 50%;
+        height: 250px;
+        padding: 0 5px;
+        margin-bottom: 20px;
+    }
+}
+
+.filter-category-title {
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    @include tablets {
+        font-size: 12px;
+    }
+}
+
+.filter-item {
+    margin-bottom: 16px;
+}
+
+.filter-item:last-child {
+    margin-bottom: 0;
+}
+
+.filter-label {
+    font-size: 13px;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    @include tablets {
+        font-size: 10px;
+    }
+}
+
+.filter-input {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    @include tablets {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+    }
+}

@@ -3,10 +3,9 @@ import "./Additional-info.scss";
 
 function AdditinalInfo({material, colors, sizes}) {
 
-    const set = new Set()
-    colors.forEach(item => set.add(item.color));
-    const uniqueColors = [...set];
-
+    const allColors = colors.map(item => item.color);
+    const uniqueColors = [...new Set(allColors)];
+ 
     return (
         <div className = "additinal-info-block">
             <div className = "additinal-info-title">ADDITIONAL INFORMATION</div>

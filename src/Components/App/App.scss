@@ -8,6 +8,7 @@
 @import "../Error-page/Error-page.scss";
 @import "../Burger-menu-btn/Burger-menu-btn.scss";
 @import "../Burger-menu/Burger-menu.scss";
+@import "../Filter/Filter.scss";
 @import "../Footer/footer.scss";
 
 * {
@@ -36,4 +37,15 @@
 
 .lock {
     overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+::-webkit-scrollbar-track {
+    background: #e6e6e6;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8d8b8b;
 }
