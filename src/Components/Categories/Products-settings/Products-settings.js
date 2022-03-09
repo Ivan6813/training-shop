@@ -41,7 +41,7 @@ function ProductsSettings({clothes, filteredClothes, setFilteredClothes, categor
             );
         })
         setFilteredClothes(newFilteredClothes);
-    },[selectColor, selectSize, selectBrand, selectPrice]);
+    },[selectColor, selectSize, selectBrand, selectPrice]) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <div className = "container">

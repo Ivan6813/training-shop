@@ -11,7 +11,7 @@ function Categories() {
     const {category}  = useParams(); 
     const clothes = (category === "women") ? PRODUCTS.women : PRODUCTS.men;
     const [filteredClothes, setFilteredClothes] = useState(clothes);
-
+    
     return (
         <div className = "categories" data-test-id = {`products-page-${category}`}>
             <ProductsHeader/>
