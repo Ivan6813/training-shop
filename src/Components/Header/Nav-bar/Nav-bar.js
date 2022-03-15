@@ -46,8 +46,8 @@ function NavBar({isCartOpen, setIsCartOpen}) {
                         <li className = "user-block-item"><button className = "user-block-search-btn"></button></li>
                         <li className = "user-block-item"><button className = "user-block-site-btn"></button></li>
                         <li className = "user-block-item"><button className = "user-block-customer-btn"></button></li>
-                        <li onClick = {() => setIsCartOpen(true)} className = "user-block-item">
-                            <button data-test-id = "cart-button" className = "user-block-cart-btn"></button>
+                        <li onClick = {() => setIsCartOpen(true)} className = "user-block-item" data-test-id = "cart-button">
+                            <button  className = "user-block-cart-btn"></button>
                             {!!order.length && <span className = "user-block-cart-quantity">{order.length}</span>}
                         </li>
                     </ul>
