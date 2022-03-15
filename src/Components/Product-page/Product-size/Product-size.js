@@ -1,25 +1,20 @@
-import React, {useState} from "react";
+import React from "react";
 import classNames from "classnames";
 import size_guide from "../../../img/size-guide.svg";
+import { v4 as uuidv4 } from 'uuid';
 import "./Product-size.scss";
 
-function ProductSize({sizes}) {
-
-    const [currentSize, setcurrentSize] = useState(0);
-
-    function selectSize(index) {
-        setcurrentSize(index);
-    }
+function ProductSize({sizes, selectedSize, setSelectedSize}) {
 
     return (
         <div className = "product-size-block">
-            <div className = "product-size">Size: <span>{sizes[currentSize]}</span></div>
+            <div className = "product-size">Size: <span>{sizes[selectedSize]}</span></div>
             <div className = "product-select-size">
                 {sizes.map((item, i) => {
                     return (
-                        <button onClick = {() => selectSize(i)} 
-                            className = {classNames("product-change-size", {current_size: currentSize === i})}
-                            key = {i}
+                        <button onClick = {() => setSelectedSize(i)} 
+                            className = {classNames("product-change-size", {current_size: selectedSize === i})}
+                            key = {uuidv4()}
                         >{item}</button>
                     )
                 })}

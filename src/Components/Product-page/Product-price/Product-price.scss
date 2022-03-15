@@ -35,6 +35,8 @@
     color: #ffffff;
     opacity: 0.9;
     margin-right: 30px;
+    cursor: pointer;
+    outline: none;
     @include lg-mobile {
         width: 120px;
         font-size: 10px;

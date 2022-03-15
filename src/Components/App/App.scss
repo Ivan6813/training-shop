@@ -9,6 +9,7 @@
 @import "../Burger-menu-btn/Burger-menu-btn.scss";
 @import "../Burger-menu/Burger-menu.scss";
 @import "../Filter/Filter.scss";
+@import "../Cart/Cart.scss";
 @import "../Footer/footer.scss";
 
 * {
@@ -36,7 +37,11 @@
 }
 
 .lock {
-    overflow: hidden;
+    overflow-y: hidden;
+    padding-right: 3px;
+    @include lg-mobile {
+        padding-right: 0;
+    }
 }
 
 ::-webkit-scrollbar {

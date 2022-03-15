@@ -1,10 +1,9 @@
-import React, {useState} from "react";
+import React, {useEffect} from "react";
 import classNames from "classnames";
 import "./Product-color.scss";
 
-function ProductColor({images}) {
+function ProductColor({images, selectedColor, setSelectedColor, setSelectedItemImg}) {
 
-    const [currentColor, setCurrentColor] = useState(0);
     const uniqueColors = [];
     const uniqueImages = images.filter(item => findUniqueImg(item));
 
@@ -17,16 +16,20 @@ function ProductColor({images}) {
         }
     }
 
+    useEffect(() => {
+        setSelectedItemImg(uniqueImages[selectedColor]);
+    });
+
     return (
         <div className = "product-color-block">
-            <div className = "product-color">Color: <span>{uniqueColors[currentColor]}</span></div>
+            <div className = "product-color">Color: <span>{uniqueColors[selectedColor]}</span></div>
             <div className = "product-select-color">
                 {uniqueImages.map((item, i) => {
                     return (
-                        <img className = {classNames("product-color-img", {current_color: currentColor === i})} 
+                        <img className = {classNames("product-color-img", {current_color: selectedColor === i})} 
                              src = {`https://training.cleverland.by/shop${item.url}`}
                              alt = "icon"
-                             onClick = {() => setCurrentColor(i)}
+                             onClick = {() => setSelectedColor(i)}
                              key = {item.id}
                         />
                     )

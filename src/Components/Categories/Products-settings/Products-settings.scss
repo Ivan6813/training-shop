@@ -23,6 +23,7 @@
     color: rgba($color: #121212, $alpha: 0.6);
     outline: none;
     cursor: pointer;
+    user-select: none;
     transition: all ease 0.1s;
     @include lg-mobile {
         font-size: 10px;

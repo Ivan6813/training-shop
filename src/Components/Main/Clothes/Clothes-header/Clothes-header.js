@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import { clothesNav } from "../../../constants/constants";
+import { clothesNav } from "../../../../constants/constants";
 import classNames from "classnames";
+import { v4 as uuidv4 } from 'uuid';
 import "./Clothes-header.scss";
 
 function ClothesHeader({productType, setParticulars}) {
@@ -21,7 +22,7 @@ function ClothesHeader({productType, setParticulars}) {
                     <ul className = "clothes-nav-list">
                         {clothesNav.map((item, i) => {
                             return ( 
-                            <li className = "clothes-nav-item" key = {item.id}>
+                            <li className = "clothes-nav-item" key = {uuidv4()}>
                                 <button
                                     className = {classNames("clothes-sort-btn", {activ_btn: activBtn !== i})} 
                                     value = {item.value}

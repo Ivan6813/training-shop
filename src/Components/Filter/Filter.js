@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from 'uuid';
 import "./Filter.scss";
 
 function Filter({clothes, category, selectColor,  setSelectColor, selectSize, setSelectSize, selectBrand, setSelectBrand, selectPrice, setSelectPrice}) {
@@ -12,10 +13,10 @@ function Filter({clothes, category, selectColor,  setSelectColor, selectSize, se
     const prices = ["500+", "200-500", "100-200", "50-100", "0-50"];
 
     const filterItems = [
-        {id:1, title: "color", items: uniqueColors},
-        {id:2, title: "size", items: uniqueSizes},
-        {id:3, title: "brand", items: uniqueBrands},
-        {id:4, title: "price", items: prices}
+        {title: "color", items: uniqueColors},
+        {title: "size", items: uniqueSizes},
+        {title: "brand", items: uniqueBrands},
+        {title: "price", items: prices}
     ];
 
     function writeSelectedFilter(paragraph, event) {
@@ -64,15 +65,14 @@ function Filter({clothes, category, selectColor,  setSelectColor, selectSize, se
         <div className = "filter" data-test-id = {`filters-${category}`}>
             {filterItems.map((item, index) => {
                 return (
-                <div className = "filter-category" key = {item.id}>
+                <div className = "filter-category" key = {uuidv4()}>
                     <div className = "filter-category-title">{item.title}</div>
                     <ul className = "filter-list" data-test-id = {`filters-${item.title}`}>
                     {item.items.map(value => {
                         return (
-                        <li className = "filter-item" key = {value}>
-                            <label htmlFor = {value} className = "filter-label">
-                                <input  id = {value} 
-                                        checked = {saveChecked(filterItems[index].title, value)}
+                        <li className = "filter-item" key = {uuidv4()}>
+                            <label className = "filter-label">
+                                <input  checked = {saveChecked(filterItems[index].title, value)}
                                         type = "checkbox"
                                         className = "filter-input"
                                         value = {value}

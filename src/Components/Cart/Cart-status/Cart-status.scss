@@ -1,0 +1,44 @@
+.cart-status-block {
+    padding: 50px 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.cart-status-title {
+    width: 100%;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 150%;
+    text-align: center;
+    white-space: pre-line;
+    margin-bottom: 24px;
+}
+
+.cart-status-text {
+    width: 100%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+    white-space: pre-line;
+    margin-bottom: 16px;
+}
+
+.back-to-shop-btn {
+    width: 100%;
+    padding: 17px 0;
+    background: #121212;
+    border: none;
+    font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #ffffff;
+    opacity: 0.9;
+    cursor: pointer;
+    outline: none;
+}

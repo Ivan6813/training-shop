@@ -1,22 +1,25 @@
 import React, {useState, useEffect} from "react";
 import BurgerMenuBtn from "../../Burger-menu-btn/Burger-menu-btn";
 import BurgerMenu from "../../Burger-menu/Burger-menu";
-import { headerNav } from "../../constants/constants";
-import { userBlock } from "../../constants/constants";
+import { headerNav } from "../../../constants/constants";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { v4 as uuidv4 } from 'uuid';
 import "./Nav-bar.scss";
 
-function NavBar() {
+function NavBar({isCartOpen, setIsCartOpen}) {
 
     const [isMenuOpen, toggleMenuMode] = useState(false);
 
     useEffect(() => {
-        if(isMenuOpen) {
+        if(isMenuOpen || isCartOpen) {
             document.body.classList.add('lock');
         }else {
             document.body.classList.remove('lock');
         }
     });
+
+    const order = useSelector(state => state.order);
 
     return (
         <div onClick = {(e) => {if(e.target.className !== "burger-menu") toggleMenuMode(false)}}>
@@ -29,7 +32,7 @@ function NavBar() {
                         <ul className = "nav-list">
                             {headerNav.map(item => {
                                 return ( 
-                                <li className = "nav-item" key = {item.id}>
+                                <li className = "nav-item" key = {uuidv4()}>
                                     <Link className = "nav-link" 
                                         to = {`/${item.path}`} 
                                         data-test-id = {`menu-link-${item.path}`}
@@ -40,15 +43,13 @@ function NavBar() {
                         </ul>
                     </nav>
                     <ul className = "user-block-list">
-                        {userBlock.map((item, i) => {
-                            return (
-                            <li className = "user-block-item" key = {i}>
-                                <Link to= "/">
-                                    <img className = "user-block-icon" src = {item} alt = "icon"/>
-                                </Link>
-                            </li>
-                            )
-                        })}
+                        <li className = "user-block-item"><button className = "user-block-search-btn"></button></li>
+                        <li className = "user-block-item"><button className = "user-block-site-btn"></button></li>
+                        <li className = "user-block-item"><button className = "user-block-customer-btn"></button></li>
+                        <li onClick = {() => setIsCartOpen(true)} className = "user-block-item">
+                            <button data-test-id = "cart-button" className = "user-block-cart-btn"></button>
+                            {!!order.length && <span className = "user-block-cart-quantity">{order.length}</span>}
+                        </li>
                     </ul>
                     <BurgerMenuBtn isMenuOpen = {isMenuOpen} toggleMenuMode = {toggleMenuMode}/>
                 </div>

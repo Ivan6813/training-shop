@@ -1,6 +1,7 @@
 import React from "react";
 import filledStar from "../../img/filled_star.svg";
 import unfilledStar from "../../img/unfilled_star.svg";
+import { v4 as uuidv4 } from 'uuid';
 import "./Rating.scss";
 
 function Rating({rating}) {
@@ -29,9 +30,9 @@ function Rating({rating}) {
 
     return (
         <ul className = "rating-list">
-            {ratingStars.map((item, i) => {
+            {ratingStars.map(item => {
                 return ( 
-                <li className = "rating-item" key = {i}>
+                <li className = "rating-item" key = {uuidv4()}>
                     <img className = "star-icon" src = {item} alt = "star-icon" />
                 </li>
                 )

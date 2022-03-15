@@ -13,6 +13,11 @@
     margin-bottom: 14px;
 }
 
+.product-header-nav {
+    display: flex;
+    min-width: 0;
+}
+
 .home-link,
 .products-page-link {
     font-weight: 500;
@@ -35,6 +40,9 @@
 .current-product-link {
     font-weight: 500;
     font-size: 11px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     @include lg-mobile {
         font-size: 9px;
     }
@@ -46,6 +54,7 @@
     opacity: 0.6;
     display: flex;
     align-items: center;
+    margin-left: 15px;
 }
 
 .share-link::before {

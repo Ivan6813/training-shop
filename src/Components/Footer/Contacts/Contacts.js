@@ -1,5 +1,6 @@
 import React from "react";
-import { footerContacts } from "../../constants/constants";
+import { footerContacts } from "../../../constants/constants";
+import { v4 as uuidv4 } from 'uuid';
 
 function Contacts() {
 
@@ -9,7 +10,7 @@ function Contacts() {
             <ul className = "footer-info-list">
                 {footerContacts.map(item => {
                     return ( 
-                    <li className = "footer-info-item" key = {item.id}>
+                    <li className = "footer-info-item" key = {uuidv4()}>
                         <img className = "footer-info-icon" src = {item.icon} alt = "icon"/>
                         <div className = "footer-info-text">{item.text}</div>
                     </li>

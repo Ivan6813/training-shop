@@ -1,0 +1,123 @@
+.delivery-block {
+    overflow-y: auto;
+}
+
+.delivery-methods {
+    padding: 32px 0;
+}
+
+.delivery-methods-title {
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 16px;
+}
+
+.delivery-methods-item {
+    padding: 12px 0;
+    border-top: 2px solid #f8f8f8;
+}
+
+.delivery-methods-item:last-child {
+    border-bottom: 2px solid #f8f8f8;
+}
+
+.delivery-methods-label {
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    cursor: pointer;
+}
+
+.custom-radio > input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.custom-radio > span {
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.custom-radio > span::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #e6e6e6;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.custom-radio > input:checked + span::before {
+    border-color: #121212;
+    background: url(../../../img/custom-radio-checked.svg) no-repeat center;
+}
+
+.customer-info {
+    margin-bottom: 12px;
+}
+
+.customer-info-params {
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.customer-info-input {
+    display: block;
+    width: 100%;
+    background: #f8f8f8;
+    border: none;
+    padding: 15px 16px;
+    &::placeholder {
+        font-weight: 500;
+        font-size: 14px;
+        color: #9c9c9c;
+    }
+}
+
+.customer-store-adress {
+    display: block;
+    width: 100%;
+    background: #f8f8f8;
+    border: none;
+    padding: 15px 16px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #9c9c9c;
+}
+
+.customer-params-input {
+    margin-bottom: 8px;
+}
+
+.customer-adress {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.customer-adress-input {
+    margin-right: 8px;
+}
+
+.consent-form-label {
+    display: flex;
+    user-select: none;
+    cursor: pointer;
+}
+
+.consent-form-label > span {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.consent-form-input {
+    width: 18px;
+    height: 18px;
+    margin-right: 15px;
+}

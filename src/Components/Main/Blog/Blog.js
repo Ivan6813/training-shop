@@ -1,6 +1,7 @@
 import React from "react";
-import { blogs } from "../../constants/constants";
+import { blogs } from "../../../constants/constants";
 import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
 import "./Blog.scss";
 
 function Blog() {
@@ -15,7 +16,7 @@ function Blog() {
                 <ul className = "blog-list">
                     {blogs.map(item => {
                         return (
-                        <li className = "blog-item" key = {item.id}>
+                        <li className = "blog-item" key = {uuidv4()}>
                             <img className = "blog-item-img" src = {item.img} alt = "img"/>
                             <div className = "img-block-text">
                                 <div className = "blog-item-title">{item.title}</div>

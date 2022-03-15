@@ -1,6 +1,7 @@
 import React from "react";
-import { footerInformation } from "../../constants/constants";
+import { footerInformation } from "../../../constants/constants";
 import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
 
 function Information() {
 
@@ -11,7 +12,7 @@ function Information() {
                 <ul className = "footer-nav-list">
                     {footerInformation.map(item => {
                         return ( 
-                        <li className = "footer-nav-item" key = {item.id}>
+                        <li className = "footer-nav-item" key = {uuidv4()}>
                             <Link className = "footer-nav-link" to = {item.path}>{item.name}</Link>
                         </li>
                         )

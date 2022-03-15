@@ -4,8 +4,7 @@ import "./Products-header.scss";
 
 function ProductsHeader() {
 
-    let category1  = useParams(); 
-    const path = category1.category;
+    const {category}  = useParams(); 
 
     return (
         <div className = "products-header">
@@ -13,11 +12,11 @@ function ProductsHeader() {
                 <div className = "wrapper-products-header">
                     <div className = "products-header-nav">
                         <Link className = "home-link" to = "/">Home</Link>
-                        <Link className = "current-categories-link" to = {`/${path}`}>{path}</Link>
+                        <Link className = "current-categories-link" to = {`/${category}`}>{category}</Link>
                     </div>
                     <Link className = "share-link" to = "/">Share</Link>
                 </div>
-                <div className = "category-name">{path}</div>
+                <div className = "category-name">{category}</div>
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import { PRODUCTS } from "../../data/data";
 import ProductHeader from "./Product-header/Product-header";
@@ -18,31 +18,41 @@ function ProductPage() {
 
     const {category, id}  = useParams(); 
     const [product] = PRODUCTS[category].filter(item => item.id === id);
+    const [selectedColor, setSelectedColor] = useState(0);
+    const [selectedSize, setSelectedSize] = useState(0);
+    const [selectedItemImg, setSelectedItemImg] = useState({});
+
+    useEffect(() => {
+        setSelectedColor(0);
+        setSelectedSize(0);
+        setSelectedItemImg({});
+    },[id]);
 
     return (
         <div className = "page-product" data-test-id = {`product-page-${category}`}>
-            <ProductHeader category = {product.category} 
-                           name = {product.name}
-                           reviews = {product.reviews.length}
-                           rating = {product.rating}
-            />
+            <ProductHeader product = {product}/>
             <div className = "container">
                 <div className = "product-page">
                     <ProductSlider images = {product.images}/>
                     <div className = "product-page-info">
-                        <ProductColor images = {product.images}/>
-                        <ProductSize sizes = {product.sizes}/>
-                        <ProductPrice price = {product.price}/>
+                        <ProductColor images = {product.images}
+                                      selectedColor = {selectedColor}
+                                      setSelectedColor = {setSelectedColor}
+                                      setSelectedItemImg = {setSelectedItemImg}
+                        />
+                        <ProductSize sizes = {product.sizes}
+                                     selectedSize = {selectedSize}
+                                     setSelectedSize = {setSelectedSize}
+                        />
+                        <ProductPrice product = {product}
+                                      selectedSize = {selectedSize}
+                                      selectedItemImg = {selectedItemImg}
+                        />
                         <ProductInfo/>
                         <PayWith/>
                         <ProductDescription/>
-                        <AdditinalInfo material = {product.material} 
-                                       colors = {product.images}
-                                       sizes = {product.sizes}
-                        />
-                        <Reviews reviews = {product.reviews}
-                                 rating = {product.rating}
-                        />
+                        <AdditinalInfo product = {product}/>
+                        <Reviews product = {product}/>
                     </div>
                 </div>
             </div>

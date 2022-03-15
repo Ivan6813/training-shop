@@ -1,6 +1,7 @@
 import React from "react";
-import { topBarInfo } from "../../constants/constants";
+import { topBarInfo } from "../../../constants/constants";
 import Socials from "../../Socials/Socials";
+import { v4 as uuidv4 } from 'uuid';
 import "./Top-bar.scss";
 
 function TopBar() {
@@ -12,7 +13,7 @@ function TopBar() {
                     <ul className = "info-list">
                         {topBarInfo.map(item => {
                             return ( 
-                            <li className = "info-item" key = {item.id}>
+                            <li className = "info-item" key = {uuidv4()}>
                                 <img className = "info-icon" src = {item.icon} alt = "icon"/>
                                 <div className = "info-text">{item.text}</div>
                             </li>

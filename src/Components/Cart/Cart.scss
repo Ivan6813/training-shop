@@ -1,0 +1,44 @@
+@import "./Header-cart/Header-cart.scss";
+@import "./Nav-bar-cart/Nav-bar-cart.scss";
+@import "./Cart-items/Cart-items.scss";
+@import "./Delivery-info/Delivery-info.scss";
+@import "./Payment-cart/Payment-cart.scss";
+@import "./Cart-status/Cart-status.scss";
+@import "./Footer-cart/Footer-cart.scss";
+@import "../../mixin.scss";
+
+.cart {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100vh;
+    background: rgba($color: #000000, $alpha: 0.7);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    overflow: auto;
+}
+
+.cart-container {
+    width: 340px;
+    margin: 0 auto;
+    @include lg-mobile {
+        width: 95%;
+    }
+}
+
+.cart-elem {
+    background: rgb(255, 255, 255);
+    width: 388px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    @include tablets {
+        min-height: 600px;
+    }
+    @include lg-mobile {
+        width: 100%;
+        height: 100%;
+    }
+}

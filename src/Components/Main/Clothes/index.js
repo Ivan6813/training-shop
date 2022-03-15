@@ -15,7 +15,7 @@ function Clothes({productType}) {
         <div className = "clothes" data-test-id = {`clothes-${productType}`}>
             <ClothesHeader productType = {productType} setParticulars = {setParticulars}/>
             <ClothesList clothes = {sortClothes} productType = {productType}/>
-            <ClothesBtn/>
+            <ClothesBtn productType = {productType}/>
         </div>
     );
 }

@@ -70,16 +70,15 @@ function ProductsSettings({clothes, filteredClothes, setFilteredClothes, categor
                 />
             </div>
             {(selectColor.length === 0 && selectSize.length === 0 && selectBrand.length === 0 && selectPrice.length === 0)
-            ? (<div></div>)
-            : (
-            <ul className="activ-filters-bar">
-                <li className="items-found">{filteredClothes.length} items Found</li>
-                <li className = {classNames("hidden", {activ_filter: selectColor.length})}>Color: {selectColor.join(", ")}</li>
-                <li className = {classNames("hidden", {activ_filter: selectSize.length})}>Size: {selectSize.join(", ")}</li>
-                <li className = {classNames("hidden", {activ_filter: selectBrand.length})}>Brand: {selectBrand.join(", ")}</li>
-                <li className = {classNames("hidden", {activ_filter: selectPrice.length})}>Price: {selectPrice.join(", ")}</li>
+            ||
+            <ul className = "activ-filters-bar">
+                <li className = "items-found">{filteredClothes.length} items Found</li>
+                {!!selectColor.length && <li className = "activ_filter">Color: {selectColor.join(", ")}</li>}
+                {!!selectSize.length && <li className = "activ_filter">Size: {selectSize.join(", ")}</li>}
+                {!!selectBrand.length && <li className = "activ_filter">Brand: {selectBrand.join(", ")}</li>}
+                {!!selectPrice.length && <li className = "activ_filter">Price: {selectPrice.join(", ")}</li>}
             </ul>
-            )}
+            }
         </div>
     );
 }

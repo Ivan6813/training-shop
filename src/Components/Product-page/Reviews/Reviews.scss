@@ -67,21 +67,6 @@
     font-size: 14px;
 }
 
-.rating-review-block {
-    display: flex;
-    align-items: center;
-}
-
-.dispatch-time {
-    font-weight: 500;
-    font-size: 11px;
-    opacity: 0.4;
-    margin-right: 5px;
-    @include lg-mobile {
-        font-size: 8px;
-    }
-}
-
 .customer-text {
     font-size: 14px;
     line-height: 22px;

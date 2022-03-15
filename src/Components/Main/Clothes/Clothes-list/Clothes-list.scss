@@ -19,6 +19,7 @@
 
 .clothes-cards-item {
     position: relative;
+    min-width: 0;
 }
 
 .clothes-card-img {
@@ -33,6 +34,9 @@
     font-size: 14px;
     opacity: 0.6;
     margin-bottom: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     @include lg-mobile {
         margin-bottom: 5px;
     }

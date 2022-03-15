@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
+import { v4 as uuidv4 } from 'uuid';
 import "./Burger-menu.scss";
 
 
@@ -22,7 +23,7 @@ function BurgerMenu({isMenuOpen, toggleMenuMode, navList}) {
                 <ul className = "burger-nav-list">
                     {navList.map(item => {
                         return ( 
-                            <li className = "burger-nav-item" key = {item.id}>
+                            <li className = "burger-nav-item" key = {uuidv4()}>
                                 <Link className = "burger-nav-link" 
                                       to = {`/${item.path}`} 
                                       data-test-id = {`menu-link-${item.path}`}

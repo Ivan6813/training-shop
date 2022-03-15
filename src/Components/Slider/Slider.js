@@ -1,7 +1,8 @@
 import React from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation} from 'swiper';
-import { mainSlider } from "../constants/constants";
+import { mainSlider } from "../../constants/constants";
+import { v4 as uuidv4 } from 'uuid';
 import "swiper/scss/navigation";
 import 'swiper/scss';
 import "./Slider.scss";
@@ -17,7 +18,7 @@ function Slider() {
         >
             {mainSlider.map(item => {
                 return (
-                    <SwiperSlide key = {item.id}>
+                    <SwiperSlide key = {uuidv4()}>
                         <img src = {item.img} className = "main-page-slider-img" alt = "img" />
                         <div className = "main-page-slider-text-block">
                             <div className = "main-page-slider-text">{item.text}</div>
