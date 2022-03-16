@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer-cart.scss";
 
-function FooterCart({order, setIsCartOpen, cartSection, setCartSection}) {
+function FooterCart({order, closeCart, cartSection, setCartSection}) {
 
     const totalPrice = order.reduce((acc, item) => {
         acc += item.price*item.quantity;
@@ -18,7 +18,7 @@ function FooterCart({order, setIsCartOpen, cartSection, setCartSection}) {
                 <button  onClick = {() => setCartSection(cartSection + 1)} className="further-btn">
                     {cartSection === 2 ? "Ready" : "Further"} 
                 </button>
-                <button onClick = {() => setIsCartOpen(false)} className="view-cart-btn">View Cart</button>
+                <button onClick = {() => closeCart()} className="view-cart-btn">View Cart</button>
             </div>
         </footer>
     );

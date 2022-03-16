@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { useSelector } from "react-redux";
+import classNames from "classnames";
 import HeaderCart from "./Header-cart/Header-cart";
 import NavBarCart from "./Nav-bar-cart/Nav-bar-cart";
 import CartItems from "./Cart-items/Cart-items";
@@ -10,19 +11,26 @@ import CartStatus from "./Cart-status/Cart-status";
 import "./Cart.scss";
 
 
-function Cart({setIsCartOpen}) {
+function Cart({isCartOpen, setIsCartOpen}) {
 
     const [cartSection, setCartSection] = useState(0);
     const {order} = useSelector(state => state);
 
-    function closeCart(event) {
-        if(event.target.className === "cart") setIsCartOpen(false);
+    function closeCart() {
+        setIsCartOpen(false);
+        setCartSection(0);
     }
 
     return (
-        <div onClick = {(event) => closeCart(event)} className = "cart">
-            <div className = "cart-elem" data-test-id = "cart">
-                <HeaderCart setIsCartOpen = {setIsCartOpen}/>
+        <div onClick = {() => closeCart()} 
+             className = {classNames("cart-block", {is_open_cart: isCartOpen})}
+        >
+            <div className = "cart-dark-bg"></div>
+            <div className = "cart" 
+                 onClick = {(e) => e.stopPropagation()}
+                 data-test-id = "cart"
+            >
+                <HeaderCart closeCart = {closeCart}/>
                 {(!!order.length && cartSection !== 3) ? (
                     <>
                         <NavBarCart cartSection = {cartSection}/>
@@ -30,14 +38,14 @@ function Cart({setIsCartOpen}) {
                         {cartSection === 1 && <DeliveryInfo/>}
                         {cartSection === 2 && <PaymentCart/>}
                         <FooterCart order = {order} 
-                                    setIsCartOpen = {setIsCartOpen}
+                                    closeCart = {closeCart}
                                     cartSection = {cartSection}
                                     setCartSection = {setCartSection}
                         />
                     </>
                 ):(
                     <CartStatus cartSection = {cartSection}
-                               setIsCartOpen = {setIsCartOpen}
+                                closeCart = {closeCart}
                     />
                 )}
             </div>

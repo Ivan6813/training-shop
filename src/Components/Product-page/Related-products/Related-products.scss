@@ -37,6 +37,8 @@
     height: 40px;
     border: none;
     cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .related-products-btn-prev {

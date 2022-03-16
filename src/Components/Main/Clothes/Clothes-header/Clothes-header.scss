@@ -71,6 +71,7 @@
     border: none;
     opacity: 0.6;
     background: transparent;
+    outline: none;
     @include lg-mobile {
         display: block;
     }

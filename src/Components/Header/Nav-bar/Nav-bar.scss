@@ -8,6 +8,10 @@
     padding: 15px 0;
 }
 
+.header-logo-link {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .header-logo {
     font-family: "Playfair Display SC";
     font-size: 24px;
@@ -30,6 +34,18 @@
     display: flex;
 }
 
+.nav-item {
+    margin-right: 32px;
+}
+
+.nav-item:last-child {
+    margin-right: 0;
+}
+
+.nav-link {
+    font-size: 14px;
+}
+
 .user-block-list {
     @include tablets {
         flex: 1 1 auto;
@@ -40,11 +56,6 @@
         justify-content: center;
         margin-right: 0;
     }
-}
-
-.nav-link {
-    font-size: 14px;
-    margin-right: 32px;
 }
 
 .user-block-item {
@@ -69,6 +80,8 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .user-block-search-btn {
@@ -94,6 +107,8 @@
 .user-block-item:last-child {
     position: relative;
     cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .user-block-cart-quantity {

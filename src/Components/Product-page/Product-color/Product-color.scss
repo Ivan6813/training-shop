@@ -26,6 +26,7 @@
     height: auto;
     margin-right: 16px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
     @include lg-mobile {
         margin-right: 10px;
     }

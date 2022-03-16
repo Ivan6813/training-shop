@@ -7,17 +7,22 @@
 @import "./Footer-cart/Footer-cart.scss";
 @import "../../mixin.scss";
 
-.cart {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
+.cart-block {
+    width: 100vw;
     height: 100vh;
-    background: rgba($color: #000000, $alpha: 0.7);
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
+    transform: translateX(388px);
+    z-index: -50;
+    visibility: hidden;
+    transition: transform ease 0.3s;
+}
+
+.is_open_cart {
+    visibility: visible;
     z-index: 10;
-    overflow: auto;
+    transform: translateX(0);
 }
 
 .cart-container {
@@ -28,15 +33,27 @@
     }
 }
 
-.cart-elem {
+.cart-dark-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: 0.7);
+    transform: translateX(-388px);
+    @include lg-mobile {
+        background-color: transparent;
+    }
+}
+
+.cart {
+    position: absolute;
+    top: 0;
+    right: 0;
     background: rgb(255, 255, 255);
     width: 388px;
     height: 100%;
     display: flex;
     flex-direction: column;
-    @include tablets {
-        min-height: 600px;
-    }
+    z-index: 15;
     @include lg-mobile {
         width: 100%;
         height: 100%;

@@ -11,8 +11,16 @@ function ProductHeader({product}) {
                 <div className = "wrapper-product-header">
                     <div className = "product-header-nav">
                         <Link className = "home-link" to = "/">Home</Link>
-                        <Link className = "products-page-link" to = {`/${product.category}`}>{product.category}</Link>
-                        <Link className = "current-product-link" to = {`/${product.category}/1`}>{product.name}</Link>
+                        <Link className = "products-page-link" 
+                              to = {`/${product.category}`}
+                        >
+                            {product.category}
+                        </Link>
+                        <Link className = "current-product-link"
+                              to = {`/${product.category}/${product.id}`}
+                        >
+                            {product.name}
+                        </Link>
                     </div>
                     <Link className = "share-link" to = "/">Share</Link>
                 </div>

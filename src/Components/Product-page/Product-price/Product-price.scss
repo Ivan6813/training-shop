@@ -37,6 +37,7 @@
     margin-right: 30px;
     cursor: pointer;
     outline: none;
+    -webkit-tap-highlight-color: transparent;
     @include lg-mobile {
         width: 120px;
         font-size: 10px;

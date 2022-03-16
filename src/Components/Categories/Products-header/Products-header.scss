@@ -22,6 +22,7 @@
     opacity: 0.6;
     display: inline-flex;
     align-items: center;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .home-link::after {
@@ -33,6 +34,7 @@
 .current-categories-link {
     font-weight: 500;
     font-size: 11px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .share-link {

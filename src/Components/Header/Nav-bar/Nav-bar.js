@@ -25,7 +25,7 @@ function NavBar({isCartOpen, setIsCartOpen}) {
         <div onClick = {(e) => {if(e.target.className !== "burger-menu") toggleMenuMode(false)}}>
             <div className = "container">
                 <div className = "nav-bar">
-                    <Link to = "/" data-test-id = "header-logo-link">
+                    <Link to = "/" className = "header-logo-link" data-test-id = "header-logo-link">
                         <h1 className = "header-logo">CleverShop</h1>
                     </Link>
                     <nav className = "nav-menu" data-test-id = "menu">

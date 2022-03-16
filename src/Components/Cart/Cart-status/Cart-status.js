@@ -1,7 +1,7 @@
 import React from "react";
 import "./Cart-status.scss";
 
-function CartStatus({cartSection, setIsCartOpen}) {
+function CartStatus({cartSection, closeCart}) {
 
     return (
         <div className = "cart-status-block">
@@ -17,7 +17,7 @@ function CartStatus({cartSection, setIsCartOpen}) {
             <div className = "cart-status-title">Sorry,{"\n"} your cart{"\n"} is empty</div>
             )}
             <div className = "cart-container">
-                <button onClick = {() => setIsCartOpen(false)} className = "back-to-shop-btn">back to shopping</button>
+                <button onClick = {() => closeCart()} className = "back-to-shop-btn">back to shopping</button>
             </div>
         </div>
     );

@@ -9,6 +9,7 @@
     height: 20px;
     cursor: pointer;
     outline: none;
+    -webkit-tap-highlight-color: transparent;
     @include tablets {
         display: block;
     }

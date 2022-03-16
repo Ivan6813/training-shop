@@ -43,6 +43,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
     @include lg-mobile {
         font-size: 9px;
     }
