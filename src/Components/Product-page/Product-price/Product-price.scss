@@ -23,7 +23,7 @@
 }
 
 .add-cart-btn {
-    width: 156px;
+    width: 180px;
     padding: 15px 0;
     background: #121212;
     border: 2px solid #121212;
@@ -39,7 +39,7 @@
     outline: none;
     -webkit-tap-highlight-color: transparent;
     @include lg-mobile {
-        width: 120px;
+        width: 150px;
         font-size: 10px;
         margin-right: 0;
     }

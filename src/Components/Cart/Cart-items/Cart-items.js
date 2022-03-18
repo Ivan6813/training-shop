@@ -1,5 +1,5 @@
 import React from "react";
-import { removeOrder, increaseQauntity, decreaseQauntity } from "../../../actions";
+import { removeOrder, increaseQauntity, decreaseQauntity } from "../../../redux/actions/index";
 import { useSelector, useDispatch } from "react-redux";
 import "./Cart-items.scss";
 

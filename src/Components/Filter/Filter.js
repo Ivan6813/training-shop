@@ -71,15 +71,14 @@ function Filter({clothes, category, selectColor,  setSelectColor, selectSize, se
                     {item.items.map(value => {
                         return (
                         <li className = "filter-item" key = {uuidv4()}>
-                            <label className = "filter-label">
+                            <label className = "filter-label custom-checkbox">
                                 <input  checked = {saveChecked(filterItems[index].title, value)}
                                         type = "checkbox"
-                                        className = "filter-input"
                                         value = {value}
                                         onChange = {(event) => writeSelectedFilter(filterItems[index].title, event)}
                                         data-test-id = {`filter-${item.title}-${value}`}
                                 />
-                                {(filterItems[index].title === "price") ? `$${value}` : value}
+                                <span>{(filterItems[index].title === "price") ? `$${value}` : value}</span>
                             </label>
                         </li>
                         )

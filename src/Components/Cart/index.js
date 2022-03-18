@@ -27,7 +27,7 @@ function Cart({isCartOpen, setIsCartOpen}) {
         >
             <div className = "cart-dark-bg"></div>
             <div className = "cart" 
-                 onClick = {(e) => e.stopPropagation()}
+                 onClick = {(event) => event.stopPropagation()}
                  data-test-id = "cart"
             >
                 <HeaderCart closeCart = {closeCart}/>

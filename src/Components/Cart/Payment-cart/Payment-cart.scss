@@ -1,5 +1,6 @@
 .payment-block {
-    overflow-y: auto;
+    overflow: overlay;
+    height: 100%;
 }
 
 .payment-methods {
@@ -28,6 +29,7 @@
     font-size: 14px;
     color: #000000;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .payment-icon {
@@ -43,4 +45,5 @@
     background-position-x: 90%;
     background-color: #f8f8f8;
     margin-left: 8px;
+    padding-right: 45px;
 }

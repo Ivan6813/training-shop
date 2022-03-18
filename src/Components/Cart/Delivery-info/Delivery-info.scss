@@ -1,5 +1,8 @@
+@import "../../../mixin.scss";
+
 .delivery-block {
-    overflow-y: auto;
+    overflow: overlay;
+    height: 100%;
 }
 
 .delivery-methods {
@@ -11,6 +14,9 @@
     font-size: 14px;
     color: #000000;
     margin-bottom: 16px;
+    @include sm-mobile {
+        font-size: 13px;
+    }
 }
 
 .delivery-methods-item {
@@ -27,6 +33,7 @@
     font-size: 14px;
     color: #000000;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .custom-radio > input {
@@ -106,18 +113,17 @@
 }
 
 .consent-form-label {
-    display: flex;
+    font-weight: 400;
+    font-size: 14px;
     user-select: none;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    @include sm-mobile {
+        font-size: 13px;
+    }
 }
 
 .consent-form-label > span {
-    font-weight: 400;
-    font-size: 14px;
-}
-
-.consent-form-input {
-    width: 18px;
-    height: 18px;
-    margin-right: 15px;
+    display: flex;
+    align-items: flex-start;
 }

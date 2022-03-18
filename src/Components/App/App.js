@@ -24,7 +24,7 @@ function App() {
         <Route path = "*" element = {<ErrorPage/>}/>
       </Routes>
       <Footer/>
-     {isCartOpen && <Cart isCartOpen = {isCartOpen} setIsCartOpen = {setIsCartOpen}/>}
+      <Cart isCartOpen = {isCartOpen} setIsCartOpen = {setIsCartOpen}/>
     </div>
   );
 }

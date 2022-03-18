@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import {HashRouter} from "react-router-dom";
 import App from "./Components/App/App";
 import ScrollToTop from "./Components/Scroll-to-top/Scroll-to-top";
-import store from "./Store/index";
+import store from "./redux/Store/index";
 
 
 ReactDOM.render(

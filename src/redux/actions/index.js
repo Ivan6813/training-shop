@@ -1,4 +1,4 @@
-import { ACTION_TYPES } from "../constants/action-types";
+import { ACTION_TYPES } from "../../constants/action-types";
 
 export function addOrder(payload) {
     return { type: ACTION_TYPES.ADD_ORDER , payload};

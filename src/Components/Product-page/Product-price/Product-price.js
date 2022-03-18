@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { addOrder, removeOrder } from "../../../actions";
+import { addOrder, removeOrder } from "../../../redux/actions/index";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from 'uuid';
 import product_price_heart from "../../../img/product-price-heart.svg";
@@ -71,7 +71,7 @@ function ProductPrice({product, selectedSize, selectedItemImg}) {
                     className = "add-cart-btn"
                     data-test-id = "add-cart-button"
             >
-                {availabilityInCart ? "Remove to card" : "Add to card"}
+                {availabilityInCart ? "Remove from cart" : "Add to cart"}
             </button>
             <img className = "product-price-heart" src = {product_price_heart} alt = "icon"/>
             <img className = "product-price-scales" src = {product_price_scales} alt = "icon"/>
