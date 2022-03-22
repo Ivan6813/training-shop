@@ -19,7 +19,7 @@ function NavBar({isCartOpen, setIsCartOpen}) {
         }
     });
 
-    const order = useSelector(state => state.order);
+    const {order}= useSelector(state => state.order);
 
     return (
         <div onClick = {(e) => {if(e.target.className !== "burger-menu") toggleMenuMode(false)}}>

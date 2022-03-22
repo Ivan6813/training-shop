@@ -9,7 +9,7 @@ function Header({isCartOpen, setIsCartOpen}) {
         <header className = "header" data-test-id = "header">
             <TopBar/>
             <NavBar isCartOpen = {isCartOpen} setIsCartOpen = {setIsCartOpen}/>
-        </header>
+        </header>  
     );
 }
 

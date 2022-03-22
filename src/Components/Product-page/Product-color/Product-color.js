@@ -5,6 +5,7 @@ import "./Product-color.scss";
 function ProductColor({images, selectedColor, setSelectedColor, setSelectedItemImg}) {
 
     const uniqueColors = [];
+    images = images ?? [];
     const uniqueImages = images.filter(item => findUniqueImg(item));
 
     function findUniqueImg(item) {

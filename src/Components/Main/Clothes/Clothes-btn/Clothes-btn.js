@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Clothes-btn.scss";
 
-function BtnBlock({productType}) {
+function BtnBlock({category}) {
 
     return (
         <div className = "container">
-            <Link to = {`/${productType}`} className = "clothes-btn">See all</Link>
+            <Link to = {`/${category}`} className = "clothes-btn">See all</Link>
         </div>
     );
 }

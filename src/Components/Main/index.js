@@ -13,8 +13,8 @@ function Main() {
         <main className = "main">
             <MainSlider/>
             <Benefits/>
-            <Clothes productType = {"women"}/>
-            <Clothes productType = {"men"}/>
+            <Clothes category = {"women"}/>
+            <Clothes category = {"men"}/>
             <Info/>
             <Subscribe/>
             <Blog/>

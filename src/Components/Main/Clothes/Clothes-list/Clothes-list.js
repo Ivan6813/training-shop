@@ -3,7 +3,7 @@ import Rating from "../../../Rating/Rating";
 import { Link } from "react-router-dom";
 import "./Clothes-list.scss";
 
-function ClothesList({clothes, productType}) {
+function ClothesList({clothes}) {
 
     function discountCalc(price, discount) {
         let percent = 100 + parseInt(discount);
@@ -17,8 +17,8 @@ function ClothesList({clothes, productType}) {
                     return ( 
                     <li className = "clothes-cards-item" key = {item.id}>
                         <Link className = "clothes-card" 
-                              to = {`/${productType}/${item.id}`}
-                              data-test-id = {`clothes-card-${productType}`}
+                              to = {`/${item.category}/${item.id}`}
+                              data-test-id = {`clothes-card-${item.category}`}
                               >
                             <img className = "clothes-card-img" 
                                  src= {`https://training.cleverland.by/shop${item.images[0].url}`} 

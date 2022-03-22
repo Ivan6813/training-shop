@@ -1,18 +1,26 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation} from 'swiper';
 import { Link } from "react-router-dom";
 import Rating from "../../Rating/Rating";
 import classNames from "classnames";
-import { PRODUCTS } from "../../../data/data";
 import "./Related-products.scss";
 import "swiper/scss/navigation";
 import 'swiper/scss';
+import { getProductsCategory } from "../../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 function RelatedProducts({productType}) {
 
     const [progressSlide, setProgressSlide] = useState(0);
-    const relatedProducts = (productType === "women") ? PRODUCTS.women : PRODUCTS.men;
+    const {category}  = useParams(); 
+    const dispatch = useDispatch();
+    const relatedProducts = useSelector(state => state.products.productsCategory);
+
+    useEffect(() => {
+        dispatch(getProductsCategory(category));
+    },[category]); // eslint-disable-line react-hooks/exhaustive-deps
 
     function discountCalc(price, discount) {
         let percent = 100 + parseInt(discount);

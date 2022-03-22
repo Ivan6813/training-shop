@@ -28,7 +28,7 @@ function ProductHeader({product}) {
                 <div className = "product-info">
                     <div className = "rating-info">
                         <Rating rating = {product.rating}/>
-                        <div className = "number-reviews">{product.reviews.length} Reviews</div>
+                        <div className = "number-reviews">{product.reviews?.length} Reviews</div>
                     </div>
                     <div className = "availability-info">
                         <div className = "sku">SKU: <b>777</b></div>

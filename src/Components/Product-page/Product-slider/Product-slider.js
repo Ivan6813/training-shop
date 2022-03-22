@@ -13,7 +13,7 @@ function ProductSlider({images}) {
     const [activeSlide, setActiveSlide] = useState(0);
     const [mainSlider, setMainSlider] = useState(null);
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    const length = images.length - 1;
+    const length = images ? images.length - 1 : 0;
 
     return (
         <div className = "product-slider-block" data-test-id = "product-slider">
@@ -58,7 +58,7 @@ function ProductSlider({images}) {
                         }}
                         className = "product-slider-small"
                     >
-                    {images.map((item, i) => {
+                    {images && images.map((item, i) => {
                         return (
                             <SwiperSlide key = {item.id}>
                                 <img className = {classNames("slider-small-img", {active: activeSlide !== i})} 
@@ -80,7 +80,7 @@ function ProductSlider({images}) {
                 onAfterInit = {(swiper) => setMainSlider(swiper)}
                 className = "product-slider"
             >
-            {images.map(item => {
+            {images && images.map(item => {
                 return (
                     <SwiperSlide key = {item.id}>
                         <img className = "product-slider-img" 

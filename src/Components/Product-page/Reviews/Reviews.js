@@ -10,8 +10,8 @@ function Reviews({product}) {
             <div className = "reviews-title">Reviews</div>
             <div className = "rating-product-block">
                 <div className = "rating-info">
-                    <Rating rating = {product.rating}/>
-                    <div className = "number-reviews">{product.reviews.length} Reviews</div>
+                    <Rating rating =  {product.rating}/>
+                    <div className = "number-reviews">{product.reviews?.length} Reviews</div>
                 </div>
                 <div className="add-review">
                     <img  className="add-review-icon" src = {add_review_icon} alt = "icon"/>
@@ -20,7 +20,7 @@ function Reviews({product}) {
             </div>
             <div className = "customer-reviews">
                 <ul className = "customer-reviews-list">
-                    {product.reviews.map(item => {
+                    {product.reviews && product.reviews.map(item => {
                         return (
                         <li key = {item.id} className = "customer-reviews-item">
                             <div className = "customer-info-block">

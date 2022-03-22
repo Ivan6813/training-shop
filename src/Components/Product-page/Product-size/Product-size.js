@@ -8,9 +8,9 @@ function ProductSize({sizes, selectedSize, setSelectedSize}) {
 
     return (
         <div className = "product-size-block">
-            <div className = "product-size">Size: <span>{sizes[selectedSize]}</span></div>
+            <div className = "product-size">Size: <span>{sizes && sizes[selectedSize]}</span></div>
             <div className = "product-select-size">
-                {sizes.map((item, i) => {
+                {sizes && sizes.map((item, i) => {
                     return (
                         <button onClick = {() => setSelectedSize(i)} 
                             className = {classNames("product-change-size", {current_size: selectedSize === i})}

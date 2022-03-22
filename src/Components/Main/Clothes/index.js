@@ -1,21 +1,21 @@
 import React,{useState} from "react";
+import { useSelector } from "react-redux";
 import ClothesHeader from "./Clothes-header/Clothes-header";
 import ClothesList from "./Clothes-list/Clothes-list";
 import ClothesBtn from "./Clothes-btn/Clothes-btn";
-import { PRODUCTS } from "../../../data/data";
 import "./Clothes.scss";
 
-function Clothes({productType}) {
+function Clothes({category}) {
 
     const [particulars, setParticulars] = useState("isNewArrivals");
-    const clothes = (productType === "women") ? PRODUCTS.women : PRODUCTS.men;
-    const sortClothes = clothes.filter(item => item.particulars[particulars]);
+    const products = useSelector(state => state.products.products[category] || []);
+    const sortClothes = products.filter(item => item.particulars[particulars]);
 
     return (
-        <div className = "clothes" data-test-id = {`clothes-${productType}`}>
-            <ClothesHeader productType = {productType} setParticulars = {setParticulars}/>
-            <ClothesList clothes = {sortClothes} productType = {productType}/>
-            <ClothesBtn productType = {productType}/>
+        <div className = "clothes" data-test-id = {`clothes-${category}`}>
+            <ClothesHeader category = {category} setParticulars = {setParticulars}/>
+            <ClothesList clothes = {sortClothes}/>
+            <ClothesBtn category = {category}/>
         </div>
     );
 }

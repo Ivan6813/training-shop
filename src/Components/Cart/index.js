@@ -14,7 +14,7 @@ import "./Cart.scss";
 function Cart({isCartOpen, setIsCartOpen}) {
 
     const [cartSection, setCartSection] = useState(0);
-    const {order} = useSelector(state => state);
+    const {order} = useSelector(state => state.order);
 
     function closeCart() {
         setIsCartOpen(false);

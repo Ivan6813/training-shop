@@ -10,7 +10,7 @@ import "./Product-price.scss";
 function ProductPrice({product, selectedSize, selectedItemImg}) {
 
     const [availabilityInCart, setAvailabilityInCart] = useState(false);
-    const order = useSelector(state => state.order);
+    const {order} = useSelector(state => state.order);
     const dispatch = useDispatch();
 
     function addCartItem() {
@@ -30,7 +30,7 @@ function ProductPrice({product, selectedSize, selectedItemImg}) {
         order.forEach(item => {
             if(item.name === product.name 
                &&
-               item.color === selectedItemImg?.color
+               item.color === selectedItemImg.color
                &&
                item.size ===product.sizes[selectedSize]
                &&
@@ -55,7 +55,7 @@ function ProductPrice({product, selectedSize, selectedItemImg}) {
             return (
                 item.name === product.name
                 &&
-                item.color ===  selectedItemImg?.color
+                item.color ===  selectedItemImg.color
                 &&
                 item.size === product.sizes[selectedSize] 
                 &&

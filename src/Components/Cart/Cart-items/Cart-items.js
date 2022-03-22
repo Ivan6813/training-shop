@@ -5,7 +5,7 @@ import "./Cart-items.scss";
 
 function CartItems() {
 
-    const {order} = useSelector(state => state);
+    const {order} = useSelector(state => state.order);
     const dispatch = useDispatch();
 
     return (

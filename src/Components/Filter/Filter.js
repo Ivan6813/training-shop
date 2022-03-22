@@ -2,7 +2,18 @@ import React from "react";
 import { v4 as uuidv4 } from 'uuid';
 import "./Filter.scss";
 
-function Filter({clothes, category, selectColor,  setSelectColor, selectSize, setSelectSize, selectBrand, setSelectBrand, selectPrice, setSelectPrice}) {
+function Filter(
+    {clothes, 
+     category, 
+     selectColor,  
+     setSelectColor, 
+     selectSize, 
+     setSelectSize, 
+     selectBrand, 
+     setSelectBrand, 
+     selectPrice, 
+     setSelectPrice
+    }) {
 
     const allColors =  clothes.map(item => item.images.map(item => item.color));
     const allSizes = clothes.map(item => item.sizes.map(item => item));
