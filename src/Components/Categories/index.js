@@ -11,7 +11,7 @@ function Categories() {
 
     const [filteredClothes, setFilteredClothes] = useState([]);
     const {category}  = useParams();
-    const clothes = useSelector(state => state.products.products[category] || []);
+    const clothes = useSelector(state => state.products.products[category]);
     
     useEffect(() => {
         if(clothes.length !== 0) {

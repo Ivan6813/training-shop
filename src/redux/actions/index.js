@@ -16,28 +16,12 @@ export function decreaseQauntity(payload) {
     return { type: ACTION_TYPES.DECREASE_QUANTITY , payload};
 };
 
-export function getAllProducts() {
+export function getProducts() {
     return { type: ACTION_TYPES.GET_PRODUCTS};
 };
 
-export function getOneProduct(id) {
-    return { type: ACTION_TYPES.GET_PRODUCT, payload: {id}};
-};
-
-export function getProductsCategory(category) {
-    return { type: ACTION_TYPES.GET_PRODUCTS_CATEGORY,  payload: {category}};
-};
-
-export function setAllProducts(payload) {
+export function setProducts(payload) {
     return { type: ACTION_TYPES.SET_PRODUCTS, payload};
-};
-
-export function setProduct(payload) {
-    return { type: ACTION_TYPES.SET_PRODUCT, payload};
-};
-
-export function setProductsCategory(payload) {
-    return { type: ACTION_TYPES.SET_PRODUCTS_CATEGORY, payload};
 };
 
 export function errorRequest() {

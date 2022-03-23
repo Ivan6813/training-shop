@@ -8,7 +8,7 @@ import "./Clothes.scss";
 function Clothes({category}) {
 
     const [particulars, setParticulars] = useState("isNewArrivals");
-    const products = useSelector(state => state.products.products[category] || []);
+    const products = useSelector(state => state.products.products[category]);
     const sortClothes = products.filter(item => item.particulars[particulars]);
 
     return (

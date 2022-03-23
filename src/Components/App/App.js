@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Routes, Route } from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {getAllProducts} from "../../redux/actions/index";
+import {getProducts} from "../../redux/actions/index";
 import Header from "../Header";
 import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
@@ -20,7 +20,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getAllProducts());
+    dispatch(getProducts());
   },[]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
