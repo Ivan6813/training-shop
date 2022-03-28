@@ -27,3 +27,15 @@ export function setProducts(payload) {
 export function errorRequest() {
     return { type: ACTION_TYPES.ERROR_REQUEST};
 };
+
+export function sendEmail(payload) {
+    return { type: ACTION_TYPES.SEND_EMAIL, payload};
+};
+
+export function sendEmailResponse(payload) {
+    return { type: ACTION_TYPES.SEND_EMAIL_RESPONSE, payload};
+};
+
+export function errorSendEmail(payload) {
+    return { type: ACTION_TYPES.ERROR_SEND_EMAIL, payload};
+};

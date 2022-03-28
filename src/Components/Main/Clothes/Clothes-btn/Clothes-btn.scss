@@ -8,9 +8,22 @@
     text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    opacity: 0.8;
+    color: rgba($color: #121212, $alpha: 0.8);
+    transition: all ease 0.3s;
     margin-top: 20px;
     cursor: pointer;
     outline: none;
     -webkit-tap-highlight-color: transparent;
+}
+
+.clothes-btn:hover {
+    background: #e6e6e6;
+    color: #121212;
+    border-color: #e6e6e6;
+}
+
+.clothes-btn:active {
+    background: #9c9c9c;
+    border-color: #9c9c9c;
+    color: #ffffff;
 }

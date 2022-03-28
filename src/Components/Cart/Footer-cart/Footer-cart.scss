@@ -31,6 +31,7 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     opacity: 0.9;
+    transition: all ease 0.3s;
     cursor: pointer;
     outline: none;
     -webkit-tap-highlight-color: transparent;
@@ -46,4 +47,18 @@
 .view-cart-btn {
     background: #f8f8f8;
     border: none;
+}
+
+.further-btn:hover,
+.view-cart-btn:hover {
+    background: #e6e6e6;
+    color: #121212;
+    border-color: #e6e6e6;
+}
+
+.further-btn:active,
+.view-cart-btn:active {
+    background: #9c9c9c;
+    border-color: #9c9c9c;
+    color: #ffffff;
 }

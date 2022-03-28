@@ -48,13 +48,18 @@
 .footer-nav-link,
 .footer-info-text {
     font-size: 12px;
-    opacity: 0.8;
+    color: rgba($color: #121212, $alpha: 0.8);
     @include tablets {
         font-size: 10px;
     }
     @include sm-mobile {
         font-size: 8px;
     }
+}
+
+.footer-nav-link:hover {
+    transition: all ease 0.3s;
+    color: rgba($color: #121212, $alpha: 1);
 }
 
 .footer-nav-item {

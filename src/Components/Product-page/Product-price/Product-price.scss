@@ -35,6 +35,7 @@
     color: #ffffff;
     opacity: 0.9;
     margin-right: 30px;
+    transition: all ease 0.3s;
     cursor: pointer;
     outline: none;
     -webkit-tap-highlight-color: transparent;
@@ -43,6 +44,18 @@
         font-size: 10px;
         margin-right: 0;
     }
+}
+
+.add-cart-btn:hover {
+    background: #e6e6e6;
+    color: #121212;
+    border-color: #e6e6e6;
+}
+
+.add-cart-btn:active {
+    background: #9c9c9c;
+    border-color: #9c9c9c;
+    color: #ffffff;
 }
 
 .product-price-heart {

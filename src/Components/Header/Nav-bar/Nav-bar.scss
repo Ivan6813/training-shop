@@ -46,6 +46,11 @@
     font-size: 14px;
 }
 
+.nav-link:hover {
+    color: #9c9c9c;
+    transition: all ease 0.3s;
+}
+
 .user-block-list {
     @include tablets {
         flex: 1 1 auto;
@@ -82,6 +87,13 @@
     cursor: pointer;
     outline: none;
     -webkit-tap-highlight-color: transparent;
+}
+
+.user-block-search-btn:hover,
+.user-block-site-btn:hover,
+.user-block-customer-btn:hover,
+.user-block-cart-btn:hover {
+    transform: scale(1.2);
 }
 
 .user-block-search-btn {

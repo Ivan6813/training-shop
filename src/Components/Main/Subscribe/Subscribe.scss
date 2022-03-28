@@ -1,6 +1,6 @@
 @import "../../../mixin.scss";
 
-.wrapper-subcribe-block {
+.wrapper-subscribe-block {
     background: linear-gradient(180deg, #f3f2f2 0%, #dcdbdb 100%);
     padding: 60px 0;
 
@@ -11,7 +11,7 @@
     }
 }
 
-.subcribe-block {
+.subscribe-block {
     position: relative;
     background: #ffffff;
     width: 532px;
@@ -23,7 +23,7 @@
     }
 }
 
-.subcribe-block-title {
+.subscribe-block-title {
     font-weight: 600;
     font-size: 12px;
     letter-spacing: 0.06em;
@@ -37,7 +37,7 @@
     }
 }
 
-.subcribe-block-subtitle {
+.subscribe-block-subtitle {
     font-weight: 600;
     font-size: 26px;
     line-height: 36px;
@@ -52,12 +52,18 @@
     }
 }
 
-.subcribe-block-subtitle span {
+.subscribe-block-subtitle span {
     color: #e91e63;
 }
 
-.subcribe-form-input {
+.main-subscribe-form {
+    position: relative;
+}
+
+.main-subscribe-input {
     text-align: center;
+    font-weight: 500;
+    font-size: 14px;
     width: 100%;
     background: #f8f8f8;
     border: none;
@@ -65,41 +71,83 @@
     margin-bottom: 24px;
     @include lg-mobile {
         padding: 15px 0 15px 0;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
+    }
+    &::placeholder {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+        color: rgba($color: #121212, $alpha: 0.4);
+        @include lg-mobile {
+            font-size: 10px;
+        }
+    }
+    &:hover {
+        &::placeholder {
+            transition: all ease 0.3s;
+            color: rgba($color: #121212, $alpha: 0.6);
+        }
     }
 }
 
-.subcribe-form-input::placeholder {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 18px;
-    opacity: 0.4;
-    @include lg-mobile {
-        font-size: 10px;
-    }
-}
-
-.subcribe-form-btn {
+.main-subscribe-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    padding: 23px 0;
+    height: 65px;
     background: #121212;
     border: 2px solid #121212;
-    box-sizing: border-box;
-    text-align: center;
     font-weight: 500;
     font-size: 16px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #ffffff;
-    opacity: 0.9;
+    color: rgba($color: #ffffff, $alpha: 0.9);
+    transition: all ease 0.3s;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
     @include lg-mobile {
         font-size: 10px;
-        padding: 15px 0;
+        height: 50px;
         margin-bottom: 15px;
+    }
+    &:hover {
+        background: #e6e6e6;
+        color: #121212;
+        border-color: #e6e6e6;
+    }
+
+    &:active {
+        background: #9c9c9c;
+        border-color: #9c9c9c;
+        color: #ffffff;
+    }
+    &:disabled {
+        opacity: 0.35;
+    }
+    &:disabled:hover {
+        background: #121212;
+        border: 2px solid #121212;
+        color: rgba($color: #ffffff, $alpha: 0.9);
     }
 }
 
-.subcribe-block-women {
+.main_response_email {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-weight: 500;
+    font-size: 11px;
+    color: #d61313;
+}
+
+.success_email {
+    color: green;
+}
+
+.subscribe-block-women {
     position: absolute;
     top: -21px;
     left: 0;
@@ -109,7 +157,7 @@
     }
 }
 
-.subcribe-block-men {
+.subscribe-block-men {
     position: absolute;
     top: -10px;
     right: 0;

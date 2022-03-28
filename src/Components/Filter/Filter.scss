@@ -80,10 +80,15 @@
     min-height: 18px;
     border: 1px solid #e6e6e6;
     margin-right: 5px;
+    transition: border-color ease 0.3s;
     @include tablets {
         width: 15px;
         height: 15px;
     }
+}
+
+.custom-checkbox > input:not(:disabled):not(:checked) + span:hover::before {
+    border-color: #121212;
 }
 
 .custom-checkbox > input:checked + span::before {

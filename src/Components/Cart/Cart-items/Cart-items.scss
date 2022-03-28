@@ -55,6 +55,7 @@
     width: 18px;
     height: 18px;
     border: none;
+    transition: all ease 0.3s;
     cursor: pointer;
     outline: none;
     -webkit-tap-highlight-color: transparent;
@@ -65,6 +66,16 @@
 
 .cart-item-btn-plus {
     background: url(../../../img/cart-plus-btn.svg) no-repeat center;
+}
+
+.cart-item-btn-minus:hover,
+.cart-item-btn-plus:hover {
+    background-color: #e6e6e6;
+}
+
+.cart-item-btn-minus:active,
+.cart-item-btn-plus:active {
+    background-color: #9c9c9c;
 }
 
 .cart-item-count {

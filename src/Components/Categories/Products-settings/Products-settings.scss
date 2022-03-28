@@ -32,6 +32,10 @@
     }
 }
 
+.filter-btn:hover {
+    color: rgba($color: #121212, $alpha: 1);
+}
+
 .filter-btn.filter_open {
     background: url(../../../img/filter-open-btn.svg) no-repeat left;
 }

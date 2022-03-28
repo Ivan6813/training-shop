@@ -23,6 +23,11 @@
     }
 }
 
+.category-clothes:hover {
+    color: #9c9c9c;
+    transition: all ease 0.3s;
+}
+
 .burger-menu-clothes {
     display: none;
     width: 30px;
@@ -62,14 +67,19 @@
 }
 
 .clothes-sort-btn.activ_btn {
-    opacity: 0.6;
+    color: rgba($color: #121212, $alpha: 0.6);
+}
+
+.clothes-sort-btn:hover {
+    color: rgba($color: #121212, $alpha: 1);
+    transition: all ease 0.3s;
 }
 
 .header-clothes-sort {
     font-size: 12px;
     display: none;
     border: none;
-    opacity: 0.6;
+    color: rgba($color: #121212, $alpha: 0.6);
     background: transparent;
     outline: none;
     @include lg-mobile {

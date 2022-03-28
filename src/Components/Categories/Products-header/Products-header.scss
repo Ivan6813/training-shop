@@ -19,14 +19,20 @@
 .home-link {
     font-weight: 500;
     font-size: 11px;
-    opacity: 0.6;
+    color: rgba($color: #121212, $alpha: 0.6);
     display: inline-flex;
     align-items: center;
     -webkit-tap-highlight-color: transparent;
 }
 
+.home-link:hover {
+    transition: all ease 0.3s;
+    color: rgba($color: #121212, $alpha: 1);
+}
+
 .home-link::after {
     content: "►";
+    color: rgba($color: #121212, $alpha: 0.6);
     display: block;
     margin: 0 6px;
 }
@@ -43,6 +49,11 @@
     opacity: 0.6;
     display: flex;
     align-items: center;
+}
+
+.share-link:hover {
+    transition: all ease 0.3s;
+    opacity: 1;
 }
 
 .share-link::before {

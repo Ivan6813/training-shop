@@ -1,0 +1,164 @@
+@import "../../mixin.scss";
+
+.main-subscribe-form,
+.footer-subscribe-form {
+    position: relative;
+}
+
+.footer-subscribe-form {
+    display: flex;
+    @include lg-mobile {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.main-subscribe-input {
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    width: 100%;
+    background: #f8f8f8;
+    border: none;
+    padding: 22px 0 24px 0;
+    margin-bottom: 24px;
+    @include lg-mobile {
+        padding: 15px 0 15px 0;
+        margin-bottom: 20px;
+    }
+    &::placeholder {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+        color: rgba($color: #121212, $alpha: 0.4);
+        @include lg-mobile {
+            font-size: 10px;
+        }
+    }
+    &:hover {
+        &::placeholder {
+            transition: all ease 0.3s;
+            color: rgba($color: #121212, $alpha: 0.6);
+        }
+    }
+}
+
+.footer-subscribe-input {
+    font-weight: 500;
+    font-size: 14px;
+    width: 400px;
+    height: 32px;
+    background: rgba($color: #ffffff, $alpha: 0.2);
+    color: #ffffff;
+    border: none;
+    padding: 0 16px;
+    margin-right: 12px;
+    @include tablets {
+        width: 100%;
+    }
+    @include lg-mobile {
+        margin: 0 12px 0 0;
+    }
+    &::placeholder {
+        font-size: 13px;
+        color: rgba($color: #ffffff, $alpha: 0.4);
+        @include lg-mobile {
+            font-size: 10px;
+        }
+    }
+    &:hover {
+        &::placeholder {
+            transition: all ease 0.3s;
+            color: rgba($color: #ffffff, $alpha: 0.6);
+        }
+    }
+}
+
+.main-subscribe-button,
+.footer-subscribe-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba($color: #ffffff, $alpha: 0.9);
+    transition: all ease 0.3s;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    &:hover {
+        background: #e6e6e6;
+        color: #121212;
+        border-color: #e6e6e6;
+    }
+    &:active {
+        background: #9c9c9c;
+        border-color: #9c9c9c;
+        color: #ffffff;
+    }
+    &:disabled {
+        opacity: 0.35;
+    }
+}
+
+.main-subscribe-button {
+    width: 100%;
+    height: 65px;
+    background: #121212;
+    border: 2px solid #121212;
+    font-weight: 500;
+    font-size: 16px;
+    @include lg-mobile {
+        font-size: 10px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+    &:disabled:hover {
+        background: #121212;
+        border: 2px solid #121212;
+        color: rgba($color: #ffffff, $alpha: 0.9);
+    }
+}
+
+.footer-subscribe-button {
+    width: 108px;
+    height: 32px;
+    background-color: transparent;
+    border: 1px solid #e6e6e6;
+    font-weight: 600;
+    font-size: 12px;
+    @include lg-mobile {
+        width: 80px;
+        font-size: 10px;
+    }
+    &:disabled:hover {
+        background-color: transparent;
+        color: rgba($color: #ffffff, $alpha: 0.9);
+    }
+}
+
+.main_response_email,
+.footer_response_email {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-weight: 500;
+    font-size: 11px;
+    color: #d61313;
+}
+
+.main_response_email {
+    transform: translateY(-50%);
+}
+
+.footer_response_email {
+    transform: translate(-110%, -50%);
+    @include lg-mobile {
+        bottom: 0;
+        transform: translate(0, 120%);
+    }
+}
+
+.success_email {
+    color: green;
+}
