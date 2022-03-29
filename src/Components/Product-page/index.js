@@ -13,6 +13,7 @@ import AdditinalInfo from "./Additional-info/Additional-info";
 import Reviews from "./Reviews/Reviews";
 import RelatedProducts from "./Related-products/Related-products";
 import "./Product-page.scss";
+import ReviewModalWindow from "./Reviw-modal-window/Review-modal-window";
 
 function ProductPage() {
 
@@ -20,6 +21,7 @@ function ProductPage() {
     const [selectedColor, setSelectedColor] = useState(0);
     const [selectedSize, setSelectedSize] = useState(0);
     const [selectedItemImg, setSelectedItemImg] = useState({});
+    const {isReviewsModalWindowOpen} = useSelector(state => state.review);
 
     const [product] = useSelector(state => {
         if(state.products.products[category].length !== 0) {
@@ -64,6 +66,7 @@ function ProductPage() {
                 </div>
             </div>
             <RelatedProducts productType = {category}/>
+            {isReviewsModalWindowOpen && <ReviewModalWindow id = {product.id}/>}
         </div>
     );
 }

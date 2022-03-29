@@ -39,3 +39,23 @@ export function sendEmailResponse(payload) {
 export function errorSendEmail(payload) {
     return { type: ACTION_TYPES.ERROR_SEND_EMAIL, payload};
 };
+
+export function openReviewWindow() {
+    return { type: ACTION_TYPES.OPEN_REVIEW_WINDOW};
+};
+
+export function closeReviewWindow() {
+    return { type: ACTION_TYPES.CLOSE_REVIEW_WINDOW};
+};
+
+export function sendReview(payload) {
+    return { type: ACTION_TYPES.SEND_REVIEW, payload};
+};
+
+export function sendReviewResponse(payload) {
+    return { type: ACTION_TYPES.SEND_REVIEW_SUCCESS, payload};
+};
+
+export function errorSendReview() {
+    return { type: ACTION_TYPES.SEND_REVIEW_ERROR};
+};

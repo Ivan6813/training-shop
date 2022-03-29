@@ -26,21 +26,22 @@
     margin-bottom: 30px;
 }
 
-.add-review {
-    display: flex;
-    align-items: center;
-}
-
-.add-review-icon {
-    margin-right: 10px;
-}
-
-.add-review-text {
+.add-review-button {
+    background: url(../../../img/add-review-icon.svg) no-repeat left;
+    text-align: right;
+    width: 125px;
+    height: 32px;
+    border: none;
     font-weight: 500;
     font-size: 12px;
-    opacity: 0.6;
-    @include lg-mobile {
-        font-size: 10px;
+    color: rgba($color: #121212, $alpha: 0.6);
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all ease 0.1s;
+    &:hover {
+        color: rgba($color: #121212, $alpha: 1);
     }
 }
 
@@ -71,6 +72,7 @@
     font-size: 14px;
     line-height: 22px;
     opacity: 0.8;
+    word-break: break-all;
     @include lg-mobile {
         font-size: 10px;
     }

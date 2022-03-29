@@ -1,9 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { openReviewWindow } from "../../../redux/actions";
 import Rating from "../../Rating/Rating";
-import add_review_icon from "../../../img/add-review-icon.svg";
 import "./Reviews.scss";
 
 function Reviews({product}) {
+
+    const dispatch = useDispatch();
 
     return (
         <div className = "reviews-block">
@@ -13,10 +16,12 @@ function Reviews({product}) {
                     <Rating rating =  {product.rating}/>
                     <div className = "number-reviews">{product.reviews?.length} Reviews</div>
                 </div>
-                <div className="add-review">
-                    <img  className="add-review-icon" src = {add_review_icon} alt = "icon"/>
-                    <div className="add-review-text">Write a review</div>
-                </div>
+                <button onClick = {() => dispatch(openReviewWindow())}
+                        className = "add-review-button"
+                        data-test-id = "review-button"
+                >
+                    Write a review
+                </button>
             </div>
             <div className = "customer-reviews">
                 <ul className = "customer-reviews-list">

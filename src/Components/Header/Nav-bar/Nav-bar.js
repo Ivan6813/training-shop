@@ -10,9 +10,10 @@ import "./Nav-bar.scss";
 function NavBar({isCartOpen, setIsCartOpen}) {
 
     const [isMenuOpen, toggleMenuMode] = useState(false);
+    const {isReviewsModalWindowOpen} = useSelector(state => state.review);
 
     useEffect(() => {
-        if(isMenuOpen || isCartOpen) {
+        if(isMenuOpen || isCartOpen || isReviewsModalWindowOpen) {
             document.body.classList.add('lock');
         }else {
             document.body.classList.remove('lock');
