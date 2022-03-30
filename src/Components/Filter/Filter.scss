@@ -41,17 +41,13 @@
     }
 }
 
-.filter-item {
+.filter-item:not(:last-child) {
     margin-bottom: 16px;
-}
-
-.filter-item:last-child {
-    margin-bottom: 0;
 }
 
 .filter-label {
     font-size: 13px;
-    opacity: 0.8;
+    color: rgba($color: #121212, $alpha: 0.8);
     display: flex;
     align-items: center;
     cursor: pointer;

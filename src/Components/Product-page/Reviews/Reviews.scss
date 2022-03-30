@@ -45,15 +45,11 @@
     }
 }
 
-.customer-reviews-item {
+.customer-reviews-item:not(:last-child) {
     margin-bottom: 48px;
     @include lg-mobile {
         margin-bottom: 30px;
     }
-}
-
-.customer-reviews-item:last-child {
-    margin-bottom: 0;
 }
 
 .customer-info-block {
@@ -71,7 +67,7 @@
 .customer-text {
     font-size: 14px;
     line-height: 22px;
-    opacity: 0.8;
+    color: rgba($color: #121212, $alpha: 0.8);
     word-break: break-all;
     @include lg-mobile {
         font-size: 10px;

@@ -12,8 +12,9 @@ import ProductDescription from "./Product-description/Product-description";
 import AdditinalInfo from "./Additional-info/Additional-info";
 import Reviews from "./Reviews/Reviews";
 import RelatedProducts from "./Related-products/Related-products";
+import ReviewModalWindow from "./Reviw-modal-window/index";
 import "./Product-page.scss";
-import ReviewModalWindow from "./Reviw-modal-window/Review-modal-window";
+
 
 function ProductPage() {
 

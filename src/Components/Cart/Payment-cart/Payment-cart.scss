@@ -17,10 +17,9 @@
 .payment-methods-item {
     padding: 12px 0;
     border-top: 2px solid #f8f8f8;
-}
-
-.payment-methods-item:last-child {
-    border-bottom: 2px solid #f8f8f8;
+    &:last-child {
+        border-bottom: 2px solid #f8f8f8;
+    }
 }
 
 .payment-methods-label {

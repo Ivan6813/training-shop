@@ -37,22 +37,20 @@
     text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #ffffff;
-    opacity: 0.9;
+    color: rgba($color: #ffffff, $alpha: 0.9);
     transition: all ease 0.3s;
     cursor: pointer;
     outline: none;
     -webkit-tap-highlight-color: transparent;
-}
+    &:hover {
+        background: #e6e6e6;
+        color: #121212;
+        border-color: #e6e6e6;
+    }
 
-.back-to-shop-btn:hover {
-    background: #e6e6e6;
-    color: #121212;
-    border-color: #e6e6e6;
-}
-
-.back-to-shop-btn:active {
-    background: #9c9c9c;
-    border-color: #9c9c9c;
-    color: #ffffff;
+    &:active {
+        background: #9c9c9c;
+        border-color: #9c9c9c;
+        color: #ffffff;
+    }
 }

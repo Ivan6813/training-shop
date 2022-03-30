@@ -12,7 +12,11 @@ const initialState = {
 function productsReducer (state = initialState, action) {
     switch(action.type) {
         case ACTION_TYPES.GET_PRODUCTS:
-            return {...state, isLoading: true, isError: false};
+            return {
+                    ...state,
+                    isLoading: true,
+                    isError: false
+                };
         case ACTION_TYPES.SET_PRODUCTS:
             return {
                 ...state, 
@@ -20,7 +24,11 @@ function productsReducer (state = initialState, action) {
                 isLoading: false
             };
         case ACTION_TYPES.ERROR_REQUEST:
-            return {...state, isLoading: false, isError: true};
+            return {
+                    ...state,
+                    isLoading: false,
+                    isError: true
+                };
         default:
             return state;
     }

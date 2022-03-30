@@ -29,10 +29,7 @@
         font-size: 12px;
         margin-bottom: 10px;
     }
-}
-
-.additinal-info-color span,
-.additinal-info-size span,
-.additinal-info-material span {
-    opacity: 0.6;
+    & span {
+        color: rgba($color: #121212, $alpha: 0.6);
+    }
 }

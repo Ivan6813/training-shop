@@ -22,10 +22,9 @@
 .delivery-methods-item {
     padding: 12px 0;
     border-top: 2px solid #f8f8f8;
-}
-
-.delivery-methods-item:last-child {
-    border-bottom: 2px solid #f8f8f8;
+    &:last-child {
+        border-bottom: 2px solid #f8f8f8;
+    }
 }
 
 .delivery-methods-label {
@@ -91,12 +90,11 @@
         font-size: 14px;
         color: rgba($color: #121212, $alpha: 0.4);
     }
-}
-
-.customer-info-input:hover {
-    &::placeholder {
-        transition: all ease 0.3s;
-        color: rgba($color: #121212, $alpha: 0.6);
+    &:hover {
+        &::placeholder {
+            transition: all ease 0.3s;
+            color: rgba($color: #121212, $alpha: 0.6);
+        }
     }
 }
 

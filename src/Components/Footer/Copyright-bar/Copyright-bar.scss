@@ -19,7 +19,7 @@
 .copyright-bar-link {
     font-weight: 500;
     font-size: 11px;
-    opacity: 0.8;
+    color: rgba($color: #121212, $alpha: 0.8);
     @include lg-mobile {
         font-size: 9px;
     }

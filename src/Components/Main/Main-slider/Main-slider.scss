@@ -17,10 +17,6 @@
     width: 100%;
 }
 
-.main-card:first-child {
-    margin-right: 10px;
-}
-
 .main-cards {
     display: flex;
     flex-direction: column;
@@ -37,6 +33,9 @@
 
 .main-card {
     position: relative;
+    &:first-child {
+        margin-right: 10px;
+    }
 }
 
 .main-card-text {

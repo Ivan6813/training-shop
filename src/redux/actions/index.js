@@ -37,7 +37,7 @@ export function sendEmailResponse(payload) {
 };
 
 export function errorSendEmail(payload) {
-    return { type: ACTION_TYPES.ERROR_SEND_EMAIL, payload};
+    return { type: ACTION_TYPES.SEND_EMAIL_ERROR, payload};
 };
 
 export function openReviewWindow() {

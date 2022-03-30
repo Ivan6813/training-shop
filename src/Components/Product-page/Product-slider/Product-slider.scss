@@ -19,14 +19,6 @@
     }
 }
 
-.btn-prev {
-    background: url(../../../img/main-slider-btn-left.svg) no-repeat center;
-}
-
-.btn-next {
-    background: url(../../../img/main-slider-btn-right.svg) no-repeat center;
-}
-
 .btn-prev,
 .btn-next {
     display: block;
@@ -36,6 +28,14 @@
     cursor: pointer;
     transform: rotate(90deg);
     margin: 0 16px 16px 0;
+}
+
+.btn-prev {
+    background: url(../../../img/main-slider-btn-left.svg) no-repeat center;
+}
+
+.btn-next {
+    background: url(../../../img/main-slider-btn-right.svg) no-repeat center;
 }
 
 .product-slider-small {

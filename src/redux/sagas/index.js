@@ -1,7 +1,13 @@
 import {takeEvery, call, put} from "redux-saga/effects";
 import {API} from "../../api";
 import {ACTION_TYPES} from "../../constants/action-types";
-import {setProducts, errorRequest, sendEmailResponse, errorSendEmail, sendReviewResponse, errorSendReview} from "../actions";
+import {setProducts,
+        errorRequest,
+        sendEmailResponse,
+        errorSendEmail,
+        sendReviewResponse,
+        errorSendReview
+      } from "../actions";
 import axios from "axios";
 
 export default function* rootSaga() {

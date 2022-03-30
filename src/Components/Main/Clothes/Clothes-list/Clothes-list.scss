@@ -36,7 +36,7 @@
 
 .clothes-card-name {
     font-size: 14px;
-    opacity: 0.6;
+    color: rgba($color: #121212, $alpha: 0.6);
     margin-bottom: 12px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -75,7 +75,7 @@
     font-weight: bold;
     font-size: 12px;
     text-decoration-line: line-through;
-    opacity: 0.4;
+    color: rgba($color: #121212, $alpha: 0.4);
     margin-left: 5px;
 }
 

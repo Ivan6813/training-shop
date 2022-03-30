@@ -15,12 +15,13 @@
     left: 0;
     transform: translateX(388px);
     visibility: hidden;
-    transition: transform ease 0.3s;
+    transition-property: transform(translateX);
+    transition: ease 0.3s;
+    z-index: 30;
 }
 
 .is_open_cart {
     visibility: visible;
-    z-index: 30;
     transform: translateX(0);
 }
 
@@ -52,7 +53,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    z-index: 15;
     @include lg-mobile {
         width: 100%;
         height: 100%;

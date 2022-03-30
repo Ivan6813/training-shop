@@ -30,25 +30,27 @@
         font-size: 10px;
         width: 75px;
     }
-}
-
-.filter-btn:hover {
-    color: rgba($color: #121212, $alpha: 1);
-}
-
-.filter-btn.filter_open {
-    background: url(../../../img/filter-open-btn.svg) no-repeat left;
+    &:hover {
+        color: rgba($color: #121212, $alpha: 1);
+    }
+    &.filter_open {
+        background: url(../../../img/filter-open-btn.svg) no-repeat left;
+    }
 }
 
 .page-view-block {
     display: flex;
 }
 
-.page-view-list-btn {
-    background: url(../../../img/display-list.svg) no-repeat center;
+.page-view-list-btn,
+.page-view-squares-btn {
     width: 24px;
     height: 24px;
     border: none;
+}
+
+.page-view-list-btn {
+    background: url(../../../img/display-list.svg) no-repeat center;
     margin-right: 28px;
     @include lg-mobile {
         margin-right: 15px;
@@ -57,22 +59,6 @@
 
 .page-view-squares-btn {
     background: url(../../../img/display-tile.svg) no-repeat center;
-    width: 24px;
-    height: 24px;
-    border: none;
-}
-
-.products-settings-sort {
-    font-weight: 500;
-    font-size: 13px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    opacity: 0.6;
-    background: #ffffff;
-    border: none;
-    @include lg-mobile {
-        font-size: 10px;
-    }
 }
 
 .activ-filters-bar {
@@ -105,5 +91,5 @@
 }
 
 .activ_filter {
-    opacity: 0.6;
+    color: rgba($color: #121212, $alpha: 0.6);
 }

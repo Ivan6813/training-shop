@@ -15,6 +15,7 @@
 
 .product-header-nav {
     display: flex;
+    align-items: center;
     min-width: 0;
 }
 
@@ -27,18 +28,16 @@
     @include lg-mobile {
         font-size: 9px;
     }
-}
-
-.products-page-link:hover {
-    transition: all ease 0.3s;
-    color: rgba($color: #121212, $alpha: 1);
-}
-
-.products-page-link::after {
-    content: "►";
-    color: rgba($color: #121212, $alpha: 0.6);
-    display: block;
-    margin: 0 6px;
+    &:hover {
+        transition: all ease 0.3s;
+        color: rgba($color: #121212, $alpha: 1);
+    }
+    &::after {
+        content: "►";
+        color: rgba($color: #121212, $alpha: 0.6);
+        display: block;
+        margin: 0 6px;
+    }
 }
 
 .current-product-link {
@@ -88,7 +87,7 @@
 .availability {
     font-weight: 500;
     font-size: 11px;
-    opacity: 0.6;
+    color: rgba($color: #121212, $alpha: 0.6);
 }
 
 .number-reviews {

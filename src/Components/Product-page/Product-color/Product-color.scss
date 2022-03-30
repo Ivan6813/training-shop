@@ -14,11 +14,10 @@
     text-transform: uppercase;
     color: #1212129c;
     margin-bottom: 16px;
-}
-
-.product-color span {
-    text-transform: none;
-    color: #000000;
+    & span {
+        text-transform: none;
+        color: #000000;
+    }
 }
 
 .product-color-img {

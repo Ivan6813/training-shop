@@ -14,16 +14,14 @@
     cursor: pointer;
     outline: none;
     -webkit-tap-highlight-color: transparent;
-}
-
-.clothes-btn:hover {
-    background: #e6e6e6;
-    color: #121212;
-    border-color: #e6e6e6;
-}
-
-.clothes-btn:active {
-    background: #9c9c9c;
-    border-color: #9c9c9c;
-    color: #ffffff;
+    &:hover {
+        background: #e6e6e6;
+        color: #121212;
+        border-color: #e6e6e6;
+    }
+    &:active {
+        background: #9c9c9c;
+        border-color: #9c9c9c;
+        color: #ffffff;
+    }
 }

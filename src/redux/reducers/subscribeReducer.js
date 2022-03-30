@@ -9,11 +9,25 @@ const initialState = {
 function subscribeReducer (state = initialState, action) {
     switch(action.type) {
         case ACTION_TYPES.SEND_EMAIL:
-            return {...state, isEmailSendLoading: true, isEmailSendSuccess: false, mailSendResponse: ""};
+            return {
+                    ...state,
+                    isEmailSendLoading: true,
+                    isEmailSendSuccess: false,
+                    mailSendResponse: ""
+                };
         case ACTION_TYPES.SEND_EMAIL_RESPONSE:
-            return {...state, isEmailSendLoading: false, isEmailSendSuccess: true, mailSendResponse: action.payload};
-        case ACTION_TYPES.ERROR_SEND_EMAIL:
-            return {...state, isEmailSendLoading: false, mailSendResponse: action.payload};
+            return {
+                    ...state,
+                    isEmailSendLoading: false,
+                    isEmailSendSuccess: true,
+                    mailSendResponse: action.payload
+                };
+        case ACTION_TYPES.SEND_EMAIL_ERROR:
+            return {
+                    ...state,
+                    isEmailSendLoading: false,
+                    mailSendResponse: action.payload
+                };
         default:
             return state;
     }

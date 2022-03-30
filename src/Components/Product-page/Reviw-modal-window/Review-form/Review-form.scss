@@ -1,0 +1,85 @@
+@import "../../../../mixin.scss";
+
+.review-modal-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.review-input,
+.review-textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.review-textarea {
+    resize: none;
+    overflow: overlay;
+}
+
+.error-name,
+.error-review,
+.error-response-review {
+    position: absolute;
+    color: #d61313;
+    @include lg-mobile {
+        font-size: 12px;
+    }
+}
+
+.error-name {
+    top: 37px;
+    left: 5px;
+}
+
+.error-review {
+    bottom: 50px;
+    left: 5px;
+}
+
+.error-response-review {
+    bottom: 0;
+    transform: translateY(100%);
+}
+
+.send-review-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background: #121212;
+    border: 2px solid #121212;
+    font-weight: 500;
+    font-size: 13px;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    &:hover {
+        background: #e6e6e6;
+        color: #121212;
+        border-color: #e6e6e6;
+    }
+    &:active {
+        background: #9c9c9c;
+        border-color: #9c9c9c;
+        color: #ffffff;
+    }
+    &:disabled {
+        opacity: 0.35;
+    }
+    &:disabled:hover {
+        background: #121212;
+        border: 2px solid #121212;
+        color: #ffffff;
+    }
+}

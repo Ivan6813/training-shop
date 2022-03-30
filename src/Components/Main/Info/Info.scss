@@ -54,7 +54,7 @@
 .new-season-text,
 .sale-text {
     font-size: 12px;
-    opacity: 0.6;
+    color: rgba($color: #121212, $alpha: 0.6);
     margin-bottom: 8px;
     @include tablets {
         font-size: 10px;

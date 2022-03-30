@@ -41,7 +41,7 @@
     font-size: 12px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    opacity: 0.6;
+    color: rgba($color: #121212, $alpha: 0.6);
     @include tablets {
         font-size: 10px;
     }
@@ -59,7 +59,7 @@
     }
 }
 
-.blog-item {
+.blog-item:not(:last-child) {
     margin-right: 30px;
     @include tablets {
         margin-right: 10px;
@@ -67,10 +67,6 @@
     @include lg-mobile {
         margin-right: 0;
     }
-}
-
-.blog-item:last-child {
-    margin-right: 0;
 }
 
 .blog-item-img {
@@ -112,7 +108,7 @@
 .blog-item-text {
     font-size: 14px;
     line-height: 22px;
-    opacity: 0.8;
+    color: rgba($color: #121212, $alpha: 0.8);
     @include tablets {
         font-size: 8px;
     }

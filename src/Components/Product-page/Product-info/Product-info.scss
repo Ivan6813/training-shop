@@ -33,7 +33,7 @@
 .product-info-text {
     font-weight: 500;
     font-size: 12px;
-    opacity: 0.6;
+    color: rgba($color: #121212, $alpha: 0.6);
     @include lg-mobile {
         font-size: 8px;
     }

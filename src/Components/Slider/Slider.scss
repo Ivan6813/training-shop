@@ -20,6 +20,10 @@
     height: 40px;
     border-radius: 50%;
     -webkit-tap-highlight-color: transparent;
+    &::after {
+        font-size: 14px;
+        color: #000000;
+    }
 }
 
 .swiper-button-next {
@@ -34,12 +38,6 @@
     @include tablets {
         margin-left: 0;
     }
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-    font-size: 14px;
-    color: #000000;
 }
 
 .main-page-slider-text-block {
@@ -61,7 +59,7 @@
 
 .main-page-slider-text {
     font-size: 12px;
-    opacity: 0.4;
+    color: rgba($color: #121212, $alpha: 0.4);
     margin-bottom: 14px;
     @include tablets {
         font-size: 10px;

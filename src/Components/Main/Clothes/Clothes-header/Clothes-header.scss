@@ -21,11 +21,10 @@
     @include sm-mobile {
         font-size: 20px;
     }
-}
-
-.category-clothes:hover {
-    color: #9c9c9c;
-    transition: all ease 0.3s;
+    &:hover {
+        color: #9c9c9c;
+        transition: all ease 0.3s;
+    }
 }
 
 .burger-menu-clothes {
@@ -64,15 +63,13 @@
     @include tablets {
         font-size: 10px;
     }
-}
-
-.clothes-sort-btn.activ_btn {
-    color: rgba($color: #121212, $alpha: 0.6);
-}
-
-.clothes-sort-btn:hover {
-    color: rgba($color: #121212, $alpha: 1);
-    transition: all ease 0.3s;
+    &.activ_btn {
+        color: rgba($color: #121212, $alpha: 0.6);
+    }
+    &:hover {
+        color: rgba($color: #121212, $alpha: 1);
+        transition: all ease 0.3s;
+    }
 }
 
 .header-clothes-sort {

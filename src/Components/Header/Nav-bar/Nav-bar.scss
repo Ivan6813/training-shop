@@ -34,21 +34,16 @@
     display: flex;
 }
 
-.nav-item {
+.nav-item:not(:last-child) {
     margin-right: 32px;
-}
-
-.nav-item:last-child {
-    margin-right: 0;
 }
 
 .nav-link {
     font-size: 14px;
-}
-
-.nav-link:hover {
-    color: #9c9c9c;
-    transition: all ease 0.3s;
+    &:hover {
+        color: #9c9c9c;
+        transition: all ease 0.3s;
+    }
 }
 
 .user-block-list {
@@ -68,11 +63,16 @@
     @include lg-mobile {
         margin-left: 20px;
     }
-}
-
-.user-block-item:first-child {
-    @include tablets {
-        margin-left: 0;
+    &:first-child {
+        @include tablets {
+            margin-left: 0;
+        }
+    }
+    &:last-child {
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
     }
 }
 
@@ -87,13 +87,9 @@
     cursor: pointer;
     outline: none;
     -webkit-tap-highlight-color: transparent;
-}
-
-.user-block-search-btn:hover,
-.user-block-site-btn:hover,
-.user-block-customer-btn:hover,
-.user-block-cart-btn:hover {
-    transform: scale(1.2);
+    &:hover {
+        transform: scale(1.2);
+    }
 }
 
 .user-block-search-btn {
@@ -114,13 +110,6 @@
 .user-block-cart-btn {
     background: url(../../../img/shopping_bag.svg) no-repeat center;
     background-size: contain;
-}
-
-.user-block-item:last-child {
-    position: relative;
-    cursor: pointer;
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
 }
 
 .user-block-cart-quantity {

@@ -49,7 +49,9 @@ function ProductsSettings({clothes, filteredClothes, setFilteredClothes, categor
                 <button className = {classNames("filter-btn", {filter_open: filterIsOpen})}
                         onClick = {() => setFilterIsOpen(!filterIsOpen)}
                         data-test-id = "filter-button"
-                >Filter</button>
+                >
+                    Filter
+                </button>
                 <div className = "page-view-block">
                     <button className = "page-view-list-btn"></button>
                     <button className = "page-view-squares-btn"></button>
