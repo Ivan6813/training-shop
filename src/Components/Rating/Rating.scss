@@ -1,9 +1,7 @@
-.rating-list {
-    display: flex;
-    align-items: flex-end;
+.star-icon {
+    fill: #9c9c9c;
+    &.star_active {
+        fill: #ffd300;
+    }
 }
 
-.star-icon {
-    width: 14px;
-    height: 14px;
-}

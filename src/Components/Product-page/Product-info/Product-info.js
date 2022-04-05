@@ -12,8 +12,14 @@ function ProductColor() {
                 {productInfo.map(item => {
                     return ( 
                     <li className = "product-info-item" key = {uuidv4()}>
-                        <img className = "product-info-icon" src = {item.icon} alt = "icon"/>
-                        <div className = "product-info-text">{item.text}</div>
+                        <img 
+                            className = "product-info-icon" 
+                            src = {item.icon} 
+                            alt = "icon"
+                        />
+                        <div className = "product-info-text">
+                            {item.text}
+                        </div>
                     </li>
                     )
                 })}

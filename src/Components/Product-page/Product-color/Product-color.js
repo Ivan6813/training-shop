@@ -23,15 +23,22 @@ function ProductColor({images, selectedColor, setSelectedColor, setSelectedItemI
 
     return (
         <div className = "product-color-block">
-            <div className = "product-color">Color: <span>{uniqueColors[selectedColor]}</span></div>
+            <div className = "product-color">
+                Color: <span>{uniqueColors[selectedColor]}</span>
+            </div>
             <div className = "product-select-color">
                 {uniqueImages.map((item, i) => {
                     return (
-                        <img className = {classNames("product-color-img", {current_color: selectedColor === i})} 
-                             src = {`https://training.cleverland.by/shop${item.url}`}
-                             alt = "icon"
-                             onClick = {() => setSelectedColor(i)}
-                             key = {item.id}
+                        <img 
+                            className = {
+                                classNames("product-color-img", {
+                                    current_color: selectedColor === i
+                                })
+                            } 
+                            src = {`https://training.cleverland.by/shop${item.url}`}
+                            alt = "icon"
+                            onClick = {() => setSelectedColor(i)}
+                            key = {item.id}
                         />
                     )
                 })}

@@ -12,7 +12,11 @@ function Socials() {
                 return ( 
                 <li className = "social-item" key = {uuidv4()}>
                     <Link to = "/">
-                        <img className = "social-icon" src = {item} alt = "icon" />
+                        <img 
+                            className = "social-icon" 
+                            src = {item} 
+                            alt = "icon"
+                        />
                     </Link>
                 </li>
                 )

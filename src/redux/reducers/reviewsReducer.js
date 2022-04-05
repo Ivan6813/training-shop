@@ -3,7 +3,7 @@ import { ACTION_TYPES } from "../../constants/action-types";
 const initialState = {
     isReviewSendLoading: false,
     isReviewSendSuccess: false,
-    isReviewSendError: true,
+    isReviewSendError: false,
     isReviewsModalWindowOpen: false
 };
 
@@ -30,7 +30,8 @@ function reviewsReducer (state = initialState, action) {
             return {
                     ...state,
                     isReviewSendLoading: false,
-                    isReviewSendSuccess: true
+                    isReviewSendSuccess: true,
+                    isReviewsModalWindowOpen: false
                 };
         case ACTION_TYPES.SEND_REVIEW_ERROR:
             return {

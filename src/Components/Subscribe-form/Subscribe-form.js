@@ -10,7 +10,11 @@ function SubscribeForm({prefix, btnText, loaderSize, dataTestId}) {
     const [email, setEmail] = useState("");
     const [disablet, setDisablet] = useState(true);
     const [responseText, setResponseText] = useState(false);
-    const {isEmailSendLoading, mailSendResponse, isEmailSendSuccess} = useSelector(state => state.subscribe);
+    const {
+        isEmailSendLoading, 
+        mailSendResponse, 
+        isEmailSendSuccess
+    } = useSelector(state => state.subscribe);
     const dispatch = useDispatch();
 
     function formValidation(value) {
@@ -27,24 +31,43 @@ function SubscribeForm({prefix, btnText, loaderSize, dataTestId}) {
         setEmail("");
     }
 
+    function deleteResponseText() {
+        setTimeout(() => {
+            setResponseText(false);
+        }, 5000);
+        return mailSendResponse;
+    }
+
     return (
         <form className = {`${prefix}-subscribe-form`}>
-            <input type = "text" 
-                   className =  {`${prefix}-subscribe-input`} 
-                   placeholder = "Enter your email" 
-                   value = {email}
-                   onChange = {(event) => formValidation(event.target.value)}
-                   data-test-id = {dataTestId}
+            <input 
+                type = "text" 
+                className =  {`${prefix}-subscribe-input`} 
+                placeholder = "Enter your email" 
+                value = {email}
+                onChange = {(event) => formValidation(event.target.value)}
+                data-test-id = {dataTestId}
             />
-            <div className = {classNames(`${prefix}_response_email`, {success_email: isEmailSendSuccess})}>
-                {responseText && mailSendResponse}
-            </div>
-            <button onClick = {() => sendUserEmail()}
-                    className =  {`${prefix}-subscribe-button`}
-                    disabled = {disablet}
-                    data-test-id = {`${prefix}-subscribe-mail-button`}
+            <div 
+                className = {
+                    classNames(`${prefix}_response_email`, {
+                        success_email: isEmailSendSuccess
+                    })
+                }
             >
-                {isEmailSendLoading ? <Oval color = "#ffffff" height = {loaderSize} width = {loaderSize}/> : btnText}
+                {responseText && deleteResponseText()}
+            </div>
+            <button 
+                onClick = {() => sendUserEmail()}
+                className =  {`${prefix}-subscribe-button`}
+                disabled = {disablet}
+                data-test-id = {`${prefix}-subscribe-mail-button`}
+            >
+                {isEmailSendLoading ? (
+                    <Oval color = "#ffffff" height = {loaderSize} width = {loaderSize}/>
+                ) : (
+                    btnText
+                )}
             </button>
         </form>
     );

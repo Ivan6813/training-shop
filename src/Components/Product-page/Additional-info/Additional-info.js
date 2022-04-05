@@ -7,12 +7,20 @@ function AdditinalInfo({product}) {
     const uniqueColors = [...new Set(allColors)];
  
     return (
-        <div className = "additinal-info-block">
-            <div className = "additinal-info-title">ADDITIONAL INFORMATION</div>
-            <div className = "additinal-info-color">Color: <span>{uniqueColors.join(", ")}</span></div>
-            <div className = "additinal-info-size">Size: <span>{product.sizes?.join(", ")}</span></div>
-            <div className = "additinal-info-material">Material: <span>{product.material}</span></div>
-        </div>
+        <section className = "additinal-info-block">
+            <h4 className = "additinal-info-title">
+                ADDITIONAL INFORMATION
+            </h4>
+            <div className = "additinal-info-color">
+                Color: <span>{uniqueColors.join(", ")}</span>
+            </div>
+            <div className = "additinal-info-size">
+                Size: <span>{product.sizes?.join(", ")}</span>
+            </div>
+            <div className = "additinal-info-material">
+                Material: <span>{product.material}</span>
+            </div>
+        </section>
     );
 }
 

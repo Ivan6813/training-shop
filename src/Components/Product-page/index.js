@@ -25,8 +25,8 @@ function ProductPage() {
     const {isReviewsModalWindowOpen} = useSelector(state => state.review);
 
     const [product] = useSelector(state => {
-        if(state.products.products[category].length !== 0) {
-            return state.products.products[category].filter(item => item.id === id);
+        if(state.products.products[category]?.some(item => item.id === id)) {
+            return state.products.products[category]?.filter(item => item.id === id);
         }else {
             return [{}];
         }
@@ -39,24 +39,30 @@ function ProductPage() {
     },[id]); 
 
     return (
-        <div className = "page-product" data-test-id = {`product-page-${category}`}>
+        <div 
+            className = "page-product" 
+            data-test-id = {`product-page-${category}`}
+        >
             <ProductHeader product = {product}/>
             <div className = "container">
                 <div className = "product-page">
                     <ProductSlider images = {product?.images}/>
                     <div className = "product-page-info">
-                        <ProductColor images = {product?.images}
-                                      selectedColor = {selectedColor}
-                                      setSelectedColor = {setSelectedColor}
-                                      setSelectedItemImg = {setSelectedItemImg}
+                        <ProductColor 
+                            images = {product?.images}
+                            selectedColor = {selectedColor}
+                            setSelectedColor = {setSelectedColor}
+                            setSelectedItemImg = {setSelectedItemImg}
                         />
-                        <ProductSize sizes = {product?.sizes}
-                                     selectedSize = {selectedSize}
-                                     setSelectedSize = {setSelectedSize}
+                        <ProductSize 
+                            sizes = {product?.sizes}
+                            selectedSize = {selectedSize}
+                            setSelectedSize = {setSelectedSize}
                         />
-                        <ProductPrice product = {product}
-                                      selectedSize = {selectedSize}
-                                      selectedItemImg = {selectedItemImg}
+                        <ProductPrice 
+                            product = {product}
+                            selectedSize = {selectedSize}
+                            selectedItemImg = {selectedItemImg}
                         />
                         <ProductInfo/>
                         <PayWith/>

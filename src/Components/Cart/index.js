@@ -9,6 +9,7 @@ import PaymentCart from "./Payment-cart/Payment-cart";
 import FooterCart from "./Footer-cart/Footer-cart";
 import CartStatus from "./Cart-status/Cart-status";
 import "./Cart.scss";
+import FormikContainer from "./Formik/FormikContainer";
 
 
 function Cart({isCartOpen, setIsCartOpen}) {
@@ -22,30 +23,34 @@ function Cart({isCartOpen, setIsCartOpen}) {
     }
 
     return (
-        <div onClick = {() => closeCart()} 
-             className = {classNames("cart-block", {is_open_cart: isCartOpen})}
+        <div 
+            onClick = {() => closeCart()} 
+            className = {classNames("cart-block", {is_open_cart: isCartOpen})}
         >
             <div className = "cart-dark-bg"></div>
-            <div className = "cart" 
-                 onClick = {(event) => event.stopPropagation()}
-                 data-test-id = "cart"
+            <div 
+                className = "cart" 
+                onClick = {(event) => event.stopPropagation()}
+                data-test-id = "cart"
             >
                 <HeaderCart closeCart = {closeCart}/>
                 {(!!order.length && cartSection !== 3) ? (
                     <>
-                        <NavBarCart cartSection = {cartSection}/>
-                        {cartSection === 0 && <CartItems/>}
-                        {cartSection === 1 && <DeliveryInfo/>}
-                        {cartSection === 2 && <PaymentCart/>}
-                        <FooterCart order = {order} 
-                                    closeCart = {closeCart}
-                                    cartSection = {cartSection}
-                                    setCartSection = {setCartSection}
+                        {/* <NavBarCart cartSection = {cartSection}/> */}
+                        {/* {cartSection === 0 && <CartItems/>} */}
+                        <FormikContainer order = {order} cartSection = {cartSection}/>
+                        {/* {cartSection === 2 && <PaymentCart/>} */}
+                        <FooterCart 
+                            order = {order} 
+                            closeCart = {closeCart}
+                            cartSection = {cartSection}
+                            setCartSection = {setCartSection}
                         />
                     </>
                 ):(
-                    <CartStatus cartSection = {cartSection}
-                                closeCart = {closeCart}
+                    <CartStatus 
+                        cartSection = {cartSection}
+                        closeCart = {closeCart}
                     />
                 )}
             </div>

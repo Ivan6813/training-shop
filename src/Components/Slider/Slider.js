@@ -19,10 +19,18 @@ function Slider() {
             {mainSlider.map(item => {
                 return (
                     <SwiperSlide key = {uuidv4()}>
-                        <img src = {item.img} className = "main-page-slider-img" alt = "img" />
+                        <img 
+                            src = {item.img} 
+                            className = "main-page-slider-img" 
+                            alt = "img" 
+                        />
                         <div className = "main-page-slider-text-block">
-                            <div className = "main-page-slider-text">{item.text}</div>
-                            <div className = "main-page-slider-title">{item.title}</div>
+                            <div className = "main-page-slider-text">
+                                {item.text}
+                            </div>
+                            <div className = "main-page-slider-title">
+                                {item.title}
+                            </div>
                         </div>
                     </SwiperSlide>
                 )

@@ -1,23 +1,24 @@
 import {takeEvery, call, put} from "redux-saga/effects";
 import {API} from "../../api";
 import {ACTION_TYPES} from "../../constants/action-types";
-import {setProducts,
-        errorRequest,
-        sendEmailResponse,
-        errorSendEmail,
-        sendReviewResponse,
-        errorSendReview
-      } from "../actions";
+import {
+  setProducts,
+  errorRequest,
+  sendEmailResponse,
+  errorSendEmail,
+  sendReviewResponse,
+  errorSendReview
+} from "../actions";
 import axios from "axios";
 
 export default function* rootSaga() {
-    yield requestsWatcher();
+  yield requestsWatcher();
 }
 
 export function* requestsWatcher() {
-    yield takeEvery(ACTION_TYPES.GET_PRODUCTS, productsRequestWorker);
-    yield takeEvery(ACTION_TYPES.SEND_EMAIL, subscribeRequestWorker);
-    yield takeEvery(ACTION_TYPES.SEND_REVIEW, reviewRequestWorker);
+  yield takeEvery(ACTION_TYPES.GET_PRODUCTS, productsRequestWorker);
+  yield takeEvery(ACTION_TYPES.SEND_EMAIL, subscribeRequestWorker);
+  yield takeEvery(ACTION_TYPES.SEND_REVIEW, reviewRequestWorker);
 }
 
 export function* productsRequestWorker() {
@@ -40,8 +41,8 @@ export function* subscribeRequestWorker({payload}) {
 
 export function* reviewRequestWorker({payload}) {
   try {
-    yield call(axios.post, API.sendReview, payload);
-    yield put(sendReviewResponse());
+    const {data} = yield call(axios.post, API.sendReview, payload);
+    yield put(sendReviewResponse(data));
   } catch (err) {
     yield put(errorSendReview());
   }

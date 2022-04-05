@@ -32,7 +32,7 @@ function ProductPrice({product, selectedSize, selectedItemImg}) {
                &&
                item.color === selectedItemImg.color
                &&
-               item.size ===product.sizes[selectedSize]
+               item.size === product.sizes[selectedSize]
                &&
                item.price === product.price
             ){
@@ -66,15 +66,26 @@ function ProductPrice({product, selectedSize, selectedItemImg}) {
 
     return (
         <div className = "product-price-block">
-            <div className = "product-price">$ {product.price}</div>
-            <button onClick={() => cartBtnHandler()}
-                    className = "add-cart-btn"
-                    data-test-id = "add-cart-button"
+            <div className = "product-price">
+                $ {product.price}
+            </div>
+            <button 
+                onClick={() => cartBtnHandler()}
+                className = "add-cart-btn"
+                data-test-id = "add-cart-button"
             >
                 {availabilityInCart ? "Remove from cart" : "Add to cart"}
             </button>
-            <img className = "product-price-heart" src = {product_price_heart} alt = "icon"/>
-            <img className = "product-price-scales" src = {product_price_scales} alt = "icon"/>
+            <img 
+                className = "product-price-heart" 
+                src = {product_price_heart} 
+                alt = "icon"
+            />
+            <img 
+                className = "product-price-scales" 
+                src = {product_price_scales} 
+                alt = "icon"
+            />
         </div>
     );
 }

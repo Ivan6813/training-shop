@@ -4,9 +4,11 @@ import "./Product-description.scss";
 function ProductDescription() {
 
     return (
-        <div className = "product-description-block">
-            <div className = "product-description-title">DESCRIPTION</div>
-        </div>
+        <section className = "product-description-block">
+            <h4 className = "product-description-title">
+                DESCRIPTION
+            </h4>
+        </section>
     );
 }
 

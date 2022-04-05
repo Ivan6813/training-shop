@@ -16,6 +16,10 @@ import support from "../img/support.svg";
 import blog_img_1 from "../img/Blog-img-1.png";
 import blog_img_2 from "../img/Blog-img-2.png";
 import blog_img_3 from "../img/Blog-img-3.png";
+import payPal from "../img/paypal-cart.png";
+import visa from "../img/visa-cart.png";
+import masterCard from "../img/mastercard-cart.png";
+import { v4 as uuidv4 } from 'uuid';
 
 export const topBarInfo = [
     {icon: phone, text: "+375 29 100 20 30"}, 
@@ -105,4 +109,25 @@ export const productInfo = [
     {icon: truck, text: "Shipping & Delivery"},
     {icon: refresh, text: "Returns & Exchanges"}, 
     {icon: email, text: "Ask a question"}
+];
+
+export const dropDownStoreAdress = [
+    {id: uuidv4() ,key: "Store adress", value: ""},
+    {id: uuidv4() ,key: "463 Massachusetts Ave, Cambridge", value: "463 Massachusetts Ave, Cambridge"},
+    {id: uuidv4() ,key: "14 McGrath Hwy, Somerville", value: "14 McGrath Hwy, Somerville"},
+    {id: uuidv4() ,key: "870 Massachusetts Ave, Boston", value: "870 Massachusetts Ave, Boston"},
+    {id: uuidv4() ,key: "301 Warren St, Roxbury", value: "301 Warren St, Roxbury"},
+];
+
+export const radioDelivery = [
+    {id: uuidv4() , key: "Pickup from post offices", value: "pickup from post offices", label: "text"},
+    {id: uuidv4() , key: "Express delivery", value: "express delivery", label: "text"},
+    {id: uuidv4() , key: "Store pickup", value: "store pickup", label: "text"}
+];
+
+export const radioPayment = [
+    {id: uuidv4() , key: payPal, value: "payPal", label: "icon"},
+    {id: uuidv4() , key: visa, value: "card", label: "icon"},
+    {id: uuidv4() , key: masterCard, value: "card", label: "icon"},
+    {id: uuidv4() , key: "Cash", value: "cash", label: "text"}
 ];

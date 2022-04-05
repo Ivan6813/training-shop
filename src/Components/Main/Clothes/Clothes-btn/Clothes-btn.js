@@ -6,7 +6,9 @@ function BtnBlock({category}) {
 
     return (
         <div className = "container">
-            <Link to = {`/${category}`} className = "clothes-btn">See all</Link>
+            <Link to = {`/${category}`} className = "clothes-btn">
+                See all
+            </Link>
         </div>
     );
 }

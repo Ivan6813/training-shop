@@ -10,6 +10,7 @@
 }
 
 .delivery-methods-title {
+    display: block;
     font-weight: 400;
     font-size: 14px;
     color: #000000;
@@ -131,9 +132,8 @@
     @include sm-mobile {
         font-size: 13px;
     }
-}
-
-.consent-form-label > span {
-    display: flex;
-    align-items: flex-start;
+    & > span {
+        display: flex;
+        align-items: flex-start;
+    }
 }

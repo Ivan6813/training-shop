@@ -2,18 +2,18 @@ import React from "react";
 import { v4 as uuidv4 } from 'uuid';
 import "./Filter.scss";
 
-function Filter(
-    {clothes, 
-     category, 
-     selectColor,  
-     setSelectColor, 
-     selectSize, 
-     setSelectSize, 
-     selectBrand, 
-     setSelectBrand, 
-     selectPrice, 
-     setSelectPrice
-    }) {
+function Filter({
+    clothes, 
+    category, 
+    selectColor,  
+    setSelectColor, 
+    selectSize, 
+    setSelectSize, 
+    selectBrand, 
+    setSelectBrand, 
+    selectPrice, 
+    setSelectPrice
+}) {
 
     const allColors =  clothes.map(item => item.images.map(item => item.color));
     const allSizes = clothes.map(item => item.sizes.map(item => item));
@@ -77,17 +77,23 @@ function Filter(
             {filterItems.map((item, index) => {
                 return (
                 <div className = "filter-category" key = {uuidv4()}>
-                    <div className = "filter-category-title">{item.title}</div>
-                    <ul className = "filter-list" data-test-id = {`filters-${item.title}`}>
+                    <div className = "filter-category-title">
+                        {item.title}
+                    </div>
+                    <ul 
+                        className = "filter-list"
+                        data-test-id = {`filters-${item.title}`}
+                    >
                     {item.items.map(value => {
                         return (
                         <li className = "filter-item" key = {uuidv4()}>
                             <label className = "filter-label custom-checkbox">
-                                <input  checked = {saveChecked(filterItems[index].title, value)}
-                                        type = "checkbox"
-                                        value = {value}
-                                        onChange = {(event) => writeSelectedFilter(filterItems[index].title, event)}
-                                        data-test-id = {`filter-${item.title}-${value}`}
+                                <input  
+                                    checked = {saveChecked(filterItems[index].title, value)}
+                                    type = "checkbox"
+                                    value = {value}
+                                    onChange = {(event) => writeSelectedFilter(filterItems[index].title, event)}
+                                    data-test-id = {`filter-${item.title}-${value}`}
                                 />
                                 <span>{(filterItems[index].title === "price") ? `$${value}` : value}</span>
                             </label>

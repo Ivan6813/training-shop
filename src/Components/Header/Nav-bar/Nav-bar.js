@@ -11,6 +11,13 @@ function NavBar({isCartOpen, setIsCartOpen}) {
 
     const [isMenuOpen, toggleMenuMode] = useState(false);
     const {isReviewsModalWindowOpen} = useSelector(state => state.review);
+    const {order} = useSelector(state => state.order);
+
+    function closeBurgerMenu(event) {
+        if(event.target.className !== "burger-menu") {
+            return toggleMenuMode(false);
+        }
+    }
 
     useEffect(() => {
         if(isMenuOpen || isCartOpen || isReviewsModalWindowOpen) {
@@ -20,13 +27,15 @@ function NavBar({isCartOpen, setIsCartOpen}) {
         }
     });
 
-    const {order}= useSelector(state => state.order);
-
     return (
-        <div onClick = {(e) => {if(e.target.className !== "burger-menu") toggleMenuMode(false)}}>
+        <div onClick = {(event) => closeBurgerMenu(event)}>
             <div className = "container">
                 <div className = "nav-bar">
-                    <Link to = "/" className = "header-logo-link" data-test-id = "header-logo-link">
+                    <Link 
+                        to = "/" 
+                        className = "header-logo-link" 
+                        data-test-id = "header-logo-link"
+                    >
                         <h1 className = "header-logo">CleverShop</h1>
                     </Link>
                     <nav className = "nav-menu" data-test-id = "menu">
@@ -34,20 +43,33 @@ function NavBar({isCartOpen, setIsCartOpen}) {
                             {headerNav.map(item => {
                                 return ( 
                                 <li className = "nav-item" key = {uuidv4()}>
-                                    <Link className = "nav-link" 
+                                    <Link 
+                                        className = "nav-link" 
                                         to = {`/${item.path}`} 
                                         data-test-id = {`menu-link-${item.path}`}
-                                    >{item.name}</Link>
+                                    >
+                                        {item.name}
+                                    </Link>
                                 </li>
                                 )
                             })}
                         </ul>
                     </nav>
                     <ul className = "user-block-list">
-                        <li className = "user-block-item"><button className = "user-block-search-btn"></button></li>
-                        <li className = "user-block-item"><button className = "user-block-site-btn"></button></li>
-                        <li className = "user-block-item"><button className = "user-block-customer-btn"></button></li>
-                        <li onClick = {() => setIsCartOpen(true)} className = "user-block-item" data-test-id = "cart-button">
+                        <li className = "user-block-item">
+                            <button className = "user-block-search-btn"></button>
+                        </li>
+                        <li className = "user-block-item">
+                            <button className = "user-block-site-btn"></button>
+                        </li>
+                        <li className = "user-block-item">
+                            <button className = "user-block-customer-btn"></button>
+                        </li>
+                        <li 
+                            onClick = {() => setIsCartOpen(true)}
+                            className = "user-block-item"
+                            data-test-id = "cart-button"
+                        >
                             <button  className = "user-block-cart-btn"></button>
                             {!!order.length && <span className = "user-block-cart-quantity">{order.length}</span>}
                         </li>
@@ -55,16 +77,15 @@ function NavBar({isCartOpen, setIsCartOpen}) {
                     <BurgerMenuBtn isMenuOpen = {isMenuOpen} toggleMenuMode = {toggleMenuMode}/>
                 </div>
             </div>
-            {(isMenuOpen) ? (
-               <BurgerMenu isMenuOpen = {isMenuOpen} 
-                           toggleMenuMode = {toggleMenuMode}
-                           navList = {headerNav}
-                /> 
-            ):(
-                <div></div>
-            )}
-        </div>
-       
+            {isMenuOpen 
+            &&
+            <BurgerMenu 
+                isMenuOpen = {isMenuOpen} 
+                toggleMenuMode = {toggleMenuMode}
+                navList = {headerNav}
+            /> 
+            }
+        </div>  
   );
 }
 

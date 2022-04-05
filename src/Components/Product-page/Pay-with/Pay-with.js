@@ -5,10 +5,16 @@ import "./Pay-with.scss";
 function PayWith() {
 
     return (
-        <div className = "pay-with-block">
-            <div className = "pay-with-title">guaranteed safe checkout</div>
-            <img className = "pay-with-img" src = {pay_with_img} alt = "icon"/>
-        </div>
+        <section className = "pay-with-block">
+            <h4 className = "pay-with-title">
+                Guaranteed safe checkout
+            </h4>
+            <img 
+                className = "pay-with-img" 
+                src = {pay_with_img} 
+                alt = "icon"
+            />
+        </section>
     );
 }
 

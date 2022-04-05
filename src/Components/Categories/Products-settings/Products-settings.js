@@ -31,9 +31,12 @@ function ProductsSettings({clothes, filteredClothes, setFilteredClothes, categor
     useEffect(() => {
         const newFilteredClothes = clothes.filter(item => {
             return (
-                item.images.some(image => selectColor.length === 0 || selectColor.includes(image.color))
+                item.images.some(image => {
+                    return selectColor.length === 0 || selectColor.includes(image.color)
+                })
                 &&
-                item.sizes.some(size => selectSize.length === 0 || selectSize.includes(size))
+                item.sizes.some(size => {
+                    return selectSize.length === 0 || selectSize.includes(size)})
                 &&
                 (selectBrand.length === 0 || selectBrand.includes(item.brand))
                 &&
@@ -46,9 +49,14 @@ function ProductsSettings({clothes, filteredClothes, setFilteredClothes, categor
     return (
         <div className = "container">
             <div className = "products-settings">
-                <button className = {classNames("filter-btn", {filter_open: filterIsOpen})}
-                        onClick = {() => setFilterIsOpen(!filterIsOpen)}
-                        data-test-id = "filter-button"
+                <button 
+                    className = {
+                        classNames("filter-btn", {
+                            filter_open: filterIsOpen
+                        })
+                    }
+                    onClick = {() => setFilterIsOpen(!filterIsOpen)}
+                    data-test-id = "filter-button"
                 >
                     Filter
                 </button>
@@ -58,27 +66,51 @@ function ProductsSettings({clothes, filteredClothes, setFilteredClothes, categor
                 </div>
             </div>
             <div className = {classNames("hidden", {show_filter: filterIsOpen})}>
-                <Filter clothes = {clothes}
-                        category = {category}
-                        selectColor = {selectColor}
-                        setSelectColor = {setSelectColor}
-                        selectSize = {selectSize}
-                        setSelectSize = {setSelectSize}
-                        selectBrand = {selectBrand}
-                        setSelectBrand = {setSelectBrand}
-                        selectPrice = {selectPrice}
-                        setSelectPrice = {setSelectPrice}
-                                      
+                <Filter 
+                    clothes = {clothes}
+                    category = {category}
+                    selectColor = {selectColor}
+                    setSelectColor = {setSelectColor}
+                    selectSize = {selectSize}
+                    setSelectSize = {setSelectSize}
+                    selectBrand = {selectBrand}
+                    setSelectBrand = {setSelectBrand}
+                    selectPrice = {selectPrice}
+                    setSelectPrice = {setSelectPrice}                   
                 />
             </div>
-            {(selectColor.length === 0 && selectSize.length === 0 && selectBrand.length === 0 && selectPrice.length === 0)
+            {(selectColor.length === 0 && selectSize.length === 0 
+            && 
+            selectBrand.length === 0 && selectPrice.length === 0
+            )
             ||
             <ul className = "activ-filters-bar">
-                <li className = "items-found">{filteredClothes.length} items Found</li>
-                {!!selectColor.length && <li className = "activ_filter">Color: {selectColor.join(", ")}</li>}
-                {!!selectSize.length && <li className = "activ_filter">Size: {selectSize.join(", ")}</li>}
-                {!!selectBrand.length && <li className = "activ_filter">Brand: {selectBrand.join(", ")}</li>}
-                {!!selectPrice.length && <li className = "activ_filter">Price: {selectPrice.join(", ")}</li>}
+                <li className = "items-found">
+                    {filteredClothes.length} items Found
+                </li>
+                {!!selectColor.length && 
+                <li className = "activ_filter">
+                    Color: {selectColor.join(", ")}
+                </li>
+                }
+                {!!selectSize.length 
+                && 
+                <li className = "activ_filter">
+                    Size: {selectSize.join(", ")}
+                </li>
+                }
+                {!!selectBrand.length 
+                && 
+                <li className = "activ_filter">
+                    Brand: {selectBrand.join(", ")}
+                </li>
+                }
+                {!!selectPrice.length
+                &&
+                <li className = "activ_filter">
+                    Price: {selectPrice.join(", ")}
+                </li>
+                }
             </ul>
             }
         </div>

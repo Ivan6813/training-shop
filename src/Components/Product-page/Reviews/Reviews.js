@@ -14,11 +14,14 @@ function Reviews({product}) {
             <div className = "rating-product-block">
                 <div className = "rating-info">
                     <Rating rating =  {product.rating}/>
-                    <div className = "number-reviews">{product.reviews?.length} Reviews</div>
+                    <div className = "number-reviews">
+                        {product.reviews?.length} Reviews
+                    </div>
                 </div>
-                <button onClick = {() => dispatch(openReviewWindow())}
-                        className = "add-review-button"
-                        data-test-id = "review-button"
+                <button 
+                    onClick = {() => dispatch(openReviewWindow())}
+                    className = "add-review-button"
+                    data-test-id = "review-button"
                 >
                     Write a review
                 </button>
@@ -29,7 +32,9 @@ function Reviews({product}) {
                         return (
                         <li key = {item.id} className = "customer-reviews-item">
                             <div className = "customer-info-block">
-                                <div className = "customer-name">{item.name}</div>
+                                <div className = "customer-name">
+                                    {item.name}
+                                </div>
                                  <Rating rating = {item.rating}/>
                             </div>
                             <p className = "customer-text">{item.text}</p>

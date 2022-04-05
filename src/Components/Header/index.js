@@ -8,7 +8,10 @@ function Header({isCartOpen, setIsCartOpen}) {
     return (
         <header className = "header" data-test-id = "header">
             <TopBar/>
-            <NavBar isCartOpen = {isCartOpen} setIsCartOpen = {setIsCartOpen}/>
+            <NavBar 
+                isCartOpen = {isCartOpen} 
+                setIsCartOpen = {setIsCartOpen}
+            />
         </header>  
     );
 }

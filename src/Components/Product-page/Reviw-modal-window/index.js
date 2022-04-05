@@ -11,14 +11,23 @@ function ReviewModalWindow({id}) {
     const dispatch = useDispatch();
 
     return (
-        <div onClick = {() => dispatch(closeReviewWindow())} className = "review-modal-block">
-            <div onClick = {(event) => event.stopPropagation()}
-                 className = "review-modal-window"
-                 data-test-id = "review-modal"
+        <div 
+            onClick = {() => dispatch(closeReviewWindow())} 
+            className = "review-modal-block"
+        >
+            <div 
+                onClick = {(event) => event.stopPropagation()}
+                className = "review-modal-window"
+                data-test-id = "review-modal"
             >
-                <div className = "review-modal-title">Write a review</div>
+                <div className = "review-modal-title">
+                    Write a review
+                </div>
                 <ReviewRating setReviewRating = {setReviewRating}/>
-                <ReviewForm id = {id} reviewRating = {reviewRating}/>
+                <ReviewForm 
+                    id = {id}
+                    reviewRating = {reviewRating}
+                />
             </div>
         </div>
     );

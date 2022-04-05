@@ -10,9 +10,10 @@ function BurgerMenuBtn({isMenuOpen, toggleMenuMode}) {
     }
 
     return (
-        <button onClick = {(event) => {showMenu(event)}} 
-                className = "burger-menu-btn"
-                data-test-id = "burger-menu-btn"
+        <button 
+            onClick = {(event) => {showMenu(event)}} 
+            className = "burger-menu-btn"
+            data-test-id = "burger-menu-btn"
         >
             <span className = {classNames("burger-top-line", {visible: isMenuOpen})}></span>
             <span className = {classNames("burger-midle-line", {visible: isMenuOpen})}></span>

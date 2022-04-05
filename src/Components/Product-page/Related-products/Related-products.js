@@ -14,7 +14,7 @@ function RelatedProducts({productType}) {
 
     const [progressSlide, setProgressSlide] = useState(0);
     const {category}  = useParams(); 
-    const relatedProducts = useSelector(state => state.products.products[category]);
+    const relatedProducts = useSelector(state => state.products.products[category] || []);
 
     function discountCalc(price, discount) {
         let percent = 100 + parseInt(discount);
@@ -25,10 +25,20 @@ function RelatedProducts({productType}) {
        <div className = "container">
             <div className = "related-products-block">
                 <div className = "related-products-header">
-                    <div className = "related-products-title">RELATED PRODUCTS</div>
+                    <div className = "related-products-title">
+                        RELATED PRODUCTS
+                    </div>
                     <div className = "related-products-slider">
-                        <button className = {classNames("related-products-btn-prev", {disabled: progressSlide === 0})}></button>
-                        <button className = {classNames("related-products-btn-next", {disabled: progressSlide === 1})}></button>
+                        <button className = {
+                            classNames("related-products-btn-prev", {
+                                disabled: progressSlide === 0
+                                })
+                        }></button>
+                        <button className = {
+                            classNames("related-products-btn-next", {
+                                disabled: progressSlide === 1
+                                })
+                        }></button>
                     </div>
                 </div>
                 <Swiper
@@ -60,33 +70,37 @@ function RelatedProducts({productType}) {
                     {relatedProducts.map(item => {
                         return (
                             <SwiperSlide key = {item.id}>
-                                <Link className = "clothes-card" 
-                                      to = {`/${productType}/${item.id}`}
-                                      data-test-id = {`clothes-card-${productType}`}
+                                <Link 
+                                    className = "clothes-card" 
+                                    to = {`/${productType}/${item.id}`}
+                                    data-test-id = {`clothes-card-${productType}`}
                                 >
-                                    <img className = "clothes-card-img" 
-                                         src= {`https://training.cleverland.by/shop${item.images[0].url}`} 
-                                         alt = "clothes"
+                                    <img 
+                                        className = "clothes-card-img" 
+                                        src= {`https://training.cleverland.by/shop${item.images[0].url}`} 
+                                        alt = "clothes"
                                     />
-                                    <div className = "clothes-card-name">{item.name}</div>
+                                    <div className = "clothes-card-name">
+                                        {item.name}
+                                    </div>
                                     <div className = "clothes-card-info">
                                         {(item.discount) ? (
                                             <div className = "clothes-card-prices-block">
-                                                <div className = "clothes-price">{`$ ${item.price}`}</div>
+                                                <div className = "clothes-price">
+                                                    {`$ ${item.price}`}
+                                                </div>
                                                 <div className = "clothes-old-price">
                                                     {`$ ${discountCalc(item.price, item.discount)}`}
                                                 </div>
                                             </div>
                                         ):(
-                                            <div className = "clothes-price">{`$ ${item.price}`}</div>
+                                            <div className = "clothes-price">
+                                                {`$ ${item.price}`}
+                                            </div>
                                         )}
                                         <Rating rating = {item.rating}/>
                                             </div>
-                                    {(item.discount) ? (
-                                        <div className = "discount">{item.discount}</div>
-                                    ):(
-                                        <div></div>
-                                    )}
+                                    {item.discount && <div className = "discount">{item.discount}</div>}
                                 </Link>
                             </SwiperSlide>
                         )

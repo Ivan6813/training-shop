@@ -20,11 +20,21 @@ function ProductSlider({images}) {
             <div className = "product-sliders">
                 <div className = "wrapper-product-slider-small">
                     <div className = "slider-small-btn">
-                        <button onClick = {() => mainSlider.slidePrev()} 
-                                className = {classNames("btn-prev", {disabled: activeSlide === 0})}
+                        <button 
+                            onClick = {() => mainSlider.slidePrev()} 
+                            className = {
+                                classNames("btn-prev", {
+                                    disabled: activeSlide === 0
+                                })
+                            }
                         ></button>
-                        <button onClick = {() => mainSlider.slideNext()} 
-                                className = {classNames("btn-next", {disabled: activeSlide === length})}
+                        <button 
+                            onClick = {() => mainSlider.slideNext()} 
+                            className = {
+                                classNames("btn-next", {
+                                    disabled: activeSlide === length
+                                })
+                            }
                         ></button>
                     </div>
                     <Swiper
@@ -61,9 +71,14 @@ function ProductSlider({images}) {
                     {images && images.map((item, i) => {
                         return (
                             <SwiperSlide key = {item.id}>
-                                <img className = {classNames("slider-small-img", {active: activeSlide !== i})} 
-                                     src = {`https://training.cleverland.by/shop${item.url}`}
-                                     alt = "img"
+                                <img 
+                                    className = {
+                                        classNames("slider-small-img", {
+                                            active: activeSlide !== i
+                                        })
+                                    } 
+                                    src = {`https://training.cleverland.by/shop${item.url}`}
+                                    alt = "img"
                                 />
                             </SwiperSlide>
                         )
@@ -83,9 +98,10 @@ function ProductSlider({images}) {
             {images && images.map(item => {
                 return (
                     <SwiperSlide key = {item.id}>
-                        <img className = "product-slider-img" 
-                             src = {`https://training.cleverland.by/shop${item.url}`} 
-                             alt = "img"/>
+                        <img 
+                            className = "product-slider-img" 
+                            src = {`https://training.cleverland.by/shop${item.url}`} 
+                            alt = "img"/>
                     </SwiperSlide>
                 )
             })}

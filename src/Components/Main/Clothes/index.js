@@ -13,7 +13,10 @@ function Clothes({category}) {
 
     return (
         <div className = "clothes" data-test-id = {`clothes-${category}`}>
-            <ClothesHeader category = {category} setParticulars = {setParticulars}/>
+            <ClothesHeader
+                category = {category} 
+                setParticulars = {setParticulars}
+            />
             <ClothesList clothes = {sortClothes}/>
             <ClothesBtn category = {category}/>
         </div>
