@@ -127,7 +127,7 @@ export const radioDelivery = [
 
 export const radioPayment = [
     {id: uuidv4() , key: payPal, value: "payPal", label: "icon"},
-    {id: uuidv4() , key: visa, value: "card", label: "icon"},
-    {id: uuidv4() , key: masterCard, value: "card", label: "icon"},
+    {id: uuidv4() , key: visa, value: "visa", label: "icon"},
+    {id: uuidv4() , key: masterCard, value: "master card", label: "icon"},
     {id: uuidv4() , key: "Cash", value: "cash", label: "text"}
 ];

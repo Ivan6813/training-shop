@@ -7,7 +7,8 @@ import {
   sendEmailResponse,
   errorSendEmail,
   sendReviewResponse,
-  errorSendReview
+  errorSendReview,
+  orderResponse
 } from "../actions";
 import axios from "axios";
 
@@ -19,6 +20,7 @@ export function* requestsWatcher() {
   yield takeEvery(ACTION_TYPES.GET_PRODUCTS, productsRequestWorker);
   yield takeEvery(ACTION_TYPES.SEND_EMAIL, subscribeRequestWorker);
   yield takeEvery(ACTION_TYPES.SEND_REVIEW, reviewRequestWorker);
+  yield takeEvery(ACTION_TYPES.SEND_ORDER, orderRequestWorker);
 }
 
 export function* productsRequestWorker() {
@@ -47,5 +49,15 @@ export function* reviewRequestWorker({payload}) {
     yield put(errorSendReview());
   }
 }
+
+export function* orderRequestWorker({payload}) {
+  try {
+    const {data} = yield call(axios.post, API.sendOrder, payload);
+    yield put(orderResponse(data.message));
+  } catch (err) {
+    yield put(orderResponse(err.message));
+  }
+}
+
 
   

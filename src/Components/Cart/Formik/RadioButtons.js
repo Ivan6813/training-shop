@@ -3,7 +3,7 @@ import {Field} from "formik";
 
 function RadioButtons(props) {
 
-    const {name, label, options, onChange, ...rest} = props;
+    const {name, label, options, onClick, ...rest} = props;
 
     return (
         <div className = "delivery-methods">
@@ -19,6 +19,7 @@ function RadioButtons(props) {
                                         defaultChecked = {field.value === option.value}
                                         {...field}
                                         value = {option.value}
+                                        onClick = {onClick}
                                     />
                                     {option.label === "text" && <span>{option.key}</span>}
                                     {option.label === "icon" 

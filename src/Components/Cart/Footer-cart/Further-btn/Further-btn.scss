@@ -1,0 +1,26 @@
+.cart-btn-black {
+    width: 100%;
+    background: #121212;
+    border: 2px solid #121212;
+    color: rgba($color: #ffffff, $alpha: 0.9);
+    padding: 17px 0;
+    font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: all ease 0.3s;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    &:hover {
+        background: #e6e6e6;
+        color: rgba($color: #121212, $alpha: 0.9);
+        border-color: #e6e6e6;
+    }
+    &:active {
+        background: #9c9c9c;
+        border-color: #9c9c9c;
+        color: rgba($color: #ffffff, $alpha: 0.9);
+    }
+}

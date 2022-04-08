@@ -3,7 +3,7 @@ import {Field} from "formik";
 
 function Checkbox(props) {
 
-    const {name, ...rest} = props;
+    const {name, value, checked, ...rest} = props;
 
     return (
         <div className = "consent-form">
@@ -14,7 +14,7 @@ function Checkbox(props) {
                             <input 
                                 type = "checkbox" 
                                 {...field}
-                                value = "agree"
+                                value = {true}
                             />
                             <span>I agree to the processing of my personal information</span>
                         </label>
