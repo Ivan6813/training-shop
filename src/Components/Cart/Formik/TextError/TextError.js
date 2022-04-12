@@ -1,8 +1,9 @@
 import React from "react";
+import "./TextError.scss";
 
 function TextError(props) {
     return (
-        <div className = "error">
+        <div className = "cart-text-error">
             {props.children}
         </div>
     )

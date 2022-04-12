@@ -5,69 +5,6 @@
     height: 100%;
 }
 
-.delivery-methods {
-    padding: 20px 0 32px 0;
-}
-
-.delivery-methods-title {
-    display: block;
-    font-weight: 400;
-    font-size: 14px;
-    color: #000000;
-    margin-bottom: 16px;
-    @include sm-mobile {
-        font-size: 13px;
-    }
-}
-
-.delivery-methods-item {
-    padding: 12px 0;
-    border-top: 2px solid #f8f8f8;
-    &:last-child {
-        border-bottom: 2px solid #f8f8f8;
-    }
-}
-
-.delivery-methods-label {
-    font-weight: 400;
-    font-size: 14px;
-    color: #000000;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.custom-radio > input {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-}
-
-.custom-radio > span {
-    display: flex;
-    align-items: center;
-    user-select: none;
-}
-
-.custom-radio > span::before {
-    content: "";
-    display: block;
-    width: 18px;
-    height: 18px;
-    border: 1px solid #e6e6e6;
-    border-radius: 50%;
-    margin-right: 12px;
-    transition: border-color ease 0.3s;
-}
-
-.custom-radio > input:not(:disabled):not(:checked) + span:hover::before {
-    border-color: #121212;
-}
-
-.custom-radio > input:checked + span::before {
-    border-color: #121212;
-    background: url(../../../img/custom-radio-checked.svg) no-repeat center;
-}
-
 .customer-info {
     margin-bottom: 12px;
 }
@@ -77,63 +14,13 @@
     font-size: 12px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    margin-bottom: 8px;
 }
 
-.customer-info-input {
-    display: block;
-    width: 100%;
-    background: #f8f8f8;
-    border: none;
-    padding: 15px 16px;
-    &::placeholder {
-        font-weight: 500;
-        font-size: 14px;
-        color: rgba($color: #121212, $alpha: 0.4);
-    }
-    &:hover {
-        &::placeholder {
-            transition: all ease 0.3s;
-            color: rgba($color: #121212, $alpha: 0.6);
-        }
-    }
+.small-input-block {
+   display: flex;
+   margin: 0 -4px 8px -4px;
 }
 
-.customer-store-adress {
-    display: block;
-    width: 100%;
-    background: #f8f8f8;
-    border: none;
-    padding: 15px 16px;
-    font-weight: 500;
-    font-size: 14px;
-    color: #9c9c9c;
-}
-
-.customer-params-input {
-    margin-bottom: 8px;
-}
-
-.customer-adress {
-    display: flex;
-    margin-bottom: 8px;
-}
-
-.customer-adress-input {
-    margin-right: 8px;
-}
-
-.consent-form-label {
-    font-weight: 400;
-    font-size: 14px;
-    user-select: none;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    @include sm-mobile {
-        font-size: 13px;
-    }
-    & > span {
-        display: flex;
-        align-items: flex-start;
-    }
+.small-input {
+    padding: 0 4px;
 }

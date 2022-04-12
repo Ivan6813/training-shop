@@ -1,19 +1,21 @@
-import React from "react";
+import React, { useRef } from "react";
 import {Formik, Form} from "formik";
 import * as yup from "yup";
-import {radioPayment} from "../../../constants/constants";
+import {radioPayment, regexEmail} from "../../../constants/constants";
 import FormikControl from "../Formik/FormikControl";
 import { savePaymentFormData, addOrderFormData } from "../../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+// import classNames from "classnames";
 import "./Payment-info.scss";
 
 function PaymentInfo({paymentFormik, setPaymentMethod}) {
 
     const {paymentFormData} = useSelector(state => state.order);
+    // const inputCVV = useRef();
     const dispatch = useDispatch();
 
     const initialValues = {
-        paymentMethod: "visa",
+        paymentMethod: "card",
         cashEmail: "",
         card: "",
         cardDate: "",
@@ -21,12 +23,26 @@ function PaymentInfo({paymentFormik, setPaymentMethod}) {
     };
 
     const validationSchema = yup.object({
-        paymentMethod: yup.string().trim(),
-        cashEmail: yup.string().trim().required("required"),
-        card: yup.string().trim(),
-        cardDate: yup.string().trim(),
-        cardCVV: yup.string().trim(),
-        
+        paymentMethod: yup.string(),
+        cashEmail: yup.string().when('paymentMethod', {
+            is: "paypal",
+            then: yup.string()
+                .trim()
+                .matches(regexEmail, "Неверный формат")
+                .required("Поле должно быть заполнено"),
+        }),
+        card: yup.string().when('paymentMethod', {
+            is: "card",
+            then: yup.string().trim().required("Поле должно быть заполнено"),
+        }),
+        cardDate: yup.string().when('paymentMethod', {
+            is: "card",
+            then: yup.string().required("Поле должно быть заполнено"),
+        }),
+        cardCVV: yup.string().when('paymentMethod', {
+            is: "card",
+            then: yup.string().trim().required("Поле должно быть заполнено"),
+        }),
     });
 
     const onSubmit = values => {
@@ -47,11 +63,12 @@ function PaymentInfo({paymentFormik, setPaymentMethod}) {
                     initialValues = {paymentFormData || initialValues}
                     validationSchema = {validationSchema}
                     onSubmit = {onSubmit}
+                    validateOnMount = {true}
                     enableReinitialize
                     innerRef = {paymentFormik}
                 >
                 {formik => (
-                    <Form id = "payment-form">
+                    <Form>
                         <FormikControl
                             control = "radio"
                             name = "paymentMethod"
@@ -59,7 +76,7 @@ function PaymentInfo({paymentFormik, setPaymentMethod}) {
                             options = {radioPayment}
                             onClick = {(event) => {setPayMethod(event)}}
                         />
-                        {formik.values.paymentMethod === "payPal" 
+                        {formik.values.paymentMethod === "paypal" 
                         && 
                         <div className = "customer-info">
                             <div className = "customer-info-params">E-mail</div>
@@ -68,36 +85,50 @@ function PaymentInfo({paymentFormik, setPaymentMethod}) {
                                 type = "text"
                                 name = "cashEmail"
                                 placeholder = "E-mail"
-                                className = "customer-info-input"
+                                formik = {formik}
                             />
                         </div>
                         }
-                        {(formik.values.paymentMethod === "visa" || formik.values.paymentMethod === "master card")
+                        {(formik.values.paymentMethod === "card")
                         &&
                         <div className = "customer-info">
                             <div className = "customer-info-params">Card</div>
                             <FormikControl
-                                control = "input"
-                                type = "text"
+                                control = "numberFormatInput"
+                                type = "tel"
                                 name = "card"
                                 placeholder = "____ ____ ____ ____"
-                                className = "customer-info-input customer-params-input"
+                                format = "#### #### #### ####"
+                                mask = "_"
+                                formik = {formik}
                             />
-                            <div className = "customer-card-info">
-                                <FormikControl
-                                    control = "input"
-                                    type = "text"
-                                    name = "cardDate"
-                                    placeholder = "YY/MM"
-                                    className = "customer-info-input"
-                                />
-                                <FormikControl
-                                    control = "input"
-                                    type = "text"
-                                    name = "cardCVV"
-                                    placeholder = "CVV"
-                                    className = "customer-info-input customer-cvv-input"
-                                />
+                            <div className = "small-input-block">
+                                <div className = "small-input">
+                                    <FormikControl
+                                        control = "numberFormatInput"
+                                        type = "tel"
+                                        name = "cardDate"
+                                        placeholder = "YY/MM"
+                                        format = "##/##"
+                                        mask = "_"
+                                        formik = {formik}
+                                    />
+                                </div>
+                                <div className = "small-input input-cart-cvv">
+                                    <FormikControl
+                                        control = "input"
+                                        type = "password"
+                                        name = "cardCVV"
+                                        placeholder = "CVV"
+                                        autoComplete = "off"
+                                        // innerRef = {inputCVV}
+                                        formik = {formik}
+                                        // inputCVV = {inputCVV}
+                                        // className = {classNames("custom-input", {
+                                        //     customer_info_input_error : formik?.errors["cardCVV"] && formik?.touched["cardCVV"]
+                                        // })}
+                                    />
+                                </div>
                             </div>
                         </div>}
                     </Form>

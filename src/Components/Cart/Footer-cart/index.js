@@ -9,7 +9,7 @@ function FooterCart({cartSection, setCartSection, paymentFormik, deliveryFormik,
     const totalPrice = order.reduce((acc, item) => {
         acc += item.price*item.quantity;
         return acc;
-    },0)
+    },0);
 
     return (
         <div className = "footer-cart">
@@ -39,7 +39,14 @@ function FooterCart({cartSection, setCartSection, paymentFormik, deliveryFormik,
                     paymentFormik = {paymentFormik}
                     paymentMethod = {paymentMethod}
                 />}
-                {cartSection !== 0 && <ViewCartBtn clearForm = {false} setCartSection = {setCartSection}/>}
+                {cartSection !== 0 && <ViewCartBtn 
+                                        clearForm = {false} 
+                                        cartSection = {cartSection}
+                                        setCartSection = {setCartSection} 
+                                        deliveryFormik = {deliveryFormik}
+                                        paymentFormik = {paymentFormik}
+                                      />
+                }
             </div>
         </div>
     );

@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { clearFormData } from "../../../../redux/actions";
+import { clearFormData, saveDeliveryFormData, savePaymentFormData } from "../../../../redux/actions";
 import "./ViewCart-btn.scss";
 
-function ViewCartBtn({clearForm, setCartSection}) {
+function ViewCartBtn({clearForm, cartSection, setCartSection, deliveryFormik, paymentFormik}) {
 
     const dispatch = useDispatch();
 
@@ -12,7 +12,13 @@ function ViewCartBtn({clearForm, setCartSection}) {
             dispatch(clearFormData());
             setCartSection(0);
         }else {
-            setCartSection(0);
+            if(cartSection === 1) {
+                dispatch(saveDeliveryFormData(deliveryFormik.current?.values));
+                setCartSection(0);
+            }else {
+                dispatch(savePaymentFormData(paymentFormik.current?.values));
+                setCartSection(0);
+            }
         }
     }
 

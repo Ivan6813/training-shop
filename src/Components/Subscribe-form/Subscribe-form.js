@@ -2,8 +2,10 @@ import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {Oval} from "react-loader-spinner";
 import {sendEmail} from "../../redux/actions/index";
+import { regexEmail } from "../../constants/constants";
 import classNames from "classnames";
 import "./Subscribe-form.scss";
+
 
 function SubscribeForm({prefix, btnText, loaderSize, dataTestId}) {
 
@@ -18,10 +20,9 @@ function SubscribeForm({prefix, btnText, loaderSize, dataTestId}) {
     const dispatch = useDispatch();
 
     function formValidation(value) {
-        let regex = new RegExp("^([a-z\\d\\.-]+)@([a-z\\d-]+)\\.([a-z]{2,8})(\\.[a-z]{2,8})?$");
         setEmail(value);
         setResponseText(false);
-        (regex.test(value)) ? setDisablet(false) : setDisablet(true);
+        (regexEmail.test(value)) ? setDisablet(false) : setDisablet(true);
     }
 
     function sendUserEmail() {

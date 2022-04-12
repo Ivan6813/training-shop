@@ -126,8 +126,12 @@ export const radioDelivery = [
 ];
 
 export const radioPayment = [
-    {id: uuidv4() , key: payPal, value: "payPal", label: "icon"},
-    {id: uuidv4() , key: visa, value: "visa", label: "icon"},
-    {id: uuidv4() , key: masterCard, value: "master card", label: "icon"},
+    {id: uuidv4() , key: payPal, value: "paypal", label: "icon"},
+    {id: uuidv4() , key: visa, value: "card", label: "icon"},
+    {id: uuidv4() , key: masterCard, value: "card", label: "icon"},
     {id: uuidv4() , key: "Cash", value: "cash", label: "text"}
 ];
+
+export const regexPhone = new RegExp("\\((([2]{1}([5]{1}|[9]{1}))|([3]{1}[3]{1})|([4]{1}[4]{1}))\\)\\s[0-9\\-]{9,9}");
+
+export const regexEmail = new RegExp("^([a-z\\d\\.-]{2,63})@([a-z\\d-]+)\\.([a-z]{2,8})(\\.[a-z]{2,8})?$");

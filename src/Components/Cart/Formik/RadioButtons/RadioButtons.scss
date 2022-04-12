@@ -1,0 +1,64 @@
+@import "../../../../mixin.scss";
+
+.methods {
+    padding: 20px 0 32px 0;
+}
+
+.methods-title {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 16px;
+    @include sm-mobile {
+        font-size: 13px;
+    }
+}
+
+.methods-item {
+    padding: 12px 0;
+    border-top: 2px solid #f8f8f8;
+    &:last-child {
+        border-bottom: 2px solid #f8f8f8;
+    }
+}
+
+.methods-label {
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.custom-radio > input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.custom-radio > span {
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.custom-radio > span::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #e6e6e6;
+    border-radius: 50%;
+    margin-right: 12px;
+    transition: border-color ease 0.3s;
+}
+
+.custom-radio > input:not(:disabled):not(:checked) + span:hover::before {
+    border-color: #121212;
+}
+
+.custom-radio > input:checked + span::before {
+    border-color: #121212;
+    background: url(../../../../img/custom-radio-checked.svg) no-repeat center;
+}

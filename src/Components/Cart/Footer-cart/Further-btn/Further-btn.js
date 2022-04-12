@@ -22,8 +22,10 @@ function FurtherBtn({cartSection, setCartSection, deliveryFormik, order, totalPr
             setCartSection(cartSection + 1); 
         }else {
             deliveryFormik.current?.submitForm();
-            if(deliveryFormik.current?.dirty && deliveryFormik.current?.isValid) {
+            if(deliveryFormik.current?.isValid) {
                 setCartSection(cartSection + 1);
+            }else {
+                deliveryFormik.current?.setFieldValue("agree", false)
             }
         }
     }

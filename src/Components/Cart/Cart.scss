@@ -5,10 +5,12 @@
 @import "./Payment-info/Payment-info.scss";
 @import "./Cart-status/Cart-status.scss";
 @import "./Footer-cart/Footer-cart.scss";
+@import "./Formik/FormikControl.scss";
 @import "../../mixin.scss";
 
 .cart-block {
     width: 100vw;
+    min-height: 500px;
     height: 100vh;
     position: fixed;
     top: 0;

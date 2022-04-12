@@ -10,7 +10,7 @@ import SuccessOrder from "./Success-order/Success-order";
 import "./Cart-status.scss";
 
 
-function CartStatus({cartSection, setCartSection, closeCart}) {
+function CartStatus({cartSection, setCartSection, closeCart, order}) {
 
     const {orderResponse, isLoadingResponse} = useSelector(state => state.order);
 
@@ -36,7 +36,7 @@ function CartStatus({cartSection, setCartSection, closeCart}) {
                     <EmptyCart/>
                 )}
                 <div className = "cart-container">
-                    {orderResponse === "success" ?
+                    {(orderResponse === "success" || order.length === 0) ?
                     <BackToShoppingBtn closeCart = {closeCart}/>
                     :
                     <>

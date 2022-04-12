@@ -2,7 +2,7 @@ import React from "react";
 import {Formik, Form} from "formik";
 import * as yup from "yup";
 import FormikControl from "../Formik/FormikControl";
-import { dropDownStoreAdress, radioDelivery } from "../../../constants/constants";
+import { dropDownStoreAdress, radioDelivery, regexPhone, regexEmail } from "../../../constants/constants";
 import { saveDeliveryFormData, addOrderFormData } from "../../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import "./Delivery-info.scss";
@@ -23,22 +23,22 @@ function DeliveryInfo({deliveryFormik}) {
         house: "",
         apartment: "",
         postcode : "",
-        storeAdress: ""
+        storeAdress: "",
+        agree: false
     };
 
     const validationSchema = yup.object({
         deliveryMethod: yup.string(),
-        phone: yup.string().trim().required("required"),
-        email: yup.string().trim().required("required"),
-        country: yup.string().trim().required("required"),
-        city: yup.string().trim().required("required"),
-        street: yup.string().trim().required("required"),
-        house: yup.string().trim().required("required"),
+        phone: yup.string().trim().matches(regexPhone, "Проверьте код оператора").required("Поле должно быть заполнено"),
+        email: yup.string().trim().matches(regexEmail, "Неверный формат").required("Поле должно быть заполнено"),
+        country: yup.string().trim().required("Поле должно быть заполнено"),
+        city: yup.string().trim().required("Поле должно быть заполнено"),
+        street: yup.string().trim().required("Поле должно быть заполнено"),
+        house: yup.string().trim().required("Поле должно быть заполнено"),
         apartment: yup.string().trim(),
-        postcode: yup.string().trim().required("required"),
+        postcode: yup.string().trim().required("Поле должно быть заполнено"),
         storeAdress: yup.string().trim(),
-        agree: yup.boolean(),
-        
+        agree: yup.bool().oneOf([true], "Вы должны согласиться на обработку личной информации")
     });
 
     const onSubmit = values => {
@@ -54,6 +54,7 @@ function DeliveryInfo({deliveryFormik}) {
                     validationSchema = {validationSchema}
                     onSubmit = {onSubmit} 
                     enableReinitialize
+                    validateOnMount = {true}
                     innerRef = {deliveryFormik}
                 >
                 {formik => (
@@ -67,11 +68,13 @@ function DeliveryInfo({deliveryFormik}) {
                         <div className = "customer-info">
                             <div className = "customer-info-params">Phone</div>
                             <FormikControl
-                                control = "input"
-                                type = "text"
+                                control = "numberFormatInput"
+                                type = "tel"
                                 name = "phone"
                                 placeholder = "+375 (__) _______"
-                                className = "customer-info-input"
+                                format = "+375 (##) ###-##-##"
+                                mask = "_"
+                                formik = {formik}
                             />
                         </div>
                         <div className = "customer-info">
@@ -81,7 +84,7 @@ function DeliveryInfo({deliveryFormik}) {
                                 type = "text"
                                 name = "email"
                                 placeholder = "E-mail"
-                                className = "customer-info-input"
+                                formik = {formik}
                             />
                         </div>
                         {formik.values.deliveryMethod !== "store pickup"
@@ -93,37 +96,41 @@ function DeliveryInfo({deliveryFormik}) {
                                 type = "text"
                                 name = "country"
                                 placeholder = "Country"
-                                className = "customer-info-input customer-params-input"
+                                formik = {formik}
                             />
                             <FormikControl
                                 control = "input"
                                 type = "text"
                                 name = "city"
                                 placeholder = "City"
-                                className = "customer-info-input customer-params-input"
+                                formik = {formik}
                             />
                             <FormikControl
                                 control = "input"
                                 type = "text"
                                 name = "street"
                                 placeholder = "Street"
-                                className = "customer-info-input customer-params-input"
+                                formik = {formik}
                             />
-                            <div className="customer-adress">
-                                <FormikControl
-                                    control = "input"
-                                    type = "text"
-                                    name = "house"
-                                    placeholder = "House"
-                                    className = "customer-info-input customer-adress-input"
-                                />
-                                <FormikControl
-                                    control = "input"
-                                    type = "text"
-                                    name = "apartment"
-                                    placeholder = "Apartment"
-                                    className = "customer-info-input"
-                                />
+                            <div className = "small-input-block">
+                                <div className = "small-input">
+                                    <FormikControl
+                                        control = "input"
+                                        type = "text"
+                                        name = "house"
+                                        placeholder = "House"
+                                        formik = {formik}
+                                    />
+                                </div>
+                                <div className = "small-input">
+                                    <FormikControl
+                                        control = "input"
+                                        type = "text"
+                                        name = "apartment"
+                                        placeholder = "Apartment"
+                                        formik = {formik}
+                                    />
+                                </div>
                             </div>
                         </div>
                         :
@@ -134,7 +141,7 @@ function DeliveryInfo({deliveryFormik}) {
                                 type = "text"
                                 name = "country"
                                 placeholder = "Country"
-                                className = "customer-info-input customer-params-input"
+                                formik = {formik}
                             />
                             <FormikControl
                                 control = "select"
@@ -149,20 +156,22 @@ function DeliveryInfo({deliveryFormik}) {
                         <div className = "customer-info">
                             <div className = "customer-info-params">Postcode</div>
                             <FormikControl
-                                control = "input"
-                                type = "text"
+                                control = "numberFormatInput"
+                                type = "tel"
                                 name = "postcode"
                                 placeholder = "BY ______"
-                                className = "customer-info-input"
+                                format = "BY ######"
+                                mask = "_"
+                                formik = {formik}
                             />
                         </div>
                         }
                         <FormikControl
                             control = "checkbox"
-                            // name = "agree"
+                            name = "agree"
                             defaultChecked = {formik.values.agree}
-                            // checked = {formik.isValid && formik.dirty}
-                            // value = {formik.values.agree}
+                            value = {formik.values.agree}
+                            formik = {formik}
                         />
                     </Form>
                 )}

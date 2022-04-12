@@ -14,7 +14,7 @@ import "./Cart.scss";
 function Cart({isCartOpen, setIsCartOpen}) {
 
     const [cartSection, setCartSection] = useState(0);
-    const [paymentMethod, setPaymentMethod] = useState("visa");
+    const [paymentMethod, setPaymentMethod] = useState("card");
     const {order, orderResponse} = useSelector(state => state.order);
     const deliveryFormik = useRef();
     const paymentFormik = useRef();
@@ -69,6 +69,7 @@ function Cart({isCartOpen, setIsCartOpen}) {
                         cartSection = {cartSection}
                         setCartSection = {setCartSection}
                         closeCart = {closeCart}
+                        order = {order}
                     />
                 )}
             </div>

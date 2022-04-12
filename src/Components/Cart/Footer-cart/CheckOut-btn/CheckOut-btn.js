@@ -9,7 +9,7 @@ function CheckOutBtn({cartSection, setCartSection, paymentFormik, paymentMethod}
     
     function submitFormData() {
         paymentFormik.current?.submitForm();
-        if(paymentFormik.current?.dirty && paymentFormik.current?.isValid) {
+        if(paymentFormik.current?.isValid) {
             dispatch(sendOrder(orderFormData));
             setCartSection(cartSection + 1);
         }
