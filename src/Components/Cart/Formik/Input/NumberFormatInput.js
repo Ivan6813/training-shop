@@ -17,7 +17,7 @@ function NumberFormatInput(props) {
                     return (
                         <NumberFormat 
                             mask = {mask}
-                            className = {classNames("customer-info-input", {
+                            className = {classNames("number-fomat-input", {
                                 customer_info_input_error : formik?.errors[name] && formik?.touched[name]
                             })}
                             {...field}

@@ -17,11 +17,7 @@ function RadioButtons(props) {
                                 <label className = "methods-label custom-radio">
                                     <input 
                                         type = "radio"
-                                        defaultChecked = {label === "Method of payments" ? 
-                                            (index === 1)
-                                            :
-                                            (field.value === option.value)
-                                        } 
+                                        defaultChecked = {field.value === option.value} 
                                         {...field}
                                         value = {option.value}
                                         onClick = {onClick}

@@ -134,4 +134,8 @@ export const radioPayment = [
 
 export const regexPhone = new RegExp("\\((([2]{1}([5]{1}|[9]{1}))|([3]{1}[3]{1})|([4]{1}[4]{1}))\\)\\s[0-9\\-]{9,9}");
 
-export const regexEmail = new RegExp("^([a-z\\d\\.-]{2,63})@([a-z\\d-]+)\\.([a-z]{2,8})(\\.[a-z]{2,8})?$");
+export const regexEmail = new RegExp("^([a-z\\d\\.-]+)@([a-z\\d-]+)\\.([a-z]{2,63})(\\.[a-z]{2,63})?$");
+
+export const regexCard = new RegExp("^([0-9]{4,4})\\s([0-9]{4,4})\\s([0-9]{4,4})\\s([0-9]{4,4})");
+
+export const regexCardCVV = new RegExp("^[0-9]{3,4}$");

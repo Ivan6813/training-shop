@@ -1,11 +1,12 @@
 import React, { useRef } from "react";
 import {Formik, Form} from "formik";
 import * as yup from "yup";
-import {radioPayment, regexEmail} from "../../../constants/constants";
+import {radioPayment, regexEmail, regexCard, regexCardCVV} from "../../../constants/constants";
 import FormikControl from "../Formik/FormikControl";
 import { savePaymentFormData, addOrderFormData } from "../../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 // import classNames from "classnames";
+import { parse, isDate } from "date-fns";
 import "./Payment-info.scss";
 
 function PaymentInfo({paymentFormik, setPaymentMethod}) {
@@ -22,26 +23,65 @@ function PaymentInfo({paymentFormik, setPaymentMethod}) {
         cardCVV: ""
     };
 
+    function limitMonthValue(val, max) {
+        if (val.length === 1 && val[0] > max[0]) {
+          val = '0' + val;
+        }
+        if (val.length === 2) {
+          if (Number(val) === 0) {
+            val = '01';
+          } else if (val > max) {
+            val = max;
+          }
+        }
+        return val;
+    }
+
+    function cardExpiry(val) {
+        let month = limitMonthValue(val.substring(0, 2), '12');
+        let year = val.substring(2, 4);
+        return month + (year.length ? '/' + year : '');
+    }
+
+    function validateCardDate(value) {
+        const today = new Date();
+        const parsedDate = isDate(value)
+          ? value
+          : parse(value, "MM/yy", new Date());
+      
+        return parsedDate > today;
+    }
+
     const validationSchema = yup.object({
         paymentMethod: yup.string(),
         cashEmail: yup.string().when('paymentMethod', {
             is: "paypal",
-            then: yup.string()
+            then: yup
+                .string()
                 .trim()
                 .matches(regexEmail, "Неверный формат")
                 .required("Поле должно быть заполнено"),
         }),
         card: yup.string().when('paymentMethod', {
             is: "card",
-            then: yup.string().trim().required("Поле должно быть заполнено"),
+            then: yup
+                .string()
+                .matches(regexCard, "Должно быть ровно 16 символов")
+                .required("Поле должно быть заполнено"),
         }),
         cardDate: yup.string().when('paymentMethod', {
             is: "card",
-            then: yup.string().required("Поле должно быть заполнено"),
+            then: yup
+                .string()
+                .test("cardDate", "Неверная дата", value => validateCardDate(value))
+                .required("Поле должно быть заполнено"),
         }),
         cardCVV: yup.string().when('paymentMethod', {
             is: "card",
-            then: yup.string().trim().required("Поле должно быть заполнено"),
+            then: yup
+                .string()
+                .matches(regexCardCVV, "Должно быть 3-4 символа")
+                .required("Поле должно быть заполнено"),
         }),
     });
 
@@ -108,19 +148,20 @@ function PaymentInfo({paymentFormik, setPaymentMethod}) {
                                         control = "numberFormatInput"
                                         type = "tel"
                                         name = "cardDate"
-                                        placeholder = "YY/MM"
-                                        format = "##/##"
+                                        placeholder = "MM/YY"
+                                        format={cardExpiry}
                                         mask = "_"
                                         formik = {formik}
                                     />
                                 </div>
                                 <div className = "small-input input-cart-cvv">
                                     <FormikControl
-                                        control = "input"
+                                        control = "numberFormatInput"
                                         type = "password"
                                         name = "cardCVV"
                                         placeholder = "CVV"
                                         autoComplete = "off"
+                                        // format = "####"
                                         // innerRef = {inputCVV}
                                         formik = {formik}
                                         // inputCVV = {inputCVV}

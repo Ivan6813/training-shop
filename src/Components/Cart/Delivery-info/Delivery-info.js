@@ -29,14 +29,34 @@ function DeliveryInfo({deliveryFormik}) {
 
     const validationSchema = yup.object({
         deliveryMethod: yup.string(),
-        phone: yup.string().trim().matches(regexPhone, "Проверьте код оператора").required("Поле должно быть заполнено"),
-        email: yup.string().trim().matches(regexEmail, "Неверный формат").required("Поле должно быть заполнено"),
+        phone: yup
+            .string()
+            .trim()
+            .matches(regexPhone, "Проверьте код оператора")
+            .required("Поле должно быть заполнено"),
+        email: yup
+            .string()
+            .trim()
+            .matches(regexEmail, "Неверный формат")
+            .required("Поле должно быть заполнено"),
         country: yup.string().trim().required("Поле должно быть заполнено"),
-        city: yup.string().trim().required("Поле должно быть заполнено"),
-        street: yup.string().trim().required("Поле должно быть заполнено"),
-        house: yup.string().trim().required("Поле должно быть заполнено"),
+        city: yup.string().when("deliveryMethod", {
+            is: (value => value === "pickup from post offices" || value === "express delivery"),
+            then: yup.string().trim().required("Поле должно быть заполнено"),
+        }),
+        street: yup.string().when("deliveryMethod", {
+            is: (value => value === "pickup from post offices" || value === "express delivery"),
+            then: yup.string().trim().required("Поле должно быть заполнено"),
+        }),
+        house: yup.string().when("deliveryMethod", {
+            is: (value => value === "pickup from post offices" || value === "express delivery"),
+            then: yup.string().trim().required("Поле должно быть заполнено"),
+        }),
         apartment: yup.string().trim(),
-        postcode: yup.string().trim().required("Поле должно быть заполнено"),
+        postcode: yup.string().when("deliveryMethod", {
+            is: "pickup from post offices",
+            then: yup.string().trim().required("Поле должно быть заполнено"),
+        }),
         storeAdress: yup.string().trim(),
         agree: yup.bool().oneOf([true], "Вы должны согласиться на обработку личной информации")
     });
