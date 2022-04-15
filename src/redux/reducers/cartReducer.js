@@ -1,7 +1,16 @@
 import { ACTION_TYPES } from "../../constants/action-types";
 
 const initialState = {
-    order: []
+    order: [],
+    deliveryFormData: null,
+    paymentFormData: null,
+    orderFormData: {},
+    orderResponse: "",
+    isLoadingResponse: false,
+    countries: [],
+    cities: [],
+    countriesRequestError: "",
+    citiesRequestError: ""
 };
 
 function cartReducer (state = initialState, action) {
@@ -21,7 +30,10 @@ function cartReducer (state = initialState, action) {
                     ...state,
                     order: state.order.map(item => {
                         if(item.id === action.payload) {
-                            return {...item, quantity: item.quantity + 1};
+                            return {
+                                ...item, 
+                                quantity: item.quantity + 1
+                            };
                         }else return item;
                     })
             };
@@ -30,10 +42,62 @@ function cartReducer (state = initialState, action) {
                     ...state,
                     order: state.order.map(item => {
                         if(item.id === action.payload) {
-                            return {...item, quantity: (item.quantity === 1) ? 1 : item.quantity - 1};
+                            return {
+                                ...item, 
+                                quantity: (item.quantity === 1) ? 1 : item.quantity - 1
+                            };
                         }else return item;
                     })
             };
+        case ACTION_TYPES.SAVE_DELIVERY_FORM:
+            return {...state, deliveryFormData: {...action.payload}};
+        case ACTION_TYPES.SAVE_PAYMENT_FORM:
+            return {...state, paymentFormData: {...action.payload}};
+        case ACTION_TYPES.CLEAR_FORM_DATA:
+            return {
+                ...state, 
+                orderFormData: {}, 
+                deliveryFormData: null, 
+                paymentFormData: null, 
+                orderResponse: ""
+            };
+        case ACTION_TYPES.CLEAR_CART_ITEMS:
+            return {...state, order: []};
+        case ACTION_TYPES.ADD_ORDER_FORM_DATA:
+            return {
+                ...state, 
+                orderFormData: {...state.orderFormData, ...action.payload}
+            };
+        case ACTION_TYPES.SEND_ORDER:
+            return {
+                ...state, 
+                isLoadingResponse: true, 
+                orderResponse: ""
+            };
+        case ACTION_TYPES.ORDER_RESPONSE:
+            return {
+                ...state, 
+                orderResponse: action.payload, 
+                isLoadingResponse: false
+            };
+        case ACTION_TYPES.GET_COUNTRIES:
+            return {...state, countriesRequestError: ""};
+        case ACTION_TYPES.GET_CITIES:
+            return {...state, citiesRequestError: ""};
+        case ACTION_TYPES.SET_COUNTRIES:
+            return {...state, countries: [...action.payload]};
+        case ACTION_TYPES.SET_CITIES:
+            return {...state, cities: [...action.payload]};
+        case ACTION_TYPES.CLEAR_CITIES:
+            return {
+                ...state, 
+                cities: [], 
+                citiesRequestError: ""
+            };
+        case ACTION_TYPES.COUNTRIES_REQUEST_ERROR:
+            return {...state, countriesRequestError: action.payload};
+        case ACTION_TYPES.CITIES_REQUEST_ERROR:
+            return {...state, citiesRequestError: action.payload};
         default:
             return state;
     }

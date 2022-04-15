@@ -1,25 +1,36 @@
-import React, {useState} from "react";
-import { useSelector } from "react-redux";
+import React, {useState, useRef} from "react";
+import { useSelector, useDispatch } from "react-redux";
 import classNames from "classnames";
 import HeaderCart from "./Header-cart/Header-cart";
-// import NavBarCart from "./Nav-bar-cart/Nav-bar-cart";
-// import CartItems from "./Cart-items/Cart-items";
-// import DeliveryInfo from "./Delivery-info/Delivery-info";
-// import PaymentCart from "./Payment-cart/Payment-cart";
-import FooterCart from "./Footer-cart/Footer-cart";
-import CartStatus from "./Cart-status/Cart-status";
+import NavBarCart from "./Nav-bar-cart/Nav-bar-cart";
+import CartItems from "./Cart-items/Cart-items";
+import CartStatus from "./Cart-status/index";
+import DeliveryInfo from "./Delivery-info/Delivery-info";
+import PaymentInfo from "./Payment-info/Payment-info";
+import { clearCartItems, clearFormData } from "../../redux/actions";
+import FooterCart from "./Footer-cart";
 import "./Cart.scss";
-import FormikContainer from "./Formik/FormikContainer";
-
 
 function Cart({isCartOpen, setIsCartOpen}) {
 
     const [cartSection, setCartSection] = useState(0);
-    const {order} = useSelector(state => state.order);
-
+    const [paymentMethod, setPaymentMethod] = useState("visa");
+    const {order, orderResponse} = useSelector(state => state.order);
+    const deliveryFormik = useRef();
+    const paymentFormik = useRef();
+    const dispatch = useDispatch();
+    
     function closeCart() {
-        setIsCartOpen(false);
-        setCartSection(0);
+        if(cartSection === 3 && orderResponse === "success") {
+            setIsCartOpen(false);
+            setCartSection(0);
+            dispatch(clearFormData());
+            dispatch(clearCartItems());
+        }else {
+            setIsCartOpen(false);
+            setCartSection(0);
+            dispatch(clearFormData());
+        } 
     }
 
     return (
@@ -34,23 +45,31 @@ function Cart({isCartOpen, setIsCartOpen}) {
                 data-test-id = "cart"
             >
                 <HeaderCart closeCart = {closeCart}/>
-                {(!!order.length && cartSection !== 3) ? (
+                {(!!order.length && cartSection !== 3) ? (  
                     <>
-                        {/* <NavBarCart cartSection = {cartSection}/> */}
-                        {/* {cartSection === 0 && <CartItems/>} */}
-                        <FormikContainer order = {order} cartSection = {cartSection}/>
-                        {/* {cartSection === 2 && <PaymentCart/>} */}
+                        <NavBarCart cartSection = {cartSection}/>
+                        {cartSection === 0 && <CartItems order = {order}/>}
+                        {cartSection === 1 && <DeliveryInfo deliveryFormik = {deliveryFormik}/>}
+                        {cartSection === 2 && <PaymentInfo 
+                                                paymentFormik = {paymentFormik} 
+                                                setPaymentMethod = {setPaymentMethod}
+                                              />
+                        }
                         <FooterCart 
-                            order = {order} 
-                            closeCart = {closeCart}
-                            cartSection = {cartSection}
-                            setCartSection = {setCartSection}
+                            cartSection = {cartSection} 
+                            setCartSection = {setCartSection} 
+                            paymentFormik = {paymentFormik} 
+                            paymentMethod = {paymentMethod} 
+                            deliveryFormik = {deliveryFormik}
+                            order = {order}
                         />
                     </>
                 ):(
                     <CartStatus 
                         cartSection = {cartSection}
+                        setCartSection = {setCartSection}
                         closeCart = {closeCart}
+                        order = {order}
                     />
                 )}
             </div>
