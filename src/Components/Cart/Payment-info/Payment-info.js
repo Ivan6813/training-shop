@@ -3,14 +3,14 @@ import {Formik, Form} from "formik";
 import * as yup from "yup";
 import {radioPayment, regexEmail, regexCard, regexCardCVV} from "../../../constants/constants";
 import FormikControl from "../Formik-control/FormikControl";
-import { savePaymentFormData, addOrderFormData } from "../../../redux/actions";
+import { savePaymentFormData, sendOrder } from "../../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { parse, isDate } from "date-fns";
 import "./Payment-info.scss";
 
-function PaymentInfo({paymentFormik, setPaymentMethod}) {
+function PaymentInfo({paymentFormik, setPaymentMethod, cartSection, setCartSection}) {
 
-    const {paymentFormData} = useSelector(state => state.order);
+    const {paymentFormData, orderFormData} = useSelector(state => state.order);
     const dispatch = useDispatch();
 
     const initialValues = {
@@ -20,35 +20,6 @@ function PaymentInfo({paymentFormik, setPaymentMethod}) {
         cardDate: "",
         cardCVV: ""
     };
-
-    function limitMonthValue(val, max) {
-        if (val.length === 1 && val[0] > max[0]) {
-          val = '0' + val;
-        }
-        if (val.length === 2) {
-          if (Number(val) === 0) {
-            val = '01';
-          } else if (val > max) {
-            val = max;
-          }
-        }
-        return val;
-    }
-
-    function cardExpiry(val) {
-        let month = limitMonthValue(val.substring(0, 2), '12');
-        let year = val.substring(2, 4);
-        return month + (year.length ? '/' + year : '');
-    }
-
-    function validateCardDate(value) {
-        const today = new Date();
-        const parsedDate = isDate(value)
-          ? value
-          : parse(value, "MM/yy", new Date());
-      
-        return parsedDate > today;
-    }
 
     const validationSchema = yup.object({
         paymentMethod: yup.string(),
@@ -85,12 +56,45 @@ function PaymentInfo({paymentFormik, setPaymentMethod}) {
 
     const onSubmit = values => {
         dispatch(savePaymentFormData(values));
-        if(values.paymentMethod === "visa" || values.paymentMethod === "master card") {
-            values.paymentMethod = "card";
-            dispatch(addOrderFormData(values));
-        }else {
-            dispatch(addOrderFormData(values));
+        if(paymentFormik.current?.isValid) {
+            if(values.paymentMethod === "visa" || values.paymentMethod === "master card") {
+                values.paymentMethod = "card";
+                dispatch(sendOrder({...values, ...orderFormData}));
+                setCartSection(cartSection + 1);
+            }else {
+                dispatch(sendOrder({...values, ...orderFormData}));
+                setCartSection(cartSection + 1);
+            }
         }
+    }
+
+    function limitMonthValue(val, max) {
+        if (val.length === 1 && val[0] > max[0]) {
+          val = '0' + val;
+        }
+        if (val.length === 2) {
+          if (Number(val) === 0) {
+            val = '01';
+          } else if (val > max) {
+            val = max;
+          }
+        }
+        return val;
+    }
+
+    function cardExpiry(val) {
+        let month = limitMonthValue(val.substring(0, 2), '12');
+        let year = val.substring(2, 4);
+        return month + (year.length ? '/' + year : '');
+    }
+
+    function validateCardDate(value) {
+        const today = new Date();
+        const parsedDate = isDate(value)
+          ? value
+          : parse(value, "MM/yy", new Date());
+      
+        return parsedDate > today;
     }
 
     function setPayMethod(event) {

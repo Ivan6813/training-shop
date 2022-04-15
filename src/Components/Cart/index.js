@@ -53,6 +53,8 @@ function Cart({isCartOpen, setIsCartOpen}) {
                         {cartSection === 2 && <PaymentInfo 
                                                 paymentFormik = {paymentFormik} 
                                                 setPaymentMethod = {setPaymentMethod}
+                                                cartSection = {cartSection} 
+                                                setCartSection = {setCartSection} 
                                               />
                         }
                         <FooterCart 

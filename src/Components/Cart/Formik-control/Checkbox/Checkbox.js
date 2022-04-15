@@ -13,7 +13,7 @@ function Checkbox({name, value, formik, ...rest}) {
                     return (
                         <label
                             className = {classNames("consent-form-label custom-checkbox", {
-                                custom_checkbox_error : formik?.errors[name] && formik?.touched[name]
+                                custom_checkbox_error: formik?.errors[name] && formik?.touched[name]
                             })}
                         >
                             <input 

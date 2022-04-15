@@ -34,8 +34,6 @@ function FooterCart({cartSection, setCartSection, paymentFormik, deliveryFormik,
                 {cartSection === 2
                 && 
                 <CheckOutBtn
-                    cartSection = {cartSection}
-                    setCartSection = {setCartSection}
                     paymentFormik = {paymentFormik}
                     paymentMethod = {paymentMethod}
                 />}
