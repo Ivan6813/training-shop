@@ -111,14 +111,6 @@ export const productInfo = [
     {icon: email, text: "Ask a question"}
 ];
 
-export const dropDownStoreAdress = [
-    {id: uuidv4() ,key: "Store adress", value: ""},
-    {id: uuidv4() ,key: "463 Massachusetts Ave, Cambridge", value: "463 Massachusetts Ave, Cambridge"},
-    {id: uuidv4() ,key: "14 McGrath Hwy, Somerville", value: "14 McGrath Hwy, Somerville"},
-    {id: uuidv4() ,key: "870 Massachusetts Ave, Boston", value: "870 Massachusetts Ave, Boston"},
-    {id: uuidv4() ,key: "301 Warren St, Roxbury", value: "301 Warren St, Roxbury"},
-];
-
 export const radioDelivery = [
     {id: uuidv4() , key: "Pickup from post offices", value: "pickup from post offices", label: "text"},
     {id: uuidv4() , key: "Express delivery", value: "express delivery", label: "text"},
@@ -127,8 +119,8 @@ export const radioDelivery = [
 
 export const radioPayment = [
     {id: uuidv4() , key: payPal, value: "paypal", label: "icon"},
-    {id: uuidv4() , key: visa, value: "card", label: "icon"},
-    {id: uuidv4() , key: masterCard, value: "card", label: "icon"},
+    {id: uuidv4() , key: visa, value: "visa", label: "icon"},
+    {id: uuidv4() , key: masterCard, value: "master card", label: "icon"},
     {id: uuidv4() , key: "Cash", value: "cash", label: "text"}
 ];
 

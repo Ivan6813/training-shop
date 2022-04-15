@@ -1,0 +1,35 @@
+.cart-input-block {
+    position: relative;
+    padding: 8px 0 24px 0;
+}
+
+.cart-input{
+    display: block;
+    width: 100%;
+    background: #f8f8f8;
+    border: none;
+    padding: 15px 16px;
+    font-weight: 500;
+    font-size: 14px;    
+    &::placeholder {
+        font-weight: 500;
+        font-size: 14px;
+        color: rgba($color: #121212, $alpha: 0.4);
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+    &:focus::placeholder {
+        opacity: 0; 
+        transition: opacity 0.3s ease;
+    }
+    &:hover {
+        &::placeholder {
+            transition: all ease 0.3s;
+            color: rgba($color: #121212, $alpha: 0.6);
+        }
+    }
+}
+
+.cart_input_error {
+    outline: 1px solid #D61313;
+}

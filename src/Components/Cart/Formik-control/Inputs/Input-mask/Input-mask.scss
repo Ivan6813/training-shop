@@ -1,10 +1,9 @@
-.cart-input-block {
+.input-mask_block{
     position: relative;
     padding: 8px 0 24px 0;
 }
 
-.customer-info-input,
-.number-fomat-input {
+.input-mask {
     display: block;
     width: 100%;
     background: #f8f8f8;
@@ -16,12 +15,6 @@
         font-weight: 500;
         font-size: 14px;
         color: rgba($color: #121212, $alpha: 0.4);
-        opacity: 1;
-        transition: opacity 0.3s ease;
-    }
-    &:focus::placeholder {
-        opacity: 0; 
-        transition: opacity 0.3s ease;
     }
     &:hover {
         &::placeholder {
@@ -29,13 +22,8 @@
             color: rgba($color: #121212, $alpha: 0.6);
         }
     }
-}
+}  
 
-.number-fomat-input {  
-    &:focus::placeholder {
-        opacity: 1; 
-    }
-}
-.customer_info_input_error {
+.cart_input_error {
     outline: 1px solid #D61313;
 }

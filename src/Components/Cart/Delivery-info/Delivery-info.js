@@ -1,16 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import {Formik, Form} from "formik";
 import * as yup from "yup";
-import FormikControl from "../Formik/FormikControl";
-import { dropDownStoreAdress, radioDelivery, regexPhone, regexEmail } from "../../../constants/constants";
-import { saveDeliveryFormData, addOrderFormData } from "../../../redux/actions";
+import FormikControl from "../Formik-control/FormikControl";
+import { radioDelivery, regexPhone, regexEmail } from "../../../constants/constants";
+import { saveDeliveryFormData, addOrderFormData, getCountries } from "../../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import "./Delivery-info.scss";
 
-
 function DeliveryInfo({deliveryFormik}) {
 
-    const {deliveryFormData} = useSelector(state => state.order);
+    const [isOpenDropdown, setIsOpenDropdown] = useState(false);
+    const [isOpenCitiesList, setIsOpenCitiesList] = useState(false);
+    const {deliveryFormData, countries, cities} = useSelector(state => state.order);
     const dispatch = useDispatch();
 
     const initialValues = {
@@ -42,22 +43,31 @@ function DeliveryInfo({deliveryFormik}) {
         country: yup.string().trim().required("Поле должно быть заполнено"),
         city: yup.string().when("deliveryMethod", {
             is: (value => value === "pickup from post offices" || value === "express delivery"),
-            then: yup.string().trim().required("Поле должно быть заполнено"),
+            then: yup.string().trim().required("Поле должно быть заполнено")
         }),
         street: yup.string().when("deliveryMethod", {
             is: (value => value === "pickup from post offices" || value === "express delivery"),
-            then: yup.string().trim().required("Поле должно быть заполнено"),
+            then: yup.string().trim().required("Поле должно быть заполнено")
         }),
         house: yup.string().when("deliveryMethod", {
             is: (value => value === "pickup from post offices" || value === "express delivery"),
-            then: yup.string().trim().required("Поле должно быть заполнено"),
+            then: yup.string().trim().required("Поле должно быть заполнено")
         }),
         apartment: yup.string().trim(),
         postcode: yup.string().when("deliveryMethod", {
             is: "pickup from post offices",
-            then: yup.string().trim().required("Поле должно быть заполнено"),
+            then: yup.string().trim().required("Поле должно быть заполнено")
         }),
-        storeAdress: yup.string().trim(),
+        storeAdress: yup.string().when("deliveryMethod", {
+            is: "store pickup",
+            then: yup
+                .string()
+                .trim()
+                .required("Поле должно быть заполнено")
+                .test("storeAdress", "Указанный город не найден", value => {
+                    return cities.some(item => item.city === value)
+                })
+        }),
         agree: yup.bool().oneOf([true], "Вы должны согласиться на обработку личной информации")
     });
 
@@ -66,8 +76,26 @@ function DeliveryInfo({deliveryFormik}) {
         dispatch(addOrderFormData(values));
     }
 
+    function countriesList(event) {
+        if(event.target.checked && event.target.value === "store pickup") {
+            if(countries.length === 0) {
+                dispatch(getCountries());
+            }else {
+                return;
+            }
+        }
+    }
+
+    function closeDropdowns() {
+        setIsOpenDropdown(false);
+        setIsOpenCitiesList(false);
+    }
+
     return (
-        <div className = "delivery-block">
+        <div 
+            className = "delivery-block"
+            onClick = {() => closeDropdowns()}
+        >
             <div className = "cart-container">
                 <Formik
                     initialValues = {deliveryFormData || initialValues}
@@ -84,11 +112,12 @@ function DeliveryInfo({deliveryFormik}) {
                             name = "deliveryMethod"
                             label = "Choose the method of delivery of the items"
                             options = {radioDelivery}
+                            onClick = {(event) => countriesList(event)}
                         />
                         <div className = "customer-info">
                             <div className = "customer-info-params">Phone</div>
                             <FormikControl
-                                control = "numberFormatInput"
+                                control = "inputMask"
                                 type = "tel"
                                 name = "phone"
                                 placeholder = "+375 (__) _______"
@@ -157,17 +186,18 @@ function DeliveryInfo({deliveryFormik}) {
                         <div className = "customer-info">
                             <div className = "customer-info-params">Adress of store</div>
                             <FormikControl
-                                control = "input"
-                                type = "text"
+                                control = "inputDropdown"
                                 name = "country"
-                                placeholder = "Country"
                                 formik = {formik}
+                                isOpenDropdown = {isOpenDropdown}
+                                setIsOpenDropdown = {setIsOpenDropdown}
                             />
                             <FormikControl
-                                control = "select"
+                                control = "inputSearch"
                                 name = "storeAdress"
-                                options = {dropDownStoreAdress}
-                                className = "customer-store-adress"
+                                formik = {formik}
+                                isOpenCitiesList = {isOpenCitiesList}
+                                setIsOpenCitiesList = {setIsOpenCitiesList}
                             />
                         </div>
                         }
@@ -176,12 +206,11 @@ function DeliveryInfo({deliveryFormik}) {
                         <div className = "customer-info">
                             <div className = "customer-info-params">Postcode</div>
                             <FormikControl
-                                control = "numberFormatInput"
+                                control = "inputMask"
                                 type = "tel"
                                 name = "postcode"
                                 placeholder = "BY ______"
                                 format = "BY ######"
-                                mask = "_"
                                 formik = {formik}
                             />
                         </div>

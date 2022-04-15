@@ -1,24 +1,22 @@
 import React from "react";
 import {Field, ErrorMessage} from "formik";
 import classNames from "classnames";
-import TextError from "../TextError/TextError";
-import NumberFormat from 'react-number-format';
-import "./Input.scss";
+import TextError from "../../TextError/TextError";
+import NumberFormat from "react-number-format";
+import "./Input-mask.scss";
 
 
-function NumberFormatInput(props) {
-
-    const {name, formik, mask, ...rest} = props;
+function InputMask({name, formik, mask, ...rest}) {
 
     return (
-        <div className = "cart-input-block">
+        <div className = "input-mask_block">
             <Field name = {name}>
                 {({field}) => {
                     return (
                         <NumberFormat 
                             mask = {mask}
-                            className = {classNames("number-fomat-input", {
-                                customer_info_input_error : formik?.errors[name] && formik?.touched[name]
+                            className = {classNames("input-mask", {
+                                cart_input_error: formik?.errors[name] && formik?.touched[name]
                             })}
                             {...field}
                             {...rest}
@@ -31,4 +29,4 @@ function NumberFormatInput(props) {
     )
 }
 
-export default NumberFormatInput;
+export default InputMask;

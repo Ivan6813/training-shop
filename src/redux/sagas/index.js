@@ -8,7 +8,11 @@ import {
   errorSendEmail,
   sendReviewResponse,
   errorSendReview,
-  orderResponse
+  orderResponse,
+  setCountries,
+  setCities,
+  countriesRequestError,
+  citiesRequestError
 } from "../actions";
 import axios from "axios";
 
@@ -21,6 +25,8 @@ export function* requestsWatcher() {
   yield takeEvery(ACTION_TYPES.SEND_EMAIL, subscribeRequestWorker);
   yield takeEvery(ACTION_TYPES.SEND_REVIEW, reviewRequestWorker);
   yield takeEvery(ACTION_TYPES.SEND_ORDER, orderRequestWorker);
+  yield takeEvery(ACTION_TYPES.GET_COUNTRIES, countriesRequestWorker);
+  yield takeEvery(ACTION_TYPES.GET_CITIES, citiesRequestWorker);
 }
 
 export function* productsRequestWorker() {
@@ -59,5 +65,22 @@ export function* orderRequestWorker({payload}) {
   }
 }
 
+export function* countriesRequestWorker() {
+  try {
+    const {data} = yield call(axios.get, API.getCountries);
+    yield put(setCountries(data));
+  } catch (err) {
+    yield put(countriesRequestError(err.message));
+  }
+}
+
+export function* citiesRequestWorker({payload}) {
+  try {
+    const {data} = yield call(axios.post, API.getCities, payload);
+    yield put(setCities(data));
+  } catch (err) {
+    yield put(citiesRequestError(err.message));
+  }
+}
 
   

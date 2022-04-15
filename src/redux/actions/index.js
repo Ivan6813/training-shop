@@ -87,3 +87,31 @@ export function sendOrder(payload) {
 export function orderResponse(payload) {
     return { type: ACTION_TYPES.ORDER_RESPONSE, payload};
 };
+
+export function getCountries() {
+    return { type: ACTION_TYPES.GET_COUNTRIES};
+};
+
+export function setCountries(payload) {
+    return { type: ACTION_TYPES.SET_COUNTRIES, payload};
+};
+
+export function getCities(payload) {
+    return { type: ACTION_TYPES.GET_CITIES, payload};
+};
+
+export function setCities(payload) {
+    return { type: ACTION_TYPES.SET_CITIES, payload};
+};
+
+export function clearCities() {
+    return { type: ACTION_TYPES.CLEAR_CITIES};
+};
+
+export function countriesRequestError(payload) {
+    return { type: ACTION_TYPES.COUNTRIES_REQUEST_ERROR, payload};
+};
+
+export function citiesRequestError(payload) {
+    return { type: ACTION_TYPES.CITIES_REQUEST_ERROR, payload};
+};

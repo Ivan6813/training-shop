@@ -4,9 +4,7 @@ import classNames from "classnames";
 import TextError from "../TextError/TextError";
 import "./Checkbox.scss";
 
-function Checkbox(props) {
-
-    const {name, value, formik, ...rest} = props;
+function Checkbox({name, value, formik, ...rest}) {
 
     return (
         <div className = "consent-form">

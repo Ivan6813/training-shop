@@ -6,7 +6,11 @@ const initialState = {
     paymentFormData: null,
     orderFormData: {},
     orderResponse: "",
-    isLoadingResponse: false
+    isLoadingResponse: false,
+    countries: [],
+    cities: [],
+    countriesRequestError: "",
+    citiesRequestError: ""
 };
 
 function cartReducer (state = initialState, action) {
@@ -76,6 +80,24 @@ function cartReducer (state = initialState, action) {
                 orderResponse: action.payload, 
                 isLoadingResponse: false
             };
+        case ACTION_TYPES.GET_COUNTRIES:
+            return {...state, countriesRequestError: ""};
+        case ACTION_TYPES.GET_CITIES:
+            return {...state, citiesRequestError: ""};
+        case ACTION_TYPES.SET_COUNTRIES:
+            return {...state, countries: [...action.payload]};
+        case ACTION_TYPES.SET_CITIES:
+            return {...state, cities: [...action.payload]};
+        case ACTION_TYPES.CLEAR_CITIES:
+            return {
+                ...state, 
+                cities: [], 
+                citiesRequestError: ""
+            };
+        case ACTION_TYPES.COUNTRIES_REQUEST_ERROR:
+            return {...state, countriesRequestError: action.payload};
+        case ACTION_TYPES.CITIES_REQUEST_ERROR:
+            return {...state, citiesRequestError: action.payload};
         default:
             return state;
     }

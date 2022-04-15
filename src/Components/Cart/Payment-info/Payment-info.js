@@ -1,22 +1,20 @@
-import React, { useRef } from "react";
+import React from "react";
 import {Formik, Form} from "formik";
 import * as yup from "yup";
 import {radioPayment, regexEmail, regexCard, regexCardCVV} from "../../../constants/constants";
-import FormikControl from "../Formik/FormikControl";
+import FormikControl from "../Formik-control/FormikControl";
 import { savePaymentFormData, addOrderFormData } from "../../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-// import classNames from "classnames";
 import { parse, isDate } from "date-fns";
 import "./Payment-info.scss";
 
 function PaymentInfo({paymentFormik, setPaymentMethod}) {
 
     const {paymentFormData} = useSelector(state => state.order);
-    // const inputCVV = useRef();
     const dispatch = useDispatch();
 
     const initialValues = {
-        paymentMethod: "card",
+        paymentMethod: "visa",
         cashEmail: "",
         card: "",
         cardDate: "",
@@ -59,35 +57,40 @@ function PaymentInfo({paymentFormik, setPaymentMethod}) {
             then: yup
                 .string()
                 .trim()
+                .required("Поле должно быть заполнено")
                 .matches(regexEmail, "Неверный формат")
-                .required("Поле должно быть заполнено"),
         }),
         card: yup.string().when('paymentMethod', {
-            is: "card",
+            is: (value => value === "visa" || value === "master card"),
             then: yup
                 .string()
+                .required("Поле должно быть заполнено")
                 .matches(regexCard, "Должно быть ровно 16 символов")
-                .required("Поле должно быть заполнено"),
         }),
         cardDate: yup.string().when('paymentMethod', {
-            is: "card",
+            is: (value => value === "visa" || value === "master card"),
             then: yup
                 .string()
+                .required("Поле должно быть заполнено")
                 .test("cardDate", "Неверная дата", value => validateCardDate(value))
-                .required("Поле должно быть заполнено"),
         }),
         cardCVV: yup.string().when('paymentMethod', {
-            is: "card",
+            is: (value => value === "visa" || value === "master card"),
             then: yup
                 .string()
+                .required("Поле должно быть заполнено")
                 .matches(regexCardCVV, "Должно быть 3-4 символа")
-                .required("Поле должно быть заполнено"),
         }),
     });
 
     const onSubmit = values => {
         dispatch(savePaymentFormData(values));
-        dispatch(addOrderFormData(values));
+        if(values.paymentMethod === "visa" || values.paymentMethod === "master card") {
+            values.paymentMethod = "card";
+            dispatch(addOrderFormData(values));
+        }else {
+            dispatch(addOrderFormData(values));
+        }
     }
 
     function setPayMethod(event) {
@@ -129,12 +132,14 @@ function PaymentInfo({paymentFormik, setPaymentMethod}) {
                             />
                         </div>
                         }
-                        {(formik.values.paymentMethod === "card")
+                        {(formik.values.paymentMethod === "visa" 
+                        || 
+                        formik.values.paymentMethod === "master card")
                         &&
                         <div className = "customer-info">
                             <div className = "customer-info-params">Card</div>
                             <FormikControl
-                                control = "numberFormatInput"
+                                control = "inputMask"
                                 type = "tel"
                                 name = "card"
                                 placeholder = "____ ____ ____ ____"
@@ -145,7 +150,7 @@ function PaymentInfo({paymentFormik, setPaymentMethod}) {
                             <div className = "small-input-block">
                                 <div className = "small-input">
                                     <FormikControl
-                                        control = "numberFormatInput"
+                                        control = "inputMask"
                                         type = "tel"
                                         name = "cardDate"
                                         placeholder = "MM/YY"
@@ -154,20 +159,11 @@ function PaymentInfo({paymentFormik, setPaymentMethod}) {
                                         formik = {formik}
                                     />
                                 </div>
-                                <div className = "small-input input-cart-cvv">
+                                <div className = "small-input">
                                     <FormikControl
-                                        control = "numberFormatInput"
-                                        type = "password"
+                                        control = "inputCVV"
                                         name = "cardCVV"
-                                        placeholder = "CVV"
-                                        autoComplete = "off"
-                                        // format = "####"
-                                        // innerRef = {inputCVV}
                                         formik = {formik}
-                                        // inputCVV = {inputCVV}
-                                        // className = {classNames("custom-input", {
-                                        //     customer_info_input_error : formik?.errors["cardCVV"] && formik?.touched["cardCVV"]
-                                        // })}
                                     />
                                 </div>
                             </div>

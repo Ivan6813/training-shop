@@ -1,15 +1,3 @@
-@font-face {
-	font-family: "fontello";
-	src: url("../../../fonts/fontello.eot?2022");
-	src: url("../../../fonts/fontello.eot?2022#iefix") format("embedded-opentype"),
-	     url("../../../fonts/fontello.woff2?2022") format("woff2"),
-	     url("../../../fonts/fontello.woff?2022") format("woff"),
-	     url("../../../fonts/fontello.woff2") format("truetype"),
-	     url("../../../fonts/fontello.svg?2022#fontello") format("svg");
-	font-weight: 300;
-	font-style: normal;
-}
-
 .payment-block {
     overflow: overlay;
     height: 100%;
@@ -18,35 +6,5 @@
 .payment-icon {
     height: 24px;
 }
-
-.input-cart-cvv {
-    position: relative;
-
-}
-
-// .custom-input {
-//     display: block;
-//     background: #f8f8f8;
-//     border: none;
-//     width: 163px;
-//     height: 47px;
-//     padding: 0 45px 0 16px;
-//     font-family: "fontello";
-//     font-weight: 500;
-//     font-size: 10px;    
-//     letter-spacing: 3px;
-//     &::placeholder {
-//         font-family: "Spartan";
-//         font-weight: 500;
-//         font-size: 14px;
-//         color: rgba($color: #121212, $alpha: 0.4);
-//     }
-//     &:hover {
-//         &::placeholder {
-//             transition: all ease 0.3s;
-//             color: rgba($color: #121212, $alpha: 0.6);
-//         }
-//     }
-// }
 
 

@@ -1,10 +1,11 @@
 import React from "react";
 import "./TextError.scss";
 
-function TextError(props) {
+function TextError({children}) {
+
     return (
         <div className = "cart-text-error">
-            {props.children}
+            {children}
         </div>
     )
 }

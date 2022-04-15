@@ -17,7 +17,7 @@ function ViewCartBtn({clearForm, cartSection, setCartSection, deliveryFormik, pa
                 setCartSection(0);
             }else {
                 dispatch(savePaymentFormData(paymentFormik.current?.values));
-                setCartSection(0);
+                setCartSection(1);
             }
         }
     }

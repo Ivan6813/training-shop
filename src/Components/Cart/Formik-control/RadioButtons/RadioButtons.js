@@ -2,9 +2,7 @@ import React from "react";
 import {Field} from "formik";
 import "./RadioButtons.scss";
 
-function RadioButtons(props) {
-
-    const {name, label, options, onClick, ...rest} = props;
+function RadioButtons({name, label, options, onClick, ...rest}) {
 
     return (
         <div className = "methods">
