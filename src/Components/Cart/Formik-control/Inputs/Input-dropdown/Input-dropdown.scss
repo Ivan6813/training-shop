@@ -2,7 +2,6 @@
     position: relative;
     padding: 8px 0 24px 0;
     z-index: 50;
-    user-select: none;
 }
 
 .dropdown_block_shadow {
@@ -17,7 +16,6 @@
     font-weight: 500;
     font-size: 14px;
     padding: 15px 16px;
-    outline: none;
     cursor: pointer;
     user-select: none;
     &::placeholder {
@@ -29,12 +27,6 @@
         &::placeholder {
             transition: all ease 0.3s;
             color: rgba($color: #121212, $alpha: 0.6);
-        }
-    }
-    &:disabled {
-        opacity: 0.35;
-        &::placeholder {
-            color: rgba($color: #121212, $alpha: 0.4);
         }
     }
 }
