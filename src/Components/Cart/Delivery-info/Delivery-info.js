@@ -24,7 +24,7 @@ function DeliveryInfo({deliveryFormik}) {
         house: "",
         apartment: "",
         postcode : "",
-        storeAdress: "",
+        storeAddress: "",
         agree: false
     };
 
@@ -58,13 +58,13 @@ function DeliveryInfo({deliveryFormik}) {
             is: "pickup from post offices",
             then: yup.string().trim().required("Поле должно быть заполнено")
         }),
-        storeAdress: yup.string().when("deliveryMethod", {
+        storeAddress: yup.string().when("deliveryMethod", {
             is: "store pickup",
             then: yup
                 .string()
                 .trim()
                 .required("Поле должно быть заполнено")
-                .test("storeAdress", "Указанный город не найден", value => {
+                .test("storeAddress", "Указанный город не найден", value => {
                     return cities.some(item => item.city === value)
                 })
         }),
@@ -194,7 +194,7 @@ function DeliveryInfo({deliveryFormik}) {
                             />
                             <FormikControl
                                 control = "inputSearch"
-                                name = "storeAdress"
+                                name = "storeAddress"
                                 formik = {formik}
                                 isOpenCitiesList = {isOpenCitiesList}
                                 setIsOpenCitiesList = {setIsOpenCitiesList}

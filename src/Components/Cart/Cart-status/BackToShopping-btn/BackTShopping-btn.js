@@ -6,6 +6,7 @@ function BackToShoppingBtn({closeCart}) {
         <button 
             onClick = {() => closeCart()} 
             className = "cart-btn-black"
+            type = "button"
         >
             back to shopping
         </button>

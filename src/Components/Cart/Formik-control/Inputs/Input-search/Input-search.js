@@ -34,7 +34,7 @@ function InputSearch({name, formik, isOpenCitiesList, setIsOpenCitiesList}) {
     }
 
     function selectCity(event) {
-        formik.setFieldValue("storeAdress", event.target.textContent);
+        formik.setFieldValue("storeAddress", event.target.textContent);
         setIsOpenCitiesList(false);
     }
 
