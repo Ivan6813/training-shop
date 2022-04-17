@@ -9,9 +9,12 @@ function InputDropdown({name, formik, isOpenDropdown, setIsOpenDropdown}) {
 
     const {countriesRequestError, countries} = useSelector(state => state.order);
 
-    function openCountriesList(event) {
+    function openCountriesList() {
+        setIsOpenDropdown(true);
+    }
+
+    function clickStopPropagation(event) {
         event.stopPropagation();
-        setIsOpenDropdown(!isOpenDropdown);
     }
 
     function selectCountry(event) {
@@ -32,7 +35,8 @@ function InputDropdown({name, formik, isOpenDropdown, setIsOpenDropdown}) {
                 className = {classNames("input-dropdown", {
                     input_dropdown_error: formik?.errors[name] && formik?.touched[name]
                 })}
-                onClick = {(event) => openCountriesList(event)}
+                onFocus = {openCountriesList}
+                onClick = {clickStopPropagation}
                 placeholder = "Country"
                 readOnly 
              />
@@ -44,7 +48,7 @@ function InputDropdown({name, formik, isOpenDropdown, setIsOpenDropdown}) {
                         <li 
                             className = "countries-item"
                             key = {option._id}
-                            onClick = {(event) => selectCountry(event)}
+                            onClick = {selectCountry}
                         >
                             {option.name}
                         </li>
