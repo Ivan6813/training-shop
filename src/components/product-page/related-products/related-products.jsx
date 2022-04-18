@@ -6,8 +6,8 @@ import {useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
 import classNames from "classnames";
 import Rating from "../../rating/rating";
-import "swiper/scss/navigation";
-import "swiper/scss";
+import "../../../../node_modules/swiper/modules/navigation/navigation.scss";
+import "../../../../node_modules/swiper/swiper.scss";
 import "./related-products.scss";
 
 const RelatedProducts = ({productType}) => {

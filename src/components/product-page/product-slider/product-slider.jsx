@@ -2,10 +2,10 @@ import {useState} from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {FreeMode, Navigation, Thumbs, Controller} from "swiper";
 import classNames from "classnames";
-import "swiper/scss";
-import "swiper/scss/free-mode";
-import "swiper/scss/navigation";
-import "swiper/scss/thumbs";
+import "../../../../node_modules/swiper/swiper.scss";
+import "../../../../node_modules/swiper/modules/free-mode/free-mode.scss";
+import "../../../../node_modules/swiper/modules/navigation/navigation.scss";
+import "../../../../node_modules/swiper/modules/thumbs/thumbs.scss";
 import "./product-slider.scss";
 
 const ProductSlider = ({images}) => {
