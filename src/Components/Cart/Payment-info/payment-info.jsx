@@ -25,7 +25,7 @@ const PaymentInfo = ({paymentFormik, setPaymentMethod, cartSection, setCartSecti
             if(values.paymentMethod === paymentMethods.visa || 
                 values.paymentMethod === paymentMethods.master
             ) {
-                values.paymentMethod = paymentMethods.card;
+                values.paymentMethod = "card";
                 dispatch(sendOrder({...values, ...orderFormData}));
                 setCartSection(cartSection + 1);
             }else {
@@ -33,7 +33,7 @@ const PaymentInfo = ({paymentFormik, setPaymentMethod, cartSection, setCartSecti
                 setCartSection(cartSection + 1);
             }
         }
-    }
+    };
 
     const limitMonthValue = (val, max) => {
         if(val.length === 1 && val[0] > max[0]) {
@@ -84,7 +84,7 @@ const PaymentInfo = ({paymentFormik, setPaymentMethod, cartSection, setCartSecti
                         {values.paymentMethod === paymentMethods.payPal 
                         && 
                         <div className = "customer-info">
-                            <div className = "customer-info-params">E-mail</div>
+                            <label className = "customer-info-params">E-mail</label>
                             <FormikControl
                                 control = {inputTypes.input}
                                 type = "text"
@@ -100,7 +100,7 @@ const PaymentInfo = ({paymentFormik, setPaymentMethod, cartSection, setCartSecti
                         values.paymentMethod === paymentMethods.master)
                         &&
                         <div className = "customer-info">
-                            <div className = "customer-info-params">Card</div>
+                            <label className = "customer-info-params">Card</label>
                             <FormikControl
                                 control = {inputTypes.mask}
                                 type = "tel"

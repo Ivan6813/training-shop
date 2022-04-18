@@ -20,7 +20,16 @@ const Cart = ({isCartOpen, setIsCartOpen}) => {
     const deliveryFormik = useRef();
     const paymentFormik = useRef();
     const dispatch = useDispatch();
-    
+
+    const products = order.map(item => {
+        return {
+            name: item.name, 
+            size: item.size, 
+            color: item.color,
+            quantity: item.quantity
+        };
+    });
+
     const closeCart = () => {
         if(cartSection === 3 && orderResponse === serverResponse.success) {
             setIsCartOpen(false);
@@ -65,6 +74,7 @@ const Cart = ({isCartOpen, setIsCartOpen}) => {
                             paymentMethod = {paymentMethod} 
                             deliveryFormik = {deliveryFormik}
                             order = {order}
+                            products = {products}
                         />
                     </>
                 ):(

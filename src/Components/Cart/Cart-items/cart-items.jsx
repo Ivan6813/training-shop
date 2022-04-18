@@ -30,7 +30,7 @@ const CartItems = ({order}) => {
     };
 
     return (
-        < div className = "cart-items-block">
+        <div className = "cart-items-block">
             <div className = "cart-container">
                 {order.map(({id, name, size, color, price, quantity, img}) => (
                     <div 

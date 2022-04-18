@@ -8,7 +8,10 @@ import "./input-cvv.scss";
 const InputCvv = ({name, errors, touched}) => {
 
     const [cvvHidden, setCvvHidden] = useState(false);
-    let type = cvvHidden ? "text" : "password";
+
+    const changeType = () => {
+        setCvvHidden(!cvvHidden);
+    };
 
     return (
         <div className = "cart-input-block">
@@ -20,7 +23,7 @@ const InputCvv = ({name, errors, touched}) => {
                             input_cvv_visible: cvvHidden
                         })}
                         {...field}
-                        type = {type}
+                        type = {cvvHidden ? "text" : "password"}
                         placeholder = "CVV"
                         autoComplete = "off"
                     />
@@ -29,7 +32,7 @@ const InputCvv = ({name, errors, touched}) => {
             <button 
                 className = {classNames("input-cvv-btn", {show_CVV: cvvHidden})}
                 type = "button"
-                onClick = {() => setCvvHidden(!cvvHidden)}
+                onClick = {changeType}
             ></button>
             <ErrorMessage name = {name} component = {TextError}/>
         </div>

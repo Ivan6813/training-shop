@@ -1,20 +1,26 @@
-import {useSelector} from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
 import {ThreeDots} from "react-loader-spinner";
-import ViewCartBtn from "../footer-cart/view-cart-btn/view-cart-btn";
-import BackToBtn from "./back-to-btn/back-to-btn";
 import ErrorOrder from "./error-order/error-order";
 import SuccessOrder from "./success-order/success-order";
+import CartBtn from "../footer-cart/cart-btn/cart-btn";
 import {serverResponse} from "../../../constants/constants";
+import {clearFormData} from "../../../redux/actions";
 import "./cart-status.scss";
 
 const CartStatus = ({setCartSection, closeCart, order}) => {
 
     const {orderResponse, isLoadingResponse} = useSelector(state => state.order);
+    const dispatch = useDispatch();
 
-    const goToPayment = () => {
+    const handleToPaymentBtn = () => {
         setCartSection(2);
     };
 
+    const handleViewCartBtn = () => {
+        dispatch(clearFormData());
+        setCartSection(0);
+    };
+    
     return (
         <div className = "cart-status-block">
             {isLoadingResponse &&
@@ -41,12 +47,24 @@ const CartStatus = ({setCartSection, closeCart, order}) => {
                 }
                 <div className = "cart-container">
                     {(orderResponse === serverResponse.success || !order.length) &&
-                    <BackToBtn text = "back to shopping" func = {closeCart}/>
+                    <CartBtn 
+                        text = "back to shopping" 
+                        handle = {closeCart} 
+                        bg = "black"
+                    />
                     }
-                    {orderResponse !== serverResponse.success &&
+                    {(orderResponse !== serverResponse.success && !!order.length) &&
                     <>
-                        <BackToBtn text = "back to payment" func = {goToPayment}/>
-                        <ViewCartBtn clearForm = {true} setCartSection = {setCartSection}/>
+                        <CartBtn 
+                            text = "back to payment" 
+                            handle = {handleToPaymentBtn} 
+                            bg = "black"
+                        />
+                        <CartBtn 
+                            text = "View Cart" 
+                            handle = {handleViewCartBtn} 
+                            bg = "grey"
+                        />
                     </>
                     }
                 </div>

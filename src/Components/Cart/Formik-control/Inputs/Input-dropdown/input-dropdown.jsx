@@ -4,7 +4,14 @@ import {useSelector} from "react-redux";
 import TextError from "../../text-error/text-error";
 import "./input-dropdown.scss";
 
-const InputDropdown = ({name, setFieldValue, errors, touched, isOpenDropdown, setIsOpenDropdown}) => {
+const InputDropdown = ({
+    name, 
+    setFieldValue, 
+    errors, 
+    touched, 
+    isOpenDropdown, 
+    setIsOpenDropdown
+}) => {
 
     const {countriesRequestError, countries} = useSelector(state => state.order);
 
@@ -39,7 +46,11 @@ const InputDropdown = ({name, setFieldValue, errors, touched, isOpenDropdown, se
                 placeholder = "Country"
                 readOnly 
             />
-            <span className = {classNames("arrow-icon", {dropdown_open: isOpenDropdown})}></span>
+            <span 
+                className = {classNames("arrow-icon", {
+                    dropdown_open: isOpenDropdown
+                })}>
+            </span>
             {isOpenDropdown && 
             <ul className = "countries-list">
                 {countries.map(({name, _id}) => (

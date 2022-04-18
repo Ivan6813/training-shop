@@ -7,7 +7,6 @@ import {radioDelivery, deliveryMethods, inputTypes} from "../../../constants/con
 import {saveDeliveryFormData, addOrderFormData, getCountries} from "../../../redux/actions";
 import "./delivery-info.scss";
 
-
 const DeliveryInfo = ({deliveryFormik}) => {
 
     const [isOpenDropdown, setIsOpenDropdown] = useState(false);
@@ -32,10 +31,10 @@ const DeliveryInfo = ({deliveryFormik}) => {
     const onSubmit = (values) => {
         dispatch(saveDeliveryFormData(values));
         dispatch(addOrderFormData(values));
-    }
+    };
 
-    const countriesList = (event) => {
-        if(event.target.checked && event.target.value === deliveryMethods.pickup) {
+    const countriesList = ({target}) => {
+        if(target.checked && target.value === deliveryMethods.pickup) {
             if(!countries.length) {
                 dispatch(getCountries());
             }else {

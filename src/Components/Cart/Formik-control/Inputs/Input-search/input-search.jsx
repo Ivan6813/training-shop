@@ -3,10 +3,18 @@ import {Field, ErrorMessage} from "formik";
 import classNames from "classnames";
 import {useDispatch, useSelector} from "react-redux";
 import TextError from "../../text-error/text-error";
-import { clearCities, getCities } from "../../../../../redux/actions/index";
+import {clearCities, getCities} from "../../../../../redux/actions/index";
 import "./input-search.scss";
 
-const InputSearch = ({name,values, setFieldValue, errors, touched, isOpenCitiesList, setIsOpenCitiesList}) => {
+const InputSearch = ({
+    name,
+    values, 
+    setFieldValue, 
+    errors, 
+    touched, 
+    isOpenCitiesList, 
+    setIsOpenCitiesList
+}) => {
 
     const {citiesRequestError, cities} = useSelector(state => state.order);
     const [citiesList, setCitiesList] = useState(cities);

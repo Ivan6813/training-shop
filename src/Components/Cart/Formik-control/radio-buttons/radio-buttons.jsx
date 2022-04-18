@@ -6,8 +6,8 @@ const RadioButtons = ({name, label, options, onClick, ...rest}) => (
     <div className = "methods">
         <label className = "methods-title">{label}</label>
         <Field name = {name} {...rest}>
-            {({field}) => {
-                return options.map(({id, value, label, key}) => (
+            {({field}) => (
+                options.map(({id, value, label, key}) => (
                     <div className = "methods-item" key = {id}>
                         <label className = "methods-label custom-radio">
                             <input 
@@ -31,7 +31,7 @@ const RadioButtons = ({name, label, options, onClick, ...rest}) => (
                         </label>
                     </div>
                 ))
-            }}
+            )}
         </Field>
     </div>
 );
