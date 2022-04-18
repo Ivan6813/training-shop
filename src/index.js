@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {Provider} from "react-redux";
 import {HashRouter} from "react-router-dom";
-import App from "./components/app/app.jsx";
+import App from "./components/app/app";
 import ScrollToTop from "./components/scroll-to-top/scroll-to-top";
 import store from "./redux/store/index";
 

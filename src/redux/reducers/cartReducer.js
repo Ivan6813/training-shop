@@ -46,17 +46,9 @@ const cartReducer = (state = initialState, action) => {
                 orderFormData: {...state.orderFormData, ...action.payload}
             };
         case ACTION_TYPES.SEND_ORDER:
-            return {
-                ...state, 
-                isLoadingResponse: true, 
-                orderResponse: ""
-            };
+            return {...state, isLoadingResponse: true, orderResponse: ""};
         case ACTION_TYPES.ORDER_RESPONSE:
-            return {
-                ...state, 
-                orderResponse: action.payload, 
-                isLoadingResponse: false
-            };
+            return {...state, orderResponse: action.payload, isLoadingResponse: false};
         case ACTION_TYPES.GET_COUNTRIES:
             return {...state, countriesRequestError: ""};
         case ACTION_TYPES.GET_CITIES:
@@ -66,11 +58,7 @@ const cartReducer = (state = initialState, action) => {
         case ACTION_TYPES.SET_CITIES:
             return {...state, cities: [...action.payload]};
         case ACTION_TYPES.CLEAR_CITIES:
-            return {
-                ...state, 
-                cities: [], 
-                citiesRequestError: ""
-            };
+            return {...state, cities: [], citiesRequestError: ""};
         case ACTION_TYPES.COUNTRIES_REQUEST_ERROR:
             return {...state, countriesRequestError: action.payload};
         case ACTION_TYPES.CITIES_REQUEST_ERROR:
