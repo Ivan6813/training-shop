@@ -2,8 +2,8 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation} from "swiper";
 import {v4 as uuidv4} from "uuid";
 import {mainSlider} from "../../constants/constants";
-import "swiper/scss/navigation";
-import "swiper/swiper.scss";
+import "../../../node_modules/swiper/modules/navigation/navigation.scss";
+import "../../../node_modules/swiper/swiper.scss";
 import "./slider.scss";
 
 const Slider = () => (
