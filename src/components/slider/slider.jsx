@@ -3,7 +3,7 @@ import {Navigation} from "swiper";
 import {v4 as uuidv4} from "uuid";
 import {mainSlider} from "../../constants/constants";
 import "swiper/scss/navigation";
-import "swiper/scss";
+import "swiper/swiper.scss";
 import "./slider.scss";
 
 const Slider = () => (
