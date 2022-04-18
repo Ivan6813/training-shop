@@ -1,4 +1,4 @@
-import { ACTION_TYPES } from "../../constants/action-types";
+import {ACTION_TYPES} from "../../constants/action-types";
 
 const initialState = {
     order: [],
@@ -13,42 +13,19 @@ const initialState = {
     citiesRequestError: ""
 };
 
-function cartReducer (state = initialState, action) {
+const cartReducer = (state = initialState, action) => {
     switch(action.type) {
         case ACTION_TYPES.ADD_ORDER:
             return {
-                    ...state,
-                    order: [...state.order, {...action.payload, quantity: 1}]
-                };
+                ...state,
+                order: [...state.order, {...action.payload, quantity: 1}]
+            };
         case ACTION_TYPES.REMOVE_ORDER:
-            return {
-                    ...state,
-                    order: state.order.filter(item => item.id !== action.payload)
-                };
+            return {...state, order: action.payload};
         case ACTION_TYPES.INCREASE_QUANTITY:
-            return {
-                    ...state,
-                    order: state.order.map(item => {
-                        if(item.id === action.payload) {
-                            return {
-                                ...item, 
-                                quantity: item.quantity + 1
-                            };
-                        }else return item;
-                    })
-            };
+            return {...state, order: action.payload};
         case ACTION_TYPES.DECREASE_QUANTITY:
-            return {
-                    ...state,
-                    order: state.order.map(item => {
-                        if(item.id === action.payload) {
-                            return {
-                                ...item, 
-                                quantity: (item.quantity === 1) ? 1 : item.quantity - 1
-                            };
-                        }else return item;
-                    })
-            };
+            return {...state, order: action.payload};
         case ACTION_TYPES.SAVE_DELIVERY_FORM:
             return {...state, deliveryFormData: {...action.payload}};
         case ACTION_TYPES.SAVE_PAYMENT_FORM:
@@ -101,6 +78,6 @@ function cartReducer (state = initialState, action) {
         default:
             return state;
     }
-}
+};
 
 export default cartReducer;

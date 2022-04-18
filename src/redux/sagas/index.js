@@ -1,5 +1,6 @@
-import {takeEvery, call, put} from "redux-saga/effects";
-import {API} from "../../api";
+import {takeLatest, call, put} from "redux-saga/effects";
+import axios from "axios";
+import API from "../../api";
 import {ACTION_TYPES} from "../../constants/action-types";
 import {
   setProducts,
@@ -14,19 +15,18 @@ import {
   countriesRequestError,
   citiesRequestError
 } from "../actions";
-import axios from "axios";
 
 export default function* rootSaga() {
   yield requestsWatcher();
 }
 
 export function* requestsWatcher() {
-  yield takeEvery(ACTION_TYPES.GET_PRODUCTS, productsRequestWorker);
-  yield takeEvery(ACTION_TYPES.SEND_EMAIL, subscribeRequestWorker);
-  yield takeEvery(ACTION_TYPES.SEND_REVIEW, reviewRequestWorker);
-  yield takeEvery(ACTION_TYPES.SEND_ORDER, orderRequestWorker);
-  yield takeEvery(ACTION_TYPES.GET_COUNTRIES, countriesRequestWorker);
-  yield takeEvery(ACTION_TYPES.GET_CITIES, citiesRequestWorker);
+  yield takeLatest(ACTION_TYPES.GET_PRODUCTS, productsRequestWorker);
+  yield takeLatest(ACTION_TYPES.SEND_EMAIL, subscribeRequestWorker);
+  yield takeLatest(ACTION_TYPES.SEND_REVIEW, reviewRequestWorker);
+  yield takeLatest(ACTION_TYPES.SEND_ORDER, orderRequestWorker);
+  yield takeLatest(ACTION_TYPES.GET_COUNTRIES, countriesRequestWorker);
+  yield takeLatest(ACTION_TYPES.GET_CITIES, citiesRequestWorker);
 }
 
 export function* productsRequestWorker() {

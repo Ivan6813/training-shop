@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from "uuid";
 import phone from "../img/phone.svg";
 import location_marker from "../img/location_marker.svg";
 import clock from "../img/clock.svg";
@@ -19,7 +20,7 @@ import blog_img_3 from "../img/Blog-img-3.png";
 import payPal from "../img/paypal-cart.png";
 import visa from "../img/visa-cart.png";
 import masterCard from "../img/mastercard-cart.png";
-import { v4 as uuidv4 } from 'uuid';
+
 
 export const topBarInfo = [
     {icon: phone, text: "+375 29 100 20 30"}, 
@@ -131,3 +132,30 @@ export const regexEmail = new RegExp("^([a-z\\d\\.-]+)@([a-z\\d-]+)\\.([a-z]{2,6
 export const regexCard = new RegExp("^([0-9]{4,4})\\s([0-9]{4,4})\\s([0-9]{4,4})\\s([0-9]{4,4})");
 
 export const regexCardCVV = new RegExp("^[0-9]{3,4}$");
+
+export const deliveryMethods = {
+    postOffice: "pickup from post offices",
+    express: "express delivery",
+    pickup: "store pickup"
+};
+
+export const paymentMethods = {
+    payPal: "paypal",
+    visa: "visa",
+    master: "master card",
+    cash: "cash"
+};
+
+export const inputTypes = {
+    input: "input",
+    mask: "input-mask",
+    cvv: "input-cvv",
+    dropdown: "input-dropdown",
+    search: "input-search",
+    radio: "radio",
+    checkbox: "checkbox"
+};
+
+export const serverResponse = {
+    success: "success"
+};
