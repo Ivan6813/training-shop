@@ -1,0 +1,24 @@
+@import "./cart-btn/cart-btn.scss";
+
+.footer-cart {
+    padding: 20px 0;
+}
+
+.order-price-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.order-price-text {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.order-price {
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}

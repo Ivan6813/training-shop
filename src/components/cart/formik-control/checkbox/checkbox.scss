@@ -1,0 +1,30 @@
+@import "../../../../mixin.scss";
+
+.consent-form {
+    position: relative;
+    padding: 10px 0 20px 0;
+}
+
+.consent-form-label {
+    font-weight: 400;
+    font-size: 14px;
+    user-select: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    @include sm-mobile {
+        font-size: 13px;
+    }
+    & > span {
+        display: flex;
+        align-items: flex-start;
+    }
+}
+
+.custom_checkbox_error > span::before {
+    border-color: #D61313;
+    transition: border-color ease 0s;
+}
+
+.custom_checkbox_error > input:not(:disabled):not(:checked) + span:hover::before {
+    border-color: #D61313;
+}

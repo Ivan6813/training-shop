@@ -1,0 +1,22 @@
+@import "../../../mixin.scss";
+
+.delivery-block {
+    overflow: overlay;
+    height: 100%;
+}
+
+.customer-info-params {
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.small-input-block {
+   display: flex;
+   margin: 0 -4px 8px -4px;
+}
+
+.small-input {
+    padding: 0 4px;
+}

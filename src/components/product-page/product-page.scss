@@ -1,0 +1,29 @@
+@import "./product-header/product-header.scss";
+@import "./product-slider/product-slider.scss";
+@import "./product-color/product-color.scss";
+@import "./product-size/product-size.scss";
+@import "./product-price/product-price.scss";
+@import "./product-info/product-info.scss";
+@import "./pay-with/pay-with.scss";
+@import "./product-description/product-description.scss";
+@import "./additional-info/additional-info.scss";
+@import "./reviews/reviews.scss";
+@import "./related-products/related-products.scss";
+@import "./review-modal-window/review-modal-window.scss";
+
+.product-page {
+    width: 100%;
+    display: flex;
+    padding-top: 32px;
+    @include tablets {
+        display: block;
+    }
+}
+
+.product-page-info {
+    padding-left: 30px;
+    width: 100%;
+    @include tablets {
+        padding-left: 0;
+    }
+}

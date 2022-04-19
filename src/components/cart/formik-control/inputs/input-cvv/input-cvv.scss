@@ -1,0 +1,72 @@
+@import "../../../../../mixin.scss";
+
+@font-face {
+	font-family: "fontello";
+	src: url("../../../../../fonts/fontello.eot?2022");
+	src: url("../../../../../fonts/fontello.eot?2022#iefix") format("embedded-opentype"),
+	     url("../../../../../fonts/fontello.woff2?2022") format("woff2"),
+	     url("../../../../../fonts/fontello.woff?2022") format("woff"),
+	     url("../../../../../fonts/fontello.woff2") format("truetype"),
+	     url("../../../../../fonts/fontello.svg?2022#fontello") format("svg");
+	font-weight: 100;
+	font-style: normal;
+}
+
+.input-cvv-hidden,
+.input_cvv_visible {
+    display: block;
+    background: #f8f8f8;
+    border: none;
+    &::placeholder {
+		font-family: "Spartan";
+        font-size: 14px;
+        color: rgba($color: #121212, $alpha: 0.4);
+    }
+    &:hover {
+        &::placeholder {
+            transition: all ease 0.3s;
+            color: rgba($color: #121212, $alpha: 0.6);
+        }
+    } 
+}
+
+.input-cvv-hidden {
+    width: 166px;
+    padding: 19px 16px;
+	font-family: "fontello";
+    font-size: 8px;    
+	letter-spacing: 1.5px;
+    @include lg-mobile {
+	    width: 167px;
+    }
+}
+.input_cvv_visible{
+	font-family: "Spartan";
+    width: 100%;
+    padding: 15px 16px;
+	font-weight: 500;
+    font-size: 14px;
+}
+
+.input-cvv-btn {
+    position: absolute;
+    top: 40%;
+    right: 12px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    background: url(../../../../../img/hide-cvv.svg) no-repeat center;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+    
+.input-cvv-btn.show_CVV {
+    background: url(../../../../../img/show-cvv.svg) no-repeat center;
+}
+
+.input_cvv_error {
+    outline: 1px solid #D61313;
+}

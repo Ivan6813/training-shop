@@ -1,0 +1,14 @@
+@import "../../../mixin.scss";
+@import "./clothes-header/clothes-header.scss";
+@import "./clothes-list/clothes-list.scss";
+@import "./clothes-btn/clothes-btn.scss";
+
+.clothes {
+    padding-top: 96px;
+    @include tablets {
+        padding-top: 50px;
+    }
+    @include lg-mobile {
+        padding-top: 40px;
+    }
+}

@@ -1,0 +1,8 @@
+@import "./top-bar/top-bar.scss";
+@import "./nav-bar/nav-bar.scss";
+
+.header {
+    border-bottom: 2px solid #f8f8f8;
+    position: relative;
+    z-index: 25;
+}

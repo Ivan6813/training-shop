@@ -1,0 +1,62 @@
+@import "./header-cart/header-cart.scss";
+@import "./nav-bar-cart/nav-bar-cart.scss";
+@import "./cart-items/cart-items.scss";
+@import "./delivery-info/delivery-info.scss";
+@import "./payment-info/payment-info.scss";
+@import "./cart-status/cart-status.scss";
+@import "./footer-cart/footer-cart.scss";
+@import "./formik-control/formik-control.scss";
+@import "../../mixin.scss";
+
+.cart-block {
+    width: 100vw;
+    min-height: 500px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(388px);
+    visibility: hidden;
+    transition-property: transform(translateX);
+    transition: ease 0.3s;
+    z-index: 30;
+}
+
+.is_open_cart {
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.cart-container {
+    width: 340px;
+    margin: 0 auto;
+    @include lg-mobile {
+        width: 95%;
+    }
+}
+
+.cart-dark-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: 0.7);
+    transform: translateX(-388px);
+    @include lg-mobile {
+        background-color: transparent;
+    }
+}
+
+.cart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgb(255, 255, 255);
+    width: 388px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    @include lg-mobile {
+        width: 100%;
+        height: 100%;
+    }
+}
