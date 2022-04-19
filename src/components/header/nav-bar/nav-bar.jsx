@@ -26,7 +26,7 @@ const NavBar = ({isCartOpen, setIsCartOpen}) => {
     useEffect(() => {
         if(isMenuOpen || isCartOpen || isReviewsModalWindowOpen) {
             document.body.classList.add('lock');
-        }else {
+        } else {
             document.body.classList.remove('lock');
         }
     });
@@ -59,20 +59,20 @@ const NavBar = ({isCartOpen, setIsCartOpen}) => {
                     </nav>
                     <ul className = "user-block-list">
                         <li className = "user-block-item">
-                            <button className = "user-block-search-btn"></button>
+                            <button className = "user-block-search-btn"/>
                         </li>
                         <li className = "user-block-item">
-                            <button className = "user-block-site-btn"></button>
+                            <button className = "user-block-site-btn"/>
                         </li>
                         <li className = "user-block-item">
-                            <button className = "user-block-customer-btn"></button>
+                            <button className = "user-block-customer-btn"/>
                         </li>
                         <li 
                             onClick = {openCart}
                             className = "user-block-item"
                             data-test-id = "cart-button"
                         >
-                            <button  className = "user-block-cart-btn"></button>
+                            <button  className = "user-block-cart-btn"/>
                             {!!order.length && <span className = "user-block-cart-quantity">{order.length}</span>}
                         </li>
                     </ul>
@@ -82,8 +82,7 @@ const NavBar = ({isCartOpen, setIsCartOpen}) => {
                     />
                 </div>
             </div>
-            {isMenuOpen 
-            &&
+            {isMenuOpen &&
             <BurgerMenu 
                 isMenuOpen = {isMenuOpen} 
                 toggleMenuMode = {toggleMenuMode}

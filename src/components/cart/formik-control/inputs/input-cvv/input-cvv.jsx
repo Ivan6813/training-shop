@@ -33,7 +33,7 @@ const InputCvv = ({name, errors, touched}) => {
                 className = {classNames("input-cvv-btn", {show_CVV: cvvHidden})}
                 type = "button"
                 onClick = {changeType}
-            ></button>
+            />
             <ErrorMessage name = {name} component = {TextError}/>
         </div>
     )

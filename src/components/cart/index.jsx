@@ -21,14 +21,13 @@ const Cart = ({isCartOpen, setIsCartOpen}) => {
     const paymentFormik = useRef();
     const dispatch = useDispatch();
 
-    const products = order.map(item => {
-        return {
-            name: item.name, 
-            size: item.size, 
-            color: item.color,
-            quantity: item.quantity
-        };
-    });
+    const products = order.map(item => (
+        {name: item.name, 
+        size: item.size, 
+        color: item.color,
+        quantity: item.quantity
+        }
+    ));
 
     const closeCart = () => {
         if(cartSection === 3 && orderResponse === serverResponse.success) {
@@ -36,11 +35,11 @@ const Cart = ({isCartOpen, setIsCartOpen}) => {
             setCartSection(0);
             dispatch(clearFormData());
             dispatch(clearCartItems());
-        }else {
-            setIsCartOpen(false);
-            setCartSection(0);
-            dispatch(clearFormData());
-        } 
+            return;
+        }
+        setIsCartOpen(false);
+        setCartSection(0);
+        dispatch(clearFormData());
     };
 
     return (
@@ -48,7 +47,7 @@ const Cart = ({isCartOpen, setIsCartOpen}) => {
             onClick = {closeCart} 
             className = {classNames("cart-block", {is_open_cart: isCartOpen})}
         >
-            <div className = "cart-dark-bg"></div>
+            <div className = "cart-dark-bg"/>
             <div 
                 className = "cart" 
                 onClick = {(event) => event.stopPropagation()}

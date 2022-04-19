@@ -45,7 +45,7 @@ const ProductPrice = ({product, selectedSize, selectedItemImg}) => {
     const cartBtnHandler = () => {
         if(availabilityInCart) {
             removeCartItem();
-        }else {
+        } else {
             addCartItem();
         }
     };

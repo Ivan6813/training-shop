@@ -23,12 +23,11 @@ const CartStatus = ({setCartSection, closeCart, order}) => {
     
     return (
         <div className = "cart-status-block">
-            {isLoadingResponse &&
-             <div className = "response-loader">
+            {isLoadingResponse ? (
+            <div className = "response-loader">
                 <ThreeDots height = "50" width = "50" color = "#121212"/>
             </div>
-            }
-            {!isLoadingResponse &&
+            ) : (
             <>
                 {!!order.length &&
                 <>
@@ -69,7 +68,7 @@ const CartStatus = ({setCartSection, closeCart, order}) => {
                     }
                 </div>
             </>
-            }
+            )}
         </div>
     );
 };

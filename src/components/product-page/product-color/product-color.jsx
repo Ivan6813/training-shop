@@ -11,9 +11,8 @@ const ProductColor = ({images, selectedColor, setSelectedColor, setSelectedItemI
         if(uniqueColors.indexOf(item.color) === -1) {
             uniqueColors.push(item.color);
             return true;
-        }else {
-            return false;
         }
+        return false;
     };
     
     const uniqueImages = images.filter(item => findUniqueImg(item));

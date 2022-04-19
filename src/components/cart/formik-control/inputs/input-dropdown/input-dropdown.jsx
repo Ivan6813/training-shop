@@ -15,12 +15,9 @@ const InputDropdown = ({
 
     const {countriesRequestError, countries} = useSelector(state => state.order);
 
-    const openCountriesList = () => {
-        setIsOpenDropdown(true);
-    };
-
-    const clickStopPropagation = (event) => {
+    const openCountriesList = (event) => {
         event.stopPropagation();
+        setIsOpenDropdown(!isOpenDropdown);
     };
 
     const selectCountry = (event) => {
@@ -41,16 +38,15 @@ const InputDropdown = ({
                 className = {classNames("input-dropdown", {
                     input_dropdown_error: errors[name] && touched[name]
                 })}
-                onFocus = {openCountriesList}
-                onClick = {clickStopPropagation}
+                onClick = {openCountriesList}
                 placeholder = "Country"
                 readOnly 
             />
             <span 
                 className = {classNames("arrow-icon", {
                     dropdown_open: isOpenDropdown
-                })}>
-            </span>
+                })}
+            />
             {isOpenDropdown && 
             <ul className = "countries-list">
                 {countries.map(({name, _id}) => (
@@ -63,10 +59,10 @@ const InputDropdown = ({
                     </li>
                 ))}
             </ul>}
-            {!countriesRequestError ?
-            <ErrorMessage name = {name} component = {TextError}/>
-            :
+            {countriesRequestError ?
             <div className = "cart-text-error">{countriesRequestError}</div>
+            :
+            <ErrorMessage name = {name} component = {TextError}/>
             }
         </div>
     )

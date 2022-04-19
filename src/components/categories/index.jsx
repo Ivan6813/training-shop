@@ -19,7 +19,9 @@ const Categories = () => {
         if(clothesList.length) {
             setFilteredClothes(clothes);
             setNotFound(false);
-        }else if(!clothes) {
+            return;
+        }
+        if(!clothes) {
             return setNotFound(true);
         }
     },[clothes]); // eslint-disable-line react-hooks/exhaustive-deps

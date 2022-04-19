@@ -12,7 +12,7 @@ const HeaderCart = ({closeCart}) => (
                     onClick = {closeCart}
                     className = "header-cart-btn"
                     type = "button"
-                ></button>
+                />
             </div>
         </div>
     </header>    

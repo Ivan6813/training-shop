@@ -37,7 +37,7 @@ const DeliveryInfo = ({deliveryFormik}) => {
         if(target.checked && target.value === deliveryMethods.pickup) {
             if(!countries.length) {
                 dispatch(getCountries());
-            }else {
+            } else {
                 return null;
             }
         }

@@ -5,7 +5,7 @@ import "./clothes-list.scss";
 const ClothesList = ({clothes}) => {
 
     const discountCalc = (price, discount) => {
-        let percent = 100 + parseInt(discount);
+        const percent = 100 + parseInt(discount);
         return ((price / percent) *100).toFixed(1);
     };
 
@@ -42,8 +42,7 @@ const ClothesList = ({clothes}) => {
                                 )}
                                 <Rating rating = {rating}/>
                             </div>
-                            {discount
-                            && 
+                            {discount && 
                             <div className = "discount">
                                 {discount}
                             </div>

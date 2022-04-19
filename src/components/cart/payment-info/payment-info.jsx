@@ -28,7 +28,7 @@ const PaymentInfo = ({paymentFormik, setPaymentMethod, cartSection, setCartSecti
                 values.paymentMethod = "card";
                 dispatch(sendOrder({...values, ...orderFormData}));
                 setCartSection(cartSection + 1);
-            }else {
+            } else {
                 dispatch(sendOrder({...values, ...orderFormData}));
                 setCartSection(cartSection + 1);
             }
@@ -42,7 +42,7 @@ const PaymentInfo = ({paymentFormik, setPaymentMethod, cartSection, setCartSecti
         if(val.length === 2) {
           if(Number(val) === 0) {
             val = "01";
-          }else if(val > max) {
+          } else if(val > max) {
             val = max;
           }
         }

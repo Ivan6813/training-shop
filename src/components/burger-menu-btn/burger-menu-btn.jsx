@@ -4,8 +4,8 @@ import "./burger-menu-btn.scss";
 const BurgerMenuBtn = ({isMenuOpen, toggleMenuMode}) => {
 
     const showMenu = (event) => {
-        toggleMenuMode(!isMenuOpen);
         event.stopPropagation();
+        toggleMenuMode(!isMenuOpen);
     };
 
     return (

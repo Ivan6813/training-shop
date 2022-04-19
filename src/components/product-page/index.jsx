@@ -26,7 +26,7 @@ const ProductPage = () => {
     const [product] = useSelector(state => {
         if(state.products.products[category]?.some(item => item.id === id)) {
             return state.products.products[category]?.filter(item => item.id === id);
-        }else {
+        } else {
             return [{}];
         }
     });

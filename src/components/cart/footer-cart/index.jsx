@@ -33,13 +33,13 @@ const FooterCart = ({
                 totalPrice: totalPrice
             }));
             setCartSection(cartSection + 1); 
-        }else {
-            deliveryFormik.current?.submitForm();
-            if(deliveryFormik.current?.isValid) {
-                setCartSection(cartSection + 1);
-            }else {
-                deliveryFormik.current?.setFieldValue("agree", false);
-            }
+            return;
+        }
+        deliveryFormik.current?.submitForm();
+        if(deliveryFormik.current?.isValid) {
+            setCartSection(cartSection + 1);
+        } else {
+            deliveryFormik.current?.setFieldValue("agree", false);
         }
     };
 
@@ -51,10 +51,10 @@ const FooterCart = ({
         if(cartSection === 1) {
             dispatch(saveDeliveryFormData(deliveryFormik.current?.values));
             setCartSection(0);
-        }else {
-            dispatch(savePaymentFormData(paymentFormik.current?.values));
-            setCartSection(1);
+            return;
         }
+        dispatch(savePaymentFormData(paymentFormik.current?.values));
+        setCartSection(1);
     };
 
     return (
@@ -68,16 +68,10 @@ const FooterCart = ({
                         $ {totalPrice.toFixed(2)}
                     </div>
                 </div>
-                {cartSection !== 2
-                 && 
-                <CartBtn 
-                    text = "Further" 
-                    handle = {handleFurtherBtn} 
-                    bg = "black"
-                />
+                {cartSection !== 2 && 
+                <CartBtn text = "Further" handle = {handleFurtherBtn} bg = "black"/>
                 }
-                {cartSection === 2
-                && 
+                {cartSection === 2 && 
                 <CartBtn 
                     text = {(paymentMethod === paymentMethods.cash) ? 
                         "Ready" : "Check out"
@@ -86,11 +80,8 @@ const FooterCart = ({
                     bg = "black"
                 />
                 }
-                {!!cartSection && <CartBtn 
-                                    text = "View Cart" 
-                                    handle = {handleViewCartBtn} 
-                                    bg = "grey"
-                                  />
+                {!!cartSection && 
+                <CartBtn text = "View Cart" handle = {handleViewCartBtn} bg = "grey"/>
                 }
             </div>
         </div>

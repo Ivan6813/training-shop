@@ -32,11 +32,11 @@ const InputSearch = ({
                country: values.country
             }));
             setIsOpenCitiesList(true);
-        }else if(value.length >= 3 && cities.length) {
+        } else if(value.length >= 3 && cities.length) {
             setCitiesList(cities.filter(item => {
                 return item.city.toLowerCase().includes(value.toLowerCase());
             }));
-        }else if(value.length < 3 && cities.length) {
+        } else if(value.length < 3 && cities.length) {
             setIsOpenCitiesList(false);
             dispatch(clearCities());
         }

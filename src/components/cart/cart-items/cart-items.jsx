@@ -10,7 +10,7 @@ const CartItems = ({order}) => {
         const newOrder = order.map(item => {
             if(item.id === id && item.quantity > 1) {
                 return {...item, quantity: item.quantity - 1};
-            }else return item;
+            } else return item;
         });
         return dispatch(decreaseQauntity(newOrder));
     };
@@ -19,7 +19,7 @@ const CartItems = ({order}) => {
         const newOrder = order.map(item => {
             if(item.id === id) {
                 return {...item, quantity: item.quantity + 1};
-            }else return item;
+            } else return item;
         });
         return dispatch(increaseQauntity(newOrder));
     };
@@ -57,7 +57,7 @@ const CartItems = ({order}) => {
                                         className = "cart-item-btn-minus"
                                         data-test-id = "minus-product"
                                         type = "button"
-                                    ></button>
+                                    />
                                     <div className = "cart-item-count">
                                         {quantity}
                                     </div>
@@ -66,7 +66,7 @@ const CartItems = ({order}) => {
                                         className = "cart-item-btn-plus"
                                         data-test-id = "plus-product"
                                         type = "button"
-                                    ></button>
+                                    />
                                 </div>
                                 <div className = "cart-item-price">
                                     $ {(price*quantity).toFixed(2)}
@@ -75,7 +75,7 @@ const CartItems = ({order}) => {
                                     onClick = {() => removeItem(id)}
                                     className = "cart-item-delete-btn"
                                     data-test-id = "remove-product"
-                                ></button>
+                                />
                             </div>
                         </div>
                     </div>
