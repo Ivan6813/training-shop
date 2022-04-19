@@ -34,28 +34,28 @@ const Filter = ({
             case "color":
                 if(event.target.checked) {
                     setSelectColor(selectColor.concat(event.target.value));
-                }else {
+                } else {
                     setSelectColor(selectColor.filter(item => item !== event.target.value)); 
                 }
             break;
             case "size":
                 if(event.target.checked) {
                     setSelectSize(selectSize.concat(event.target.value));
-                }else {
+                } else {
                     setSelectSize(selectSize.filter(item => item !== event.target.value)); 
                 }
             break;
             case "brand":
                 if(event.target.checked) {
                     setSelectBrand(selectBrand.concat(event.target.value));
-                }else {
+                } else {
                     setSelectBrand(selectBrand.filter(item => item !== event.target.value));
                 };
             break;
             case "price":
                 if(event.target.checked) {
                     setSelectPrice(selectPrice.concat(event.target.value));
-                }else {
+                } else {
                     setSelectPrice(selectPrice.filter(item => item !== event.target.value));
                 };
             break;
@@ -73,8 +73,7 @@ const Filter = ({
 
     return (
         <div className = "filter" data-test-id = {`filters-${category}`}>
-            {filterItems.map(({title, items}, index) => {
-                return (
+            {filterItems.map(({title, items}, index) => (
                 <div className = "filter-category" key = {uuidv4()}>
                     <div className = "filter-category-title">
                         {title}
@@ -83,8 +82,7 @@ const Filter = ({
                         className = "filter-list"
                         data-test-id = {`filters-${title}`}
                     >
-                    {items.map(value => {
-                        return (
+                    {items.map(value => (
                         <li className = "filter-item" key = {uuidv4()}>
                             <label className = "filter-label custom-checkbox">
                                 <input  
@@ -97,12 +95,10 @@ const Filter = ({
                                 <span>{(filterItems[index].title === "price") ? `$${value}` : value}</span>
                             </label>
                         </li>
-                        )
-                    })}
+                    ))}
                     </ul>
                 </div>
-                )
-            })}
+            ))}
          </div>
     );
 };

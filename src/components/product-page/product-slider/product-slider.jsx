@@ -18,8 +18,6 @@ const ProductSlider = ({images}) => {
     const selectSlide = (swiper, event) => {
         if(event.target.className === "slider-small-img") {
             setActiveSlide(swiper.clickedIndex);
-        }else {
-            return;
         }
     };
 
@@ -35,7 +33,7 @@ const ProductSlider = ({images}) => {
                                     disabled: activeSlide === 0
                                 })
                             }
-                        ></button>
+                        />
                         <button 
                             onClick = {() => mainSlider.slideNext()} 
                             className = {
@@ -43,7 +41,7 @@ const ProductSlider = ({images}) => {
                                     disabled: activeSlide === length
                                 })
                             }
-                        ></button>
+                        />
                     </div>
                     <Swiper
                         onSwiper = {setThumbsSwiper}

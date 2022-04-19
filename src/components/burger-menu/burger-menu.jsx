@@ -1,16 +1,13 @@
 import {Link} from "react-router-dom";
 import classNames from "classnames";
-import {v4 as uuidv4} from "uuid";
 import "./burger-menu.scss";
-
 
 const BurgerMenu = ({isMenuOpen, toggleMenuMode, navList}) => {
 
     const closeMenu = (event) => {
+        event.stopPropagation();
         if(event.target.className === "burger-nav-link") {
             toggleMenuMode(false);
-        }else {
-            event.stopPropagation();
         }
     };
 
@@ -23,7 +20,7 @@ const BurgerMenu = ({isMenuOpen, toggleMenuMode, navList}) => {
             <nav className = "burger-nav-menu">
                 <ul className = "burger-nav-list">
                     {navList.map(({path, name}) => (
-                        <li className = "burger-nav-item" key = {uuidv4()}>
+                        <li className = "burger-nav-item" key = {path}>
                             <Link 
                                 className = "burger-nav-link" 
                                 to = {`/${path}`} 

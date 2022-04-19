@@ -20,7 +20,7 @@ const ReviewRating = ({setReviewRating}) => {
                     <label 
                          htmlFor = "review-rating-5"
                          className = "rating__label"
-                    ></label>
+                    />
                     <input 
                          type = "radio"
                          name = "review-rating"
@@ -32,7 +32,7 @@ const ReviewRating = ({setReviewRating}) => {
                     <label 
                          htmlFor = "review-rating-4" 
                          className = "rating__label"
-                    ></label>
+                    />
                     <input 
                          type = "radio"
                          name = "review-rating"
@@ -44,7 +44,7 @@ const ReviewRating = ({setReviewRating}) => {
                     <label 
                          htmlFor = "review-rating-3" 
                          className = "rating__label"
-                    ></label>
+                    />
                     <input 
                          type = "radio"
                          name = "review-rating"
@@ -56,7 +56,7 @@ const ReviewRating = ({setReviewRating}) => {
                     <label 
                          htmlFor = "review-rating-2" 
                          className = "rating__label"
-                    ></label>
+                    />
                     <input 
                          type = "radio"
                          name = "review-rating"
@@ -69,7 +69,7 @@ const ReviewRating = ({setReviewRating}) => {
                     <label
                          htmlFor = "review-rating-1" 
                          className = "rating__label"
-                    ></label>
+                    />
                </div>
           </div>
      );

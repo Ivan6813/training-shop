@@ -15,7 +15,7 @@ const ProductsSettings = ({clothes, filteredClothes, setFilteredClothes, categor
         const priceRange = value.split("-");
         if(priceRange.length === 1) {
             return (price >= priceRange[0]) ? true : false;
-        }else {
+        } else {
             return (price >= priceRange[0] && price <= priceRange[1]) ? true : false;
         }
     };
@@ -30,17 +30,13 @@ const ProductsSettings = ({clothes, filteredClothes, setFilteredClothes, categor
 
     useEffect(() => {
         const newFilteredClothes = clothes.filter(({images, sizes, brand, price}) => (
-            images.some(image => {
-                return selectColor.length === 0 || selectColor.includes(image.color)
-            })
+            images.some(image => !selectColor.length || selectColor.includes(image.color))
             &&
-            sizes.some(size => {
-                return selectSize.length === 0 || selectSize.includes(size)
-            })
+            sizes.some(size => !selectSize.length || selectSize.includes(size))
             &&
-            (selectBrand.length === 0 || selectBrand.includes(brand))
+            (!selectBrand.length || selectBrand.includes(brand))
             &&
-            (selectPrice.length === 0 || selectPrice.some(value => sortByPrice(value, price)))
+            (!selectPrice.length || selectPrice.some(value => sortByPrice(value, price)))
         ))
         setFilteredClothes(newFilteredClothes);
     },[selectColor, selectSize, selectBrand, selectPrice]) // eslint-disable-line react-hooks/exhaustive-deps
@@ -64,8 +60,8 @@ const ProductsSettings = ({clothes, filteredClothes, setFilteredClothes, categor
                     Filter
                 </button>
                 <div className = "page-view-block">
-                    <button className = "page-view-list-btn"></button>
-                    <button className = "page-view-squares-btn"></button>
+                    <button className = "page-view-list-btn"/>
+                    <button className = "page-view-squares-btn"/>
                 </div>
             </div>
             <div className = {classNames("hidden", {show_filter: filterIsOpen})}>
@@ -96,20 +92,17 @@ const ProductsSettings = ({clothes, filteredClothes, setFilteredClothes, categor
                     Color: {selectColor.join(", ")}
                 </li>
                 }
-                {!!selectSize.length 
-                && 
+                {!!selectSize.length && 
                 <li className = "activ_filter">
                     Size: {selectSize.join(", ")}
                 </li>
                 }
-                {!!selectBrand.length 
-                && 
+                {!!selectBrand.length && 
                 <li className = "activ_filter">
                     Brand: {selectBrand.join(", ")}
                 </li>
                 }
-                {!!selectPrice.length
-                &&
+                {!!selectPrice.length &&
                 <li className = "activ_filter">
                     Price: {selectPrice.join(", ")}
                 </li>

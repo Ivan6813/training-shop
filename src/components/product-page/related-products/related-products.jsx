@@ -17,7 +17,7 @@ const RelatedProducts = ({productType}) => {
     const relatedProducts = useSelector(state => state.products.products[category] || []);
 
     const discountCalc = (price, discount) => {
-        let percent = 100 + parseInt(discount);
+        const percent = 100 + parseInt(discount);
         return ((price / percent) *100).toFixed(1);
     };
 
@@ -29,16 +29,20 @@ const RelatedProducts = ({productType}) => {
                         RELATED PRODUCTS
                     </div>
                     <div className = "related-products-slider">
-                        <button className = {
-                            classNames("related-products-btn-prev", {
-                                disabled: progressSlide === 0
-                                })
-                        }></button>
-                        <button className = {
-                            classNames("related-products-btn-next", {
-                                disabled: progressSlide === 1
-                                })
-                        }></button>
+                        <button 
+                            className = {
+                                classNames("related-products-btn-prev", {
+                                    disabled: progressSlide === 0
+                                    })
+                            }
+                        />
+                        <button 
+                            className = {
+                                classNames("related-products-btn-next", {
+                                    disabled: progressSlide === 1
+                                    })
+                            }
+                        />
                     </div>
                 </div>
                 <Swiper
